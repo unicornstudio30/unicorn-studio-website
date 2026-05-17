@@ -432,10 +432,10 @@ export default function AISolutionsPage() {
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-[-0.02em] leading-[1.1]">
-              Got an orchestration or fine-tuning problem?
+              Ready to build real AI solutions?
             </h2>
             <p className="text-lg sm:text-xl text-blue-100 mb-10 leading-[1.6] max-w-2xl mx-auto">
-              30 minutes, no pitch. Walk us through the workflow and we&apos;ll tell you whether it&apos;s a multi-agent shape, a fine-tune shape, or both.
+              Let&apos;s skip the hype and build AI that transforms your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
