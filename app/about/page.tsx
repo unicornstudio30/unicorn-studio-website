@@ -227,7 +227,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7] text-pretty">
                   <p>
-                    I spent five-plus years in the web design and marketing industry. Long enough to watch the same pattern play out across business after business. They&apos;d grow up to a point. And then they&apos;d stall. Not because the demand wasn&apos;t there. Not because the founder wasn&apos;t working hard enough. They stalled because the business was held together by manual, messy, repetitive work, and the only way to grow was to do more of it.
+                    I spent 5+ years in the web design and marketing industry. Long enough to watch the same pattern play out across business after business. They&apos;d grow up to a point. And then they&apos;d stall. Not because the demand wasn&apos;t there. Not because the founder wasn&apos;t working hard enough. They stalled because the business was held together by manual, messy, repetitive work, and the only way to grow was to do more of it.
                   </p>
                   <p>
                     Hiring fixed it for a quarter. Then the same bottleneck moved one seat over. New software promised to fix it; six months later, nothing structural had changed. The manual work just multiplied.
