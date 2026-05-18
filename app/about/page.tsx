@@ -190,7 +190,7 @@ export default function AboutPage() {
               <div className="relative mx-auto lg:mx-0 w-full max-w-[280px] lg:max-w-none">
                 <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 shadow-[0_30px_80px_-25px_rgba(37,99,235,0.45)]">
                   <Image
-                    src="/team/founder.jpg?v=2"
+                    src="/team/founder.jpg?v=3"
                     alt="Saidur Rahaman, Founder of Unicorn Studio"
                     width={720}
                     height={720}

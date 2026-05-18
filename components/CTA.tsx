@@ -130,7 +130,7 @@ export default function CTA() {
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 p-[3px] shadow-[0_20px_50px_-12px_rgba(59,130,246,0.4)]">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <Image
-                    src="/team/founder.jpg?v=2"
+                    src="/team/founder.jpg?v=3"
                     alt="Saidur Rahaman, Founder of Unicorn Studio"
                     width={224}
                     height={224}
