@@ -222,27 +222,24 @@ export default function AboutPage() {
                   The founder
                 </div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.1] tracking-[-0.02em] text-balance mb-6 sm:mb-8">
-                  Hi, I&apos;m Saidur. I built this studio so founders could{" "}
-                  <span className="gradient-text-modern">ship AI, not assemble it.</span>
+                  Hi, I&apos;m Saidur. I started this studio after watching too many businesses{" "}
+                  <span className="gradient-text-modern">stall at the same wall.</span>
                 </h2>
                 <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7] text-pretty">
                   <p>
-                    I started building software the unglamorous way. Integrating tools, automating the boring parts of businesses everyone wanted off their plate. Pre-AI, that meant Zapier, custom scripts, and a lot of duct tape between systems that refused to cooperate. The work was useful. The ceiling was low.
+                    I spent five-plus years in the web design and marketing industry. Long enough to watch the same pattern play out across business after business. They&apos;d grow up to a point. And then they&apos;d stall. Not because the demand wasn&apos;t there. Not because the founder wasn&apos;t working hard enough. They stalled because the business was held together by manual, messy, repetitive work, and the only way to grow was to do more of it.
                   </p>
                   <p>
-                    Then language models got good enough to actually do the work. Not demo-day work. Real work. Onboarding that ran itself. Inbound that answered at 3am. Internal agents that did the lookup, the draft, and the handoff without a person. The ceiling I&apos;d been building under disappeared overnight.
+                    Hiring fixed it for a quarter. Then the same bottleneck moved one seat over. New software promised to fix it; six months later, nothing structural had changed. The manual work just multiplied.
                   </p>
                   <p>
-                    Across the next dozen projects, three shapes kept showing up. Some founders needed{" "}
-                    <span className="font-semibold text-gray-900">AI Systems</span> to automate the operational work their team was drowning in. Others needed an{" "}
-                    <span className="font-semibold text-gray-900">AI Solution</span>: one custom product solving a specific, painful problem nobody had a tool for. A few were building the next thing entirely. An{" "}
-                    <span className="font-semibold text-gray-900">AI SaaS</span>, with AI as the wedge of a subscription product. Different shapes, same broken pattern: six vendors, three handoffs, two months lost in the gaps.
+                    Most growing businesses hit the same wall: lead generation running on the wrong channels, sales follow-up depending on whoever&apos;s free that day, inbound leaking through the cracks after hours, reporting eating a full day every week, support piling up faster than it closes, and the owner running everything.
                   </p>
                   <p>
-                    Unicorn Studio is the team I wish those founders had. We do those three kinds of AI work, plus the website and brand to launch each one credibly. One team. Source files yours. No retainer trap, no vendor lock-in.
+                    So I started Unicorn Studio to build AI systems that actually replace the work. Every business is different, so we don&apos;t sell off-the-shelf packages. We talk, find the choke point that&apos;s eating your time, your team, or your revenue, and build a custom AI system to fix it. Internal workflow, lead generation, communication, marketing, sales, or the deeper builds that turn AI into a product of its own.
                   </p>
                   <p>
-                    If you&apos;re building any of the three, the discovery call is the right place to start. I take it personally for every new project.
+                    Built for founders and operators ready to replace manual work with systems they own. You own the code. Results, or we work for free. If you&apos;re at that wall and want to talk, the discovery call is the right place to start. I take it personally for every new project.
                   </p>
                 </div>
 
