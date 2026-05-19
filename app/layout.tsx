@@ -31,9 +31,11 @@ export const metadata: Metadata = {
   publisher: siteName,
   icons: {
     icon: [
-      { url: "/logo.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.svg", type: "image/svg+xml", sizes: "any" },
     ],
-    apple: "/logo.svg",
+    apple: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
   openGraph: {
     type: "website",
@@ -43,10 +45,11 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.jpg?v=2",
         width: 1200,
         height: 630,
-        alt: "Unicorn Studio · AI System Specialists",
+        alt: "Unicorn Studio · Trusted AI integration partner for businesses",
+        type: "image/jpeg",
       },
     ],
     locale: "en_US",
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.jpg"],
+    images: ["/og-image.jpg?v=2"],
     creator: "@unicornstudioai",
     site: "@unicornstudioai",
   },

@@ -159,7 +159,7 @@ export default function CTA() {
 
             {/* Quick action: WhatsApp */}
             <a
-              href="https://wa.me/12267035175?text=Hi%20Saidur%2C%20I%27d%20like%20to%20chat%20about%20an%20AI%20project."
+              href="https://wa.me/8801799296925?text=Hi%20Saidur%2C%20I%27d%20like%20to%20chat%20about%20an%20AI%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-5 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-semibold text-[15px]"
