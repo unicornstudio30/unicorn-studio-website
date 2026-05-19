@@ -386,21 +386,21 @@ export default function AISystemsPage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               Stop watching. Start building.
             </h2>
-            <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-[1.6]">
               A free 30-minute call. No pitch. You walk us through your business and we tell you honestly which of our four systems you actually need.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <button
                 onClick={openModal}
-                className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-lg"
+                className="btn-primary-light w-full sm:w-auto px-8 py-4 text-blue-700 rounded-xl font-semibold text-base sm:text-lg text-center"
               >
                 Book a discovery call
               </button>
               <Link
                 href="/about"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-xl font-semibold text-lg hover:bg-white/20 transition-colors"
+                className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-colors text-center"
               >
-                Learn About Us
+                Learn about us
               </Link>
             </div>
           </div>

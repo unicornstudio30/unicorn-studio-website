@@ -412,16 +412,16 @@ export default function AISaaSPage() {
             <p className="text-lg sm:text-xl text-blue-100 mb-10 leading-[1.6] max-w-2xl mx-auto">
               30 minutes, no pitch. Walk us through the idea and we&apos;ll tell you whether it&apos;s an MVP shape or a full build, what the stack should look like, and what we&apos;d ship in the first 4 weeks.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <button
                 onClick={openModal}
-                className="btn-primary-light px-8 py-4 text-blue-700 rounded-xl font-semibold text-base sm:text-lg"
+                className="btn-primary-light w-full sm:w-auto px-8 py-4 text-blue-700 rounded-xl font-semibold text-base sm:text-lg text-center"
               >
                 Book a discovery call
               </button>
               <Link
                 href="/case-studies"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-colors"
+                className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-colors text-center"
               >
                 See case studies
               </Link>

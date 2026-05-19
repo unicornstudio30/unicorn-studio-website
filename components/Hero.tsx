@@ -55,7 +55,7 @@ export default function Hero() {
               href="#contact"
               className="btn-primary group w-full sm:w-auto px-8 py-4 text-white rounded-xl font-semibold text-base text-center inline-flex items-center justify-center gap-2"
             >
-              <span className="relative z-10">Book a free 30-min discovery call</span>
+              <span className="relative z-10">Book a discovery call</span>
               <svg
                 className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform"
                 fill="none"

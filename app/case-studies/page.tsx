@@ -429,7 +429,7 @@ export default function CaseStudiesPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <button
                   onClick={openModal}
-                  className="btn-primary inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 text-white rounded-xl font-semibold text-sm sm:text-base"
+                  className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-white rounded-xl font-semibold text-base"
                 >
                   <span>Book a discovery call</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -438,7 +438,7 @@ export default function CaseStudiesPage() {
                 </button>
                 <Link
                   href="/#portfolio"
-                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base text-gray-900 bg-white border border-gray-300 hover:border-gray-900 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base text-gray-900 bg-white border border-gray-300 hover:border-gray-900 transition-colors"
                 >
                   See recent launches
                 </Link>
