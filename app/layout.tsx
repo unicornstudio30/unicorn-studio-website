@@ -31,11 +31,10 @@ export const metadata: Metadata = {
   publisher: siteName,
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/logo.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "1080x1080" },
     ],
-    apple: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
   },
   openGraph: {
     type: "website",
