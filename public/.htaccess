@@ -1,0 +1,13 @@
+# Next.js static export — clean routing
+RewriteEngine On
+
+# Don't auto-redirect URL → URL/ for directories
+DirectorySlash Off
+
+# If a .html file at root matches the URL (with or without trailing slash),
+# serve it — overrides same-name asset directories.
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^/]+?)/?$ /$1.html [L]
+
+# Custom 404
+ErrorDocument 404 /404.html

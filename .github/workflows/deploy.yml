@@ -1,46 +1,64 @@
-name: Deploy to Hostinger Shared Hosting
+name: Deploy to Hostinger (SSH)
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Next.js app
+      - name: Build static export
         run: npm run build
 
-      - name: List output files (shows all subfolders)
+      - name: Verify build output
         run: |
-          echo "=== Full directory structure ==="
-          find ./out -type f -name "*.html" | head -50
-          echo ""
-          echo "=== All folders ==="
-          find ./out -type d
-          echo ""
-          echo "=== Total files ==="
-          find ./out -type f | wc -l
+          test -f ./out/index.html
+          test -f ./out/.htaccess
+          echo "Build output: $(find ./out -type f | wc -l) files"
 
-      - name: Deploy to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /public_html/
-          dangerous-clean-slate: true
-          port: 21
-          log-level: verbose
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Deploy via rsync
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts" \
+            ./out/ \
+            "$SSH_USER@$SSH_HOST:domains/unicornstudio.io/public_html/"
+
+      - name: Smoke test
+        run: |
+          curl -fsS -o /dev/null -w "homepage HTTP %{http_code}\n" "https://unicornstudio.io/?ci=$GITHUB_RUN_ID"
+          curl -fsS -o /dev/null -w "about    HTTP %{http_code}\n" "https://unicornstudio.io/about?ci=$GITHUB_RUN_ID"
