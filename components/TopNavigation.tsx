@@ -3,8 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { useCalendly } from "./CalendlyProvider";
 
 export default function TopNavigation() {
+  const { openModal } = useCalendly();
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -168,12 +170,13 @@ export default function TopNavigation() {
               </div>
 
               {/* Desktop CTA Button */}
-              <a
-                href="#contact"
-                className="hidden md:inline-flex btn-primary px-4 lg:px-6 py-2 lg:py-2.5 text-white rounded-lg lg:rounded-xl font-semibold text-xs lg:text-sm"
+              <button
+                type="button"
+                onClick={openModal}
+                className="hidden md:inline-flex items-center btn-primary px-4 lg:px-6 py-2 lg:py-2.5 text-white rounded-lg lg:rounded-xl font-semibold text-xs lg:text-sm"
               >
                 Book a Call
-              </a>
+              </button>
 
               {/* Mobile Hamburger Button */}
               <button
@@ -284,13 +287,16 @@ export default function TopNavigation() {
 
           {/* Book a Call inside sidebar */}
           <div className="px-5 pt-4 mt-2 border-t border-gray-100">
-            <a
-              href="#contact"
-              onClick={closeSidebar}
+            <button
+              type="button"
+              onClick={() => {
+                closeSidebar();
+                openModal();
+              }}
               className="btn-primary flex items-center justify-center w-full px-6 py-3 text-white rounded-xl font-semibold text-sm"
             >
               Book a Call
-            </a>
+            </button>
           </div>
         </div>
       </div>

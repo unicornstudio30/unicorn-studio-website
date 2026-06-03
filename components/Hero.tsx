@@ -1,6 +1,7 @@
 "use client";
 
 import LogoCarousel from "./LogoCarousel";
+import { useCalendly } from "./CalendlyProvider";
 
 const inputs = [
   { label: "Email", icon: "✉" },
@@ -22,6 +23,7 @@ const trustStats = [
 ];
 
 export default function Hero() {
+  const { openModal } = useCalendly();
   return (
     <section
       id="hero"
@@ -51,8 +53,9 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4">
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={openModal}
               className="btn-primary group w-full sm:w-auto px-8 py-4 text-white rounded-xl font-semibold text-base text-center inline-flex items-center justify-center gap-2"
             >
               <span className="relative z-10">Book a discovery call</span>
@@ -64,7 +67,7 @@ export default function Hero() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </button>
             <a
               href="#systems"
               className="btn-secondary w-full sm:w-auto px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base border border-gray-300 text-center"
