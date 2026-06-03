@@ -5,28 +5,35 @@
  * `useCalendly` / `openModal` interface so every CTA on the site
  * keeps working without code changes.
  *
- * Implementation: Cal.com binds click handlers to elements that
- * carry data-cal-link / data-cal-namespace attributes. We render
- * one hidden trigger button with those attributes; openModal()
- * just programmatically clicks it. This is the most reliable way
- * to fire the modal (the cal("modal", ...) action isn't always
- * exposed in @calcom/embed-react builds).
+ * Implementation strategy:
+ *   1. Initialize Cal.com via getCalApi on mount; capture the
+ *      namespaced cal function in React state.
+ *   2. openModal() calls cal("modal", { calLink, config }) directly.
+ *      This is Cal.com's official programmatic-open API and the most
+ *      reliable trigger.
+ *   3. If a visitor clicks a CTA before the embed script has
+ *      finished loading (rare, but possible on slow connections),
+ *      fall back to opening the Cal.com page in a new tab so the
+ *      click is never a dead end.
  *
- * The file name and exports are kept for backwards compatibility
+ * File name and exports are kept for backwards compatibility
  * (formerly powered by react-calendly).
  */
 
-import { createContext, useContext, useEffect, useRef, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 import { getCalApi } from "@calcom/embed-react";
 
 const CAL_NAMESPACE = "intro";
 const CAL_LINK = "saidur-rahaman/intro";
+const CAL_FALLBACK_URL = `https://cal.com/${CAL_LINK}`;
 
-const CAL_CONFIG = JSON.stringify({
-  layout: "month_view",
-  useSlotsViewOnSmallScreen: "true",
-  theme: "auto",
-});
+type CalApi = (action: string, payload?: Record<string, unknown>) => void;
 
 interface BookingContextType {
   openModal: () => void;
@@ -39,21 +46,30 @@ const BookingContext = createContext<BookingContextType>({
 });
 
 export function CalendlyProvider({ children }: { children: ReactNode }) {
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  const [cal, setCal] = useState<CalApi | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const cal = await getCalApi({ namespace: CAL_NAMESPACE });
-      if (cancelled) return;
-      cal("ui", {
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#3b82f6" },
-          dark: { "cal-brand": "#1d4ed8" },
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
+      try {
+        const calApi = (await getCalApi({
+          namespace: CAL_NAMESPACE,
+        })) as CalApi;
+        if (cancelled) return;
+        calApi("ui", {
+          cssVarsPerTheme: {
+            light: { "cal-brand": "#3b82f6" },
+            dark: { "cal-brand": "#1d4ed8" },
+          },
+          hideEventTypeDetails: false,
+          layout: "month_view",
+        });
+        setCal(() => calApi);
+      } catch (err) {
+        // Surface in browser devtools but don't crash the app.
+        // openModal() will still work via the new-tab fallback.
+        console.warn("[booking] Cal.com embed failed to initialize:", err);
+      }
     })();
     return () => {
       cancelled = true;
@@ -61,45 +77,30 @@ export function CalendlyProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const openModal = () => {
-    triggerRef.current?.click();
+    if (cal) {
+      cal("modal", {
+        calLink: CAL_LINK,
+        config: {
+          layout: "month_view",
+          theme: "auto",
+        },
+      });
+      return;
+    }
+    // Embed script hasn't finished loading yet — don't leave the
+    // visitor with a dead click. Send them to the Cal.com page.
+    if (typeof window !== "undefined") {
+      window.open(CAL_FALLBACK_URL, "_blank", "noopener,noreferrer");
+    }
   };
 
-  // Cal.com handles its own close. Kept for API compatibility.
+  // Cal.com manages its own close behaviour. Kept for API compatibility
+  // with the previous react-calendly provider.
   const closeModal = () => {};
 
   return (
     <BookingContext.Provider value={{ openModal, closeModal }}>
       {children}
-
-      {/*
-        Hidden trigger that Cal.com's embed script auto-binds to.
-        Every "Book a discovery call" button across the site calls
-        openModal(), which programmatically clicks this element.
-      */}
-      <button
-        ref={triggerRef}
-        type="button"
-        data-cal-namespace={CAL_NAMESPACE}
-        data-cal-link={CAL_LINK}
-        data-cal-config={CAL_CONFIG}
-        aria-hidden="true"
-        tabIndex={-1}
-        style={{
-          position: "absolute",
-          width: 1,
-          height: 1,
-          padding: 0,
-          margin: -1,
-          overflow: "hidden",
-          clip: "rect(0 0 0 0)",
-          whiteSpace: "nowrap",
-          border: 0,
-          opacity: 0,
-          pointerEvents: "none",
-        }}
-      >
-        Open booking modal
-      </button>
     </BookingContext.Provider>
   );
 }
