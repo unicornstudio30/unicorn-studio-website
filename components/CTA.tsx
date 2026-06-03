@@ -59,27 +59,26 @@ export default function CTA() {
         ? `New inquiry, ${service}${name ? ` from ${name}` : ""}`
         : `New inquiry${name ? ` from ${name}` : ""}`;
 
-      const payload = {
-        access_key: WEB3FORMS_ACCESS_KEY,
-        subject,
-        from_name: name || "Unicorn Studio website",
-        replyto: email,
-        name,
-        email,
-        service,
-        budget,
-        message,
-        // Honeypot anti-spam (kept empty by real users)
-        botcheck: "",
-      };
+      // Use FormData (not JSON) so the browser sends multipart/form-data, a
+      // "simple" CORS request that skips the OPTIONS preflight. Web3Forms
+      // accepts both JSON and form-data, but JSON triggers a preflight that
+      // their free-tier endpoint blocks.
+      const fd = new FormData();
+      fd.append("access_key", WEB3FORMS_ACCESS_KEY);
+      fd.append("subject", subject);
+      fd.append("from_name", name || "Unicorn Studio website");
+      fd.append("replyto", email);
+      fd.append("name", name);
+      fd.append("email", email);
+      fd.append("service", service);
+      fd.append("budget", budget);
+      fd.append("message", message);
+      // Honeypot anti-spam (kept empty by real users)
+      fd.append("botcheck", "");
 
       const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
+        body: fd,
       });
 
       const data = (await res.json()) as { success: boolean; message?: string };
