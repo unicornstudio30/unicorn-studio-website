@@ -23,10 +23,11 @@ const BUDGETS = [
   "Not sure yet",
 ];
 
-// Google Apps Script web app URL. The script (in scripts/contact-form.gs)
-// runs under saidur@unicornstudio.io and forwards submissions via Workspace.
-// Set NEXT_PUBLIC_FORM_ENDPOINT in env to the deployment URL.
-const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "";
+// Web3Forms — submissions are POSTed as JSON to api.web3forms.com and
+// delivered to the email registered with the access key (saidur@unicornstudio.io).
+// The access key is public by design; rotate it from the Web3Forms dashboard if abused.
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY = "59987777-0797-438d-bd7b-de01282313e4";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -53,28 +54,16 @@ export default function CTA() {
     setStatus("loading");
     setErrorMessage("");
 
-    if (!FORM_ENDPOINT) {
-      // Fallback: drop into the user's mail client so the site still works
-      // before the Apps Script endpoint has been configured in env vars.
-      const subject = `New inquiry${service ? `, ${service}` : ""}`;
-      const lines = [
-        `Name: ${name || "(not provided)"}`,
-        `Email: ${email || "(not provided)"}`,
-        `Service: ${service || "(not selected)"}`,
-        `Budget: ${budget || "(not selected)"}`,
-        "",
-        "Project notes:",
-        message || "(none)",
-      ];
-      window.location.href = `mailto:saidur@unicornstudio.io?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(lines.join("\n"))}`;
-      setStatus("idle");
-      return;
-    }
-
     try {
+      const subject = service
+        ? `New inquiry, ${service}${name ? ` from ${name}` : ""}`
+        : `New inquiry${name ? ` from ${name}` : ""}`;
+
       const payload = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject,
+        from_name: name || "Unicorn Studio website",
+        replyto: email,
         name,
         email,
         service,
@@ -84,23 +73,23 @@ export default function CTA() {
         botcheck: "",
       };
 
-      // Apps Script web apps don't respond well to CORS preflight, so post as
-      // text/plain (which doesn't trigger one). The body is still JSON and
-      // the script parses it with JSON.parse.
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(payload),
       });
 
-      const data = (await res.json()) as { success: boolean; error?: string };
+      const data = (await res.json()) as { success: boolean; message?: string };
 
       if (data.success) {
         setStatus("success");
         resetForm();
       } else {
         setStatus("error");
-        setErrorMessage(data.error ?? "Couldn't send right now. Please try again.");
+        setErrorMessage(data.message ?? "Couldn't send right now. Please try again.");
       }
     } catch (err) {
       setStatus("error");
