@@ -395,7 +395,7 @@ export default function CTA() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>
-                    Message sent. Saidur usually replies within 2 hours during business hours.
+                    Message sent. Unicorn Studio usually replies within 2 hours during business hours.
                   </span>
                 </div>
               )}
