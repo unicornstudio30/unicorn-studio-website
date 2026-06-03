@@ -81,7 +81,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <div id="calendly-root" />
         <CalendlyProvider>{children}</CalendlyProvider>
       </body>
     </html>
