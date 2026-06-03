@@ -117,7 +117,10 @@ h1, h2, h3, .font-display {
   .animate-blob,
   .animate-float,
   .animate-gradient,
-  .animate-scroll {
+  .animate-scroll,
+  .animate-core-float,
+  .animate-core-glow,
+  .animate-core-shine {
     animation: none !important;
   }
 }
@@ -181,6 +184,32 @@ html {
 
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* === Hero AI core animations === */
+@keyframes coreFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.animate-core-float {
+  animation: coreFloat 5s ease-in-out infinite;
+}
+
+@keyframes coreGlow {
+  0%, 100% { opacity: 0.38; transform: scale(1.10); }
+  50%      { opacity: 0.55; transform: scale(1.14); }
+}
+.animate-core-glow {
+  animation: coreGlow 4.5s ease-in-out infinite;
+}
+
+@keyframes coreShine {
+  0%   { transform: translateX(-100%); }
+  60%  { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-core-shine {
+  animation: coreShine 6s ease-in-out infinite;
 }
 
 /* Float animation */

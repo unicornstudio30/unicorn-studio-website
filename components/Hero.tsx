@@ -140,22 +140,44 @@ export default function Hero() {
 
                 {/* CORE — connecting node */}
                 <div className="relative flex flex-col items-center justify-center min-h-[140px] md:min-h-[200px]">
-                  {/* Left dashed connectors (desktop) */}
+                  {/* Left dashed connectors with flowing data dots (desktop) */}
                   <svg
                     className="hidden md:block absolute -left-8 lg:-left-10 top-1/2 -translate-y-1/2 w-8 lg:w-10 h-[180px]"
                     viewBox="0 0 40 200"
                     fill="none"
+                    aria-hidden="true"
                   >
-                    {[30, 80, 130, 170].map((y, i) => (
-                      <path
-                        key={i}
-                        d={`M0 ${y} C 20 ${y}, 20 100, 40 100`}
-                        stroke="url(#flowGrad)"
-                        strokeWidth="1.5"
-                        strokeDasharray="4 4"
-                        opacity="0.55"
-                      />
-                    ))}
+                    {[30, 80, 130, 170].map((y, i) => {
+                      const pathD = `M0 ${y} C 20 ${y}, 20 100, 40 100`;
+                      return (
+                        <g key={i}>
+                          <path
+                            d={pathD}
+                            stroke="url(#flowGrad)"
+                            strokeWidth="1.5"
+                            strokeDasharray="4 4"
+                            opacity="0.55"
+                          />
+                          {/* Animated data dot flowing toward the core */}
+                          <circle r="1.6" fill="#60a5fa">
+                            <animateMotion
+                              dur={`${2.4 + i * 0.4}s`}
+                              repeatCount="indefinite"
+                              path={pathD}
+                              begin={`${i * 0.5}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0;1;1;0"
+                              keyTimes="0;0.15;0.85;1"
+                              dur={`${2.4 + i * 0.4}s`}
+                              repeatCount="indefinite"
+                              begin={`${i * 0.5}s`}
+                            />
+                          </circle>
+                        </g>
+                      );
+                    })}
                     <defs>
                       <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0%" stopColor="#60a5fa" stopOpacity="0" />
@@ -165,22 +187,44 @@ export default function Hero() {
                     </defs>
                   </svg>
 
-                  {/* Right dashed connectors (desktop) */}
+                  {/* Right dashed connectors with flowing data dots (desktop) */}
                   <svg
                     className="hidden md:block absolute -right-8 lg:-right-10 top-1/2 -translate-y-1/2 w-8 lg:w-10 h-[180px]"
                     viewBox="0 0 40 200"
                     fill="none"
+                    aria-hidden="true"
                   >
-                    {[40, 100, 160].map((y, i) => (
-                      <path
-                        key={i}
-                        d={`M0 100 C 20 100, 20 ${y}, 40 ${y}`}
-                        stroke="url(#flowGrad2)"
-                        strokeWidth="1.5"
-                        strokeDasharray="4 4"
-                        opacity="0.55"
-                      />
-                    ))}
+                    {[40, 100, 160].map((y, i) => {
+                      const pathD = `M0 100 C 20 100, 20 ${y}, 40 ${y}`;
+                      return (
+                        <g key={i}>
+                          <path
+                            d={pathD}
+                            stroke="url(#flowGrad2)"
+                            strokeWidth="1.5"
+                            strokeDasharray="4 4"
+                            opacity="0.55"
+                          />
+                          {/* Animated data dot flowing away from the core */}
+                          <circle r="1.6" fill="#818cf8">
+                            <animateMotion
+                              dur={`${2.6 + i * 0.5}s`}
+                              repeatCount="indefinite"
+                              path={pathD}
+                              begin={`${0.3 + i * 0.6}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0;1;1;0"
+                              keyTimes="0;0.15;0.85;1"
+                              dur={`${2.6 + i * 0.5}s`}
+                              repeatCount="indefinite"
+                              begin={`${0.3 + i * 0.6}s`}
+                            />
+                          </circle>
+                        </g>
+                      );
+                    })}
                     <defs>
                       <linearGradient id="flowGrad2" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0%" stopColor="#818cf8" stopOpacity="0.9" />
@@ -191,17 +235,22 @@ export default function Hero() {
                   </svg>
 
                   {/* The core pill */}
-                  <div className="relative">
-                    {/* glow */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 blur-2xl opacity-40 scale-110" />
-                    <div className="relative px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700 text-white shadow-[0_20px_50px_-12px_rgba(59,130,246,0.55)] text-center min-w-[160px]">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-200/90 mb-1.5">
+                  <div className="relative animate-core-float motion-reduce:animate-none">
+                    {/* outer glow */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 blur-2xl opacity-50 scale-110 animate-core-glow motion-reduce:animate-none" />
+                    {/* core surface */}
+                    <div className="relative px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700 text-white shadow-[0_20px_50px_-12px_rgba(59,130,246,0.55)] text-center min-w-[160px] overflow-hidden">
+                      {/* inner highlight ring */}
+                      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/15" />
+                      {/* subtle sweeping shine */}
+                      <div className="pointer-events-none absolute inset-y-0 -inset-x-1 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] animate-core-shine motion-reduce:hidden" />
+                      <div className="relative text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-200/90 mb-1.5">
                         AI core
                       </div>
-                      <div className="text-base sm:text-lg font-bold leading-tight">
+                      <div className="relative text-base sm:text-lg font-bold leading-tight">
                         Your system
                       </div>
-                      <div className="text-[11px] text-blue-100/80 mt-1">
+                      <div className="relative text-[11px] text-blue-100/80 mt-1">
                         Trained on your business
                       </div>
                     </div>
