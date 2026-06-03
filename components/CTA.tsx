@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useCalendly } from "./CalendlyProvider";
 
 const SERVICES = [
@@ -32,6 +33,7 @@ const WEB3FORMS_ACCESS_KEY = "59987777-0797-438d-bd7b-de01282313e4";
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function CTA() {
+  const router = useRouter();
   const { openModal } = useCalendly();
   const [service, setService] = useState("");
   const [budget, setBudget] = useState("");
@@ -86,6 +88,8 @@ export default function CTA() {
       if (data.success) {
         setStatus("success");
         resetForm();
+        router.push("/thank-you");
+        return;
       } else {
         setStatus("error");
         setErrorMessage(data.message ?? "Couldn't send right now. Please try again.");
