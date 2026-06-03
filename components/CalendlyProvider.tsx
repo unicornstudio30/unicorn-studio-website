@@ -19,8 +19,8 @@
 import { createContext, useContext, useEffect, useRef, ReactNode } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
-const CAL_NAMESPACE = "15min";
-const CAL_LINK = "saidur-rahaman/15min";
+const CAL_NAMESPACE = "intro";
+const CAL_LINK = "saidur-rahaman/intro";
 
 const CAL_CONFIG = JSON.stringify({
   layout: "month_view",
