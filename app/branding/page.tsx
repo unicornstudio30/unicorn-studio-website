@@ -512,56 +512,6 @@ export default function BrandingPage() {
           </div>
         </section>
 
-        {/* FAQs */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                FAQs
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  question: "How many logo concepts do we get?",
-                  answer: "Three distinct directions, each fully developed with color and type recommendations."
-                },
-                {
-                  question: "What if we need changes after delivery?",
-                  answer: "We include two rounds of refinement. Additional changes available at hourly rate."
-                },
-                {
-                  question: "Can you refresh our existing brand?",
-                  answer: "Yes, we can evolve your current identity or create something entirely new."
-                },
-                {
-                  question: "Do you handle naming?",
-                  answer: "Yes, naming services available as an add-on to any branding package."
-                },
-                {
-                  question: "What about trademark?",
-                  answer: "We provide trademark-ready files but recommend working with legal counsel for registration."
-                }
-              ].map((faq, index) => (
-                <div key={index} className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200 hover:border-gray-900 transition-colors duration-300 overflow-hidden">
-                  {/* Animated blue border at top */}
-                  <div className="absolute top-0 left-0 h-1.5 w-full bg-blue-600 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-t-2xl" />
-
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-
-                  <div className="relative z-10">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
         {/* FAQ */}
         <FAQ
           faqs={brandingFaqs}
