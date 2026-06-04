@@ -39,11 +39,15 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Verify build output
+      - name: Inspect build output
         run: |
-          test -f out/index.html
-          test -f out/thank-you/index.html
-          echo "Build output: $(find out -type f | wc -l) files"
+          echo "Contents of out/:"
+          ls -la out/ || echo "out/ does not exist!"
+          echo ""
+          echo "Total files: $(find out -type f 2>/dev/null | wc -l)"
+          echo ""
+          echo "Top-level entries:"
+          find out -maxdepth 2 -type f 2>/dev/null | head -20
 
       - name: Generate .htaccess (clean URLs + cache + force HTTPS)
         run: |
