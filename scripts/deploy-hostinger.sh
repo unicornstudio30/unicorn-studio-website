@@ -132,6 +132,13 @@ fi
 
 bold "Uploading to ${HOSTINGER_PROTOCOL}://${HOSTINGER_FTP_HOST}:${HOSTINGER_FTP_PORT}${HOSTINGER_REMOTE_PATH}"
 
+# Pre-flight reachability probe — fail fast (10s) with a useful error
+# instead of letting lftp hang for the GitHub Actions timeout (15 min).
+# Only checks DNS + TCP connect, not auth.
+if ! timeout 10 bash -c "</dev/tcp/${HOSTINGER_FTP_HOST}/${HOSTINGER_FTP_PORT}" 2>/dev/null; then
+  fail "Cannot reach ${HOSTINGER_FTP_HOST}:${HOSTINGER_FTP_PORT}. Check HOSTINGER_FTP_HOST and HOSTINGER_FTP_PORT (try 21 for FTP, 22 for SFTP, 21 with HOSTINGER_PROTOCOL=ftps for FTPS)."
+fi
+
 LFTP_MIRROR_OPTS=(
   --reverse                       # local → remote
   --delete                        # delete remote files no longer in out/
@@ -146,15 +153,18 @@ if [[ $DRY_RUN -eq 1 ]]; then
   warn "Dry run — no files will be transferred."
 fi
 
-# lftp opens an interactive-ish session; we drive it via -e
+# lftp opens an interactive-ish session; we drive it via -e.
+# Tight timeouts so a misconfigured host/port fails in ~30s, not 15 min.
 lftp -u "${HOSTINGER_FTP_USER},${HOSTINGER_FTP_PASSWORD}" \
      -p "${HOSTINGER_FTP_PORT}" \
      "${HOSTINGER_PROTOCOL}://${HOSTINGER_FTP_HOST}" \
-     -e "set ftp:ssl-allow yes;
+     -e "set net:timeout 20;
+         set net:max-retries 2;
+         set net:reconnect-interval-base 3;
+         set ftp:ssl-allow yes;
          set ftp:ssl-force ${HOSTINGER_FTP_SSL_FORCE:-no};
          set ssl:verify-certificate no;
-         set net:max-retries 3;
-         set net:reconnect-interval-base 5;
+         set ftp:passive-mode yes;
          mirror ${LFTP_MIRROR_OPTS[*]} ./out/ ${HOSTINGER_REMOTE_PATH};
          bye"
 
