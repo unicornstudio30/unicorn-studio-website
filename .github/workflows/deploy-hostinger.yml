@@ -3,35 +3,28 @@ name: Deploy to Hostinger
 # Manual-only — Vercel handles staging on every push to main; this workflow
 # pushes the latest main to Hostinger production once the user has reviewed
 # the Vercel preview and clicks "Run workflow" in the GitHub Actions UI.
+#
+# Strategy: build the static site, then publish the built `out/` to a
+# dedicated `production` branch. Hostinger's Git integration is configured
+# to pull `production` into public_html — so a successful workflow run
+# (plus, if needed, a "Pull" click in hPanel) updates the live site.
 on:
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: "Dry run (show what would change, upload nothing)"
-        type: boolean
-        default: false
 
 concurrency:
   group: deploy-hostinger
   cancel-in-progress: false
 
+permissions:
+  contents: write   # needed to push to the production branch
+
 jobs:
-  deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
-    env:
-      HOSTINGER_FTP_HOST: ${{ secrets.HOSTINGER_FTP_HOST }}
-      HOSTINGER_FTP_USER: ${{ secrets.HOSTINGER_FTP_USER }}
-      HOSTINGER_FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-      HOSTINGER_FTP_PORT: ${{ secrets.HOSTINGER_FTP_PORT }}
-      HOSTINGER_REMOTE_PATH: ${{ secrets.HOSTINGER_REMOTE_PATH }}
-      HOSTINGER_PROTOCOL: ${{ secrets.HOSTINGER_PROTOCOL }}
-      HOSTINGER_FTP_SSL_FORCE: ${{ secrets.HOSTINGER_FTP_SSL_FORCE }}
-      HOSTINGER_PUBLIC_URL: ${{ secrets.HOSTINGER_PUBLIC_URL }}
-
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -43,50 +36,59 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Build static export
+        run: npm run build
 
-      - name: Verify required secrets are configured
+      - name: Verify build output
         run: |
-          missing=()
-          [[ -z "${HOSTINGER_FTP_HOST}" ]]     && missing+=(HOSTINGER_FTP_HOST)
-          [[ -z "${HOSTINGER_FTP_USER}" ]]     && missing+=(HOSTINGER_FTP_USER)
-          [[ -z "${HOSTINGER_FTP_PASSWORD}" ]] && missing+=(HOSTINGER_FTP_PASSWORD)
-          if (( ${#missing[@]} > 0 )); then
-            echo "::error::Missing GitHub Secrets: ${missing[*]}"
-            echo "Add them at: Settings → Secrets and variables → Actions"
-            exit 1
-          fi
-          echo "All required secrets present."
+          test -f out/index.html
+          test -f out/thank-you/index.html
+          echo "Build output: $(find out -type f | wc -l) files"
 
-      - name: Run deploy script
+      - name: Generate .htaccess (clean URLs + cache + force HTTPS)
         run: |
-          chmod +x scripts/deploy-hostinger.sh
-          if [[ "${{ inputs.dry_run }}" == "true" ]]; then
-            ./scripts/deploy-hostinger.sh --dry-run
-          else
-            ./scripts/deploy-hostinger.sh
-          fi
+          cat > out/.htaccess <<'HTACCESS'
+          # Hostinger shared hosting — Apache rewrite rules
+          Options -MultiViews
+          RewriteEngine On
 
-      - name: Smoke test live site
-        if: ${{ !inputs.dry_run && env.HOSTINGER_PUBLIC_URL != '' }}
-        run: |
-          # Give Hostinger 10s to settle in case of any caching.
-          sleep 10
-          for path in "/" "/about/" "/ai-systems/" "/case-studies/" "/thank-you/"; do
-            url="${HOSTINGER_PUBLIC_URL%/}${path}?ci=$GITHUB_RUN_ID"
-            code=$(curl -fsS -o /dev/null -w "%{http_code}" "$url" || echo "FAIL")
-            printf "%-22s HTTP %s\n" "$path" "$code"
-            [[ "$code" == "200" ]] || { echo "::error::Smoke test failed for $path"; exit 1; }
-          done
+          # Serve /foo as /foo/index.html (Next.js static export)
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^([^.]+[^/])$ $1/ [L,R=301]
+
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteRule ^(.+)/$ $1/index.html [L]
+
+          # Long cache for hashed assets
+          <FilesMatch "\.(js|css|woff2|woff|ttf|otf|svg|png|jpg|jpeg|webp|avif|ico)$">
+            Header set Cache-Control "public, max-age=31536000, immutable"
+          </FilesMatch>
+
+          # Force HTTPS
+          RewriteCond %{HTTPS} off
+          RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+          HTACCESS
+
+      - name: Publish out/ to production branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: production
+          force_orphan: true              # one commit per deploy, no history bloat
+          commit_message: "deploy: ${{ github.sha }}"
+          user_name: "github-actions[bot]"
+          user_email: "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Summary
         if: always()
         run: |
           {
-            echo "## Hostinger deploy"
+            echo "## Hostinger deploy — production branch updated"
             echo ""
-            echo "- **Commit:** \`${{ github.sha }}\`"
-            echo "- **Dry run:** ${{ inputs.dry_run }}"
-            echo "- **Public URL:** ${HOSTINGER_PUBLIC_URL:-_set HOSTINGER_PUBLIC_URL secret_}"
+            echo "- **Source commit:** \`${{ github.sha }}\`"
+            echo "- **Published to branch:** \`production\` (force-orphaned)"
+            echo "- **Next step:** Hostinger pulls \`production\` on its schedule (or click 'Pull' in hPanel → Git → unicornstudio.io)."
+            echo "- **Verify:** https://unicornstudio.io"
           } >> "$GITHUB_STEP_SUMMARY"
