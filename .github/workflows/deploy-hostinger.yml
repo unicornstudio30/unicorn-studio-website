@@ -68,6 +68,18 @@ jobs:
             ./scripts/deploy-hostinger.sh
           fi
 
+      - name: Smoke test live site
+        if: ${{ !inputs.dry_run && env.HOSTINGER_PUBLIC_URL != '' }}
+        run: |
+          # Give Hostinger 10s to settle in case of any caching.
+          sleep 10
+          for path in "/" "/about/" "/ai-systems/" "/case-studies/" "/thank-you/"; do
+            url="${HOSTINGER_PUBLIC_URL%/}${path}?ci=$GITHUB_RUN_ID"
+            code=$(curl -fsS -o /dev/null -w "%{http_code}" "$url" || echo "FAIL")
+            printf "%-22s HTTP %s\n" "$path" "$code"
+            [[ "$code" == "200" ]] || { echo "::error::Smoke test failed for $path"; exit 1; }
+          done
+
       - name: Summary
         if: always()
         run: |
