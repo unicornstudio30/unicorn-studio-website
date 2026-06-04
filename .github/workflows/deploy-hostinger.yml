@@ -1,0 +1,80 @@
+name: Deploy to Hostinger
+
+# Manual-only — Vercel handles staging on every push to main; this workflow
+# pushes the latest main to Hostinger production once the user has reviewed
+# the Vercel preview and clicks "Run workflow" in the GitHub Actions UI.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (show what would change, upload nothing)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      HOSTINGER_FTP_HOST: ${{ secrets.HOSTINGER_FTP_HOST }}
+      HOSTINGER_FTP_USER: ${{ secrets.HOSTINGER_FTP_USER }}
+      HOSTINGER_FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+      HOSTINGER_FTP_PORT: ${{ secrets.HOSTINGER_FTP_PORT }}
+      HOSTINGER_REMOTE_PATH: ${{ secrets.HOSTINGER_REMOTE_PATH }}
+      HOSTINGER_PROTOCOL: ${{ secrets.HOSTINGER_PROTOCOL }}
+      HOSTINGER_FTP_SSL_FORCE: ${{ secrets.HOSTINGER_FTP_SSL_FORCE }}
+      HOSTINGER_PUBLIC_URL: ${{ secrets.HOSTINGER_PUBLIC_URL }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Verify required secrets are configured
+        run: |
+          missing=()
+          [[ -z "${HOSTINGER_FTP_HOST}" ]]     && missing+=(HOSTINGER_FTP_HOST)
+          [[ -z "${HOSTINGER_FTP_USER}" ]]     && missing+=(HOSTINGER_FTP_USER)
+          [[ -z "${HOSTINGER_FTP_PASSWORD}" ]] && missing+=(HOSTINGER_FTP_PASSWORD)
+          if (( ${#missing[@]} > 0 )); then
+            echo "::error::Missing GitHub Secrets: ${missing[*]}"
+            echo "Add them at: Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          echo "All required secrets present."
+
+      - name: Run deploy script
+        run: |
+          chmod +x scripts/deploy-hostinger.sh
+          if [[ "${{ inputs.dry_run }}" == "true" ]]; then
+            ./scripts/deploy-hostinger.sh --dry-run
+          else
+            ./scripts/deploy-hostinger.sh
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Hostinger deploy"
+            echo ""
+            echo "- **Commit:** \`${{ github.sha }}\`"
+            echo "- **Dry run:** ${{ inputs.dry_run }}"
+            echo "- **Public URL:** ${HOSTINGER_PUBLIC_URL:-_set HOSTINGER_PUBLIC_URL secret_}"
+          } >> "$GITHUB_STEP_SUMMARY"

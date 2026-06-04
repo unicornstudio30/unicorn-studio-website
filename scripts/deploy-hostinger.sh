@@ -57,17 +57,23 @@ command -v node >/dev/null 2>&1 \
   || fail "node is not installed."
 
 # --- Pre-flight: credentials ------------------------------------------------
+# On CI (GitHub Actions), vars come from the runner environment / secrets and
+# there is no .env.local. Locally, source .env.local if it exists. If neither
+# the env nor .env.local has the vars, fail with a clear message.
 
 if [[ -f .env.local ]]; then
   # shellcheck disable=SC1091
   set -a; source .env.local; set +a
-else
-  fail ".env.local not found. Copy .env.example and fill in HOSTINGER_* vars."
 fi
 
-: "${HOSTINGER_FTP_HOST:?HOSTINGER_FTP_HOST missing in .env.local}"
-: "${HOSTINGER_FTP_USER:?HOSTINGER_FTP_USER missing in .env.local}"
-: "${HOSTINGER_FTP_PASSWORD:?HOSTINGER_FTP_PASSWORD missing in .env.local}"
+missing=()
+[[ -z "${HOSTINGER_FTP_HOST:-}" ]]     && missing+=(HOSTINGER_FTP_HOST)
+[[ -z "${HOSTINGER_FTP_USER:-}" ]]     && missing+=(HOSTINGER_FTP_USER)
+[[ -z "${HOSTINGER_FTP_PASSWORD:-}" ]] && missing+=(HOSTINGER_FTP_PASSWORD)
+if (( ${#missing[@]} > 0 )); then
+  fail "Missing Hostinger credentials: ${missing[*]}. Set them in .env.local (local) or as GitHub Secrets (CI)."
+fi
+
 HOSTINGER_FTP_PORT="${HOSTINGER_FTP_PORT:-21}"
 HOSTINGER_REMOTE_PATH="${HOSTINGER_REMOTE_PATH:-/public_html}"
 HOSTINGER_PROTOCOL="${HOSTINGER_PROTOCOL:-ftp}"  # ftp | sftp | ftps
