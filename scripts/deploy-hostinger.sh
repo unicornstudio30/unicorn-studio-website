@@ -79,8 +79,11 @@ HOSTINGER_REMOTE_PATH="${HOSTINGER_REMOTE_PATH:-/public_html}"
 HOSTINGER_PROTOCOL="${HOSTINGER_PROTOCOL:-ftp}"  # ftp | sftp | ftps
 
 # --- Pre-flight: clean working tree (best-effort) --------------------------
+# Skip when running on GitHub Actions — actions/checkout always provides a
+# clean tree, and any apparent "diff" there is line-ending / file-mode noise
+# from the runner's checkout, not actual developer edits.
 
-if [[ $ALLOW_DIRTY -eq 0 ]] && ! git diff-index --quiet HEAD --; then
+if [[ $ALLOW_DIRTY -eq 0 ]] && [[ -z "${GITHUB_ACTIONS:-}" ]] && ! git diff-index --quiet HEAD --; then
   warn "Working tree has uncommitted changes."
   warn "Pass --allow-dirty to deploy anyway. Aborting."
   exit 1
