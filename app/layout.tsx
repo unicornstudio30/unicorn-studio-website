@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/og-image.jpg?v=2",
+        url: "/og-image.jpg?v=3",
         width: 1200,
         height: 630,
         alt: "Unicorn Studio · Trusted AI integration partner for businesses",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.jpg?v=2"],
+    images: ["/og-image.jpg?v=3"],
     creator: "@unicornstudioai",
     site: "@unicornstudioai",
   },
