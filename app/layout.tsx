@@ -20,7 +20,7 @@ const sora = Sora({
 
 const siteUrl = "https://unicornstudio.io";
 const siteName = "Unicorn Studio";
-const title = "Unicorn Studio · AI System Specialists";
+const title = "Unicorn Studio";
 const description =
   "Tell us about your business. We'll find what can be automated, build the AI systems that do it, and stay on it until it's running. Guaranteed, or we work for free until it does.";
 
