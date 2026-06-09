@@ -76,9 +76,11 @@ jobs:
           </Files>
 
           # RFC 9727 — Advertise the catalog via a Link header on every HTML
-          # response (skipped for assets to avoid bloat).
+          # response (skipped for assets to avoid bloat). Single-quoted outer
+          # so LiteSpeed (Hostinger's Apache variant) preserves inner quotes
+          # cleanly instead of leaking backslashes.
           <FilesMatch "\.html$">
-            Header append Link "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+            Header append Link '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"'
           </FilesMatch>
 
           # Force HTTPS
