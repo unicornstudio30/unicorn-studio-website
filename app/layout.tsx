@@ -89,6 +89,48 @@ export const metadata: Metadata = {
   },
 };
 
+// Schema.org JSON-LD — Organization + WebSite. Rendered on every page
+// via the root layout so the site has at least one structured-data block
+// no matter which URL Google / AI overviews crawl. Hand-curated rather
+// than auto-extracted so the values stay accurate.
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteUrl}#organization`,
+    name: siteName,
+    url: siteUrl,
+    logo: `${siteUrl}/favicon.png`,
+    description,
+    email: "saidur@unicornstudio.io",
+    founder: {
+      "@type": "Person",
+      name: "Saidur Rahaman",
+      url: "https://www.linkedin.com/in/saidur-builder",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/saidur-builder",
+      "https://x.com/saidur_builder",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "saidur@unicornstudio.io",
+      url: `${siteUrl}/#contact`,
+      availableLanguage: ["en"],
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}#website`,
+    name: siteName,
+    url: siteUrl,
+    publisher: { "@id": `${siteUrl}#organization` },
+    inLanguage: "en",
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -97,6 +139,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <CalendlyProvider>{children}</CalendlyProvider>
         <AutoRevealSections />
       </body>
