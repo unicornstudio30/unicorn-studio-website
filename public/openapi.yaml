@@ -1,0 +1,160 @@
+openapi: 3.1.0
+info:
+  title: Unicorn Studio content API
+  description: |
+    Machine-readable views of every page on unicornstudio.io, intended
+    for AI agents and LLM crawlers (Perplexity, ChatGPT search, Claude
+    web, Google AI Overview, etc.). The site itself is a static Next.js
+    marketing site with no business logic exposed; this document
+    catalogs the read-only content surface.
+  version: "1.0.0"
+  contact:
+    name: Unicorn Studio
+    url: https://unicornstudio.io/
+    email: saidur@unicornstudio.io
+  license:
+    name: Proprietary — content © Unicorn Studio
+servers:
+  - url: https://unicornstudio.io
+    description: Production
+tags:
+  - name: discovery
+    description: Discovery and indexing surfaces (sitemap, robots, llms.txt).
+  - name: content
+    description: Machine-readable page content (Markdown twins).
+  - name: well-known
+    description: Well-known URI endpoints per RFC 8615.
+paths:
+  /llms.txt:
+    get:
+      tags: [discovery]
+      summary: Curated index per llmstxt.org
+      description: H1, summary, and grouped Markdown links to every page on the site.
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema: { type: string }
+
+  /sitemap.xml:
+    get:
+      tags: [discovery]
+      summary: XML sitemap
+      description: Every crawlable URL with lastmod, changefreq, and priority.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/xml:
+              schema: { type: string }
+
+  /robots.txt:
+    get:
+      tags: [discovery]
+      summary: Crawl policy
+      description: Non-blocking for all bots, with explicit allow/deny rules for the major AI training and AI search crawlers.
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema: { type: string }
+
+  /index.md:
+    get:
+      tags: [content]
+      summary: Homepage as Markdown
+      responses:
+        "200":
+          description: OK
+          content:
+            text/markdown:
+              schema: { type: string }
+
+  "/{page}/index.md":
+    get:
+      tags: [content]
+      summary: Any page as Markdown
+      description: |
+        Returns the same content as the HTML page at `/{page}/`, but in
+        Markdown with a YAML front matter block carrying `title`,
+        `description`, and `source`.
+      parameters:
+        - name: page
+          in: path
+          required: true
+          description: Page slug.
+          schema:
+            type: string
+            enum:
+              - about
+              - ai-systems
+              - ai-integrations
+              - ai-solutions
+              - ai-saas
+              - websites
+              - branding
+              - case-studies
+              - thank-you
+      responses:
+        "200":
+          description: OK
+          content:
+            text/markdown:
+              schema: { type: string }
+        "404":
+          description: Unknown page slug
+
+  "/{page}/":
+    get:
+      tags: [content]
+      summary: Any page with content negotiation
+      description: |
+        Returns HTML by default. If the request sends
+        `Accept: text/markdown`, the server rewrites to the Markdown
+        twin at `/{page}/index.md`.
+      parameters:
+        - name: page
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            example: text/markdown
+      responses:
+        "200":
+          description: OK
+          content:
+            text/html:
+              schema: { type: string }
+            text/markdown:
+              schema: { type: string }
+
+  /.well-known/api-catalog:
+    get:
+      tags: [well-known]
+      summary: API catalog (RFC 9727)
+      description: Linkset pointing at this OpenAPI description.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/linkset+json:
+              schema: { type: object }
+
+  /.well-known/http-message-signatures-directory:
+    get:
+      tags: [well-known]
+      summary: HTTP message signatures key directory
+      description: JWKS-style key directory (currently an empty keys array — the site signs no outbound messages).
+      responses:
+        "200":
+          description: OK
+          content:
+            application/http-message-signatures-directory+json:
+              schema: { type: object }

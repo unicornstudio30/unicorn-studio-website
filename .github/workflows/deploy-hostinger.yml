@@ -94,6 +94,14 @@ jobs:
             Header set Cache-Control "public, max-age=86400"
           </Files>
 
+          # OpenAPI 3.1 description served at /openapi.yaml (linked from the
+          # api-catalog). Apache's default for .yaml is application/octet-stream,
+          # which makes browsers download rather than render.
+          <Files "openapi.yaml">
+            ForceType "application/vnd.oai.openapi+yaml;version=3.1"
+            Header set Cache-Control "public, max-age=86400"
+          </Files>
+
           # RFC 9727 — Advertise the catalog via a Link header on every HTML
           # response (skipped for assets to avoid bloat). Single-quoted outer
           # so LiteSpeed (Hostinger's Apache variant) preserves inner quotes
