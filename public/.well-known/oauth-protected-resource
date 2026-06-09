@@ -1,0 +1,7 @@
+{
+  "resource": "https://unicornstudio.io",
+  "authorization_servers": [],
+  "bearer_methods_supported": [],
+  "scopes_supported": [],
+  "resource_documentation": "https://unicornstudio.io/llms.txt"
+}

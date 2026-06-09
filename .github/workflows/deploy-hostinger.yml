@@ -96,6 +96,18 @@ jobs:
             Header set Cache-Control "public, max-age=86400"
           </Files>
 
+          # RFC 8414 — OAuth 2.0 Authorization Server Metadata
+          <Files "oauth-authorization-server">
+            ForceType application/json
+            Header set Cache-Control "public, max-age=86400"
+          </Files>
+
+          # RFC 9728 — OAuth 2.0 Protected Resource Metadata
+          <Files "oauth-protected-resource">
+            ForceType application/json
+            Header set Cache-Control "public, max-age=86400"
+          </Files>
+
           # OpenAPI 3.1 description served at /openapi.yaml (linked from the
           # api-catalog). AddType wins where ForceType-inside-Files loses to
           # extension-based MIME matching on LiteSpeed.

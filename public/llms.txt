@@ -49,3 +49,5 @@ Each page on this site is also available as Markdown — fetch the same URL with
 - [API catalog](https://unicornstudio.io/.well-known/api-catalog): RFC 9727 catalog, points at the OpenAPI description below.
 - [OpenAPI description](https://unicornstudio.io/openapi.yaml): OpenAPI 3.1 spec for the read-only content surface (Markdown twins, sitemap, llms.txt, well-known endpoints).
 - [HTTP message signatures directory](https://unicornstudio.io/.well-known/http-message-signatures-directory): JWKS-style key directory — empty keys array (no signing keys published).
+- [OAuth authorization server metadata (RFC 8414)](https://unicornstudio.io/.well-known/oauth-authorization-server): empty supported lists — the site does not run an OAuth authorization server.
+- [OAuth protected resource metadata (RFC 9728)](https://unicornstudio.io/.well-known/oauth-protected-resource): empty authorization-servers array — no protected resources here.
