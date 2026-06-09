@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { CalendlyProvider } from "@/components/CalendlyProvider";
 import AutoRevealSections from "@/components/AutoRevealSections";
+
+const GA_ID = "G-RYCT7ST71K";
+const isProd = process.env.NODE_ENV === "production";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -145,6 +149,7 @@ export default function RootLayout({
         />
         <CalendlyProvider>{children}</CalendlyProvider>
         <AutoRevealSections />
+        {isProd && <GoogleAnalytics gaId={GA_ID} />}
       </body>
     </html>
   );
