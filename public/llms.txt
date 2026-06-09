@@ -47,3 +47,4 @@ Each page on this site is also available as Markdown — fetch the same URL with
 - [Sitemap](https://unicornstudio.io/sitemap.xml): XML sitemap with all crawlable URLs.
 - [robots.txt](https://unicornstudio.io/robots.txt): Crawl policy (non-blocking; allows all well-behaved bots).
 - [API catalog](https://unicornstudio.io/.well-known/api-catalog): RFC 9727 catalog — empty service-desc array (the site exposes no public APIs of its own).
+- [HTTP message signatures directory](https://unicornstudio.io/.well-known/http-message-signatures-directory): JWKS-style key directory — empty keys array (no signing keys published).

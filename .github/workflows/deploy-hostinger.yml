@@ -88,6 +88,12 @@ jobs:
             Header set Cache-Control "public, max-age=86400"
           </Files>
 
+          # draft-ietf-httpapi-signature-directory — JWKS-style key directory
+          <Files "http-message-signatures-directory">
+            ForceType application/http-message-signatures-directory+json
+            Header set Cache-Control "public, max-age=86400"
+          </Files>
+
           # RFC 9727 — Advertise the catalog via a Link header on every HTML
           # response (skipped for assets to avoid bloat). Single-quoted outer
           # so LiteSpeed (Hostinger's Apache variant) preserves inner quotes
