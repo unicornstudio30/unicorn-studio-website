@@ -61,14 +61,16 @@ jobs:
           RewriteCond %{REQUEST_FILENAME} !-d
           RewriteRule ^([^.]+[^/])$ $1/ [L,R=301]
 
-          # Content negotiation: if the client sends Accept: text/markdown
-          # and an index.md twin exists for this directory, serve that
-          # instead of index.html. AI agents (Perplexity, ChatGPT search,
-          # Claude web, etc.) explicitly opt in via this header.
-          RewriteCond %{HTTP_ACCEPT} text/markdown
-          RewriteCond %{REQUEST_FILENAME} -d
-          RewriteCond %{REQUEST_FILENAME}/index.md -f
-          RewriteRule ^(.+)/$ $1/index.md [L,T=text/markdown]
+          # Content negotiation: when the client opts in via either
+          # Accept: text/markdown OR ?format=md, and an index.md twin
+          # exists for the requested directory, serve that instead of
+          # index.html. Works for the homepage (/) too because we anchor
+          # off REQUEST_URI instead of capturing the path with a regex
+          # that requires at least one leading character.
+          RewriteCond %{HTTP_ACCEPT} text/markdown [OR]
+          RewriteCond %{QUERY_STRING} (^|&)format=md(&|$)
+          RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.md -f
+          RewriteRule ^ %{REQUEST_URI}index.md [L,T=text/markdown,QSD]
 
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteRule ^(.+)/$ $1/index.html [L]
