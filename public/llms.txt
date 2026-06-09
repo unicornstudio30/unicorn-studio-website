@@ -1,0 +1,49 @@
+# Unicorn Studio
+
+> Trusted AI integration partner for businesses. A specialist studio that builds AI Systems, AI Solutions, and full AI SaaS products, plus the website and brand to launch each one credibly. Guaranteed delivery, or we work for free until it runs.
+
+Unicorn Studio is a small AI development studio founded by Saidur Rahaman. The studio specializes in four AI service lines and explicitly does not do generalist agency work. Every system is built custom to the client's business; off-the-shelf templates are not used. Average response time is under two hours during business hours.
+
+The site itself is a static Next.js export with no public APIs. Contact submissions are forwarded via Web3Forms to saidur@unicornstudio.io. Bookings happen on Cal.com.
+
+## Services
+
+- [AI Systems](https://unicornstudio.io/ai-systems/): Custom AI automation built for an entire business — process, marketing, sales, and communication systems that run in the background.
+- [AI Integrations](https://unicornstudio.io/ai-integrations/): Add AI capabilities to an existing product or workflow without rebuilding it.
+- [AI Solutions](https://unicornstudio.io/ai-solutions/): Multi-agent orchestration, LLM fine-tuning, retrieval, NLP, perception, classical ML, and MLOps. Three engagement shapes: proof of concept (~3 weeks), complete solution (~8 weeks + 90-day stabilisation), combined engagement.
+- [AI SaaS](https://unicornstudio.io/ai-saas/): End-to-end AI SaaS product builds — from first commit to launch. Real stacks (Next.js, Postgres, OpenAI/Anthropic, pgvector, Clerk, Stripe), real timelines.
+- [Website](https://unicornstudio.io/websites/): Conversion-focused websites for AI SaaS founders. Tiered builds on WordPress, Webflow, or Framer.
+- [Branding](https://unicornstudio.io/branding/): Brand identity systems built for AI SaaS products. Three concept directions, two rounds of refinement, trademark-ready files.
+
+## Company
+
+- [About](https://unicornstudio.io/about/): Studio philosophy, the five beliefs we operate from, what we will and will not do, and a fit guide for prospective clients.
+- [Case Studies](https://unicornstudio.io/case-studies/): Recent client work with concrete metrics — pipeline lifts, hours reclaimed, AI systems shipped to production.
+
+## Contact
+
+- [Book a discovery call](https://cal.com/saidur-rahaman/intro): Free 30-minute intro on Cal.com.
+- [Contact form](https://unicornstudio.io/#contact): Submit a project brief from any page.
+- [Email](mailto:saidur@unicornstudio.io): Direct line to the founder.
+- [WhatsApp](https://wa.me/8801799296925): Quick async chat.
+
+## Markdown content for LLMs
+
+Each page on this site is also available as Markdown — fetch the same URL with `index.md` appended, or send `Accept: text/markdown` and the server will negotiate.
+
+- [Home](https://unicornstudio.io/index.md)
+- [AI Systems](https://unicornstudio.io/ai-systems/index.md)
+- [AI Integrations](https://unicornstudio.io/ai-integrations/index.md)
+- [AI Solutions](https://unicornstudio.io/ai-solutions/index.md)
+- [AI SaaS](https://unicornstudio.io/ai-saas/index.md)
+- [Websites](https://unicornstudio.io/websites/index.md)
+- [Branding](https://unicornstudio.io/branding/index.md)
+- [About](https://unicornstudio.io/about/index.md)
+- [Case Studies](https://unicornstudio.io/case-studies/index.md)
+
+## Optional
+
+- [Thank you](https://unicornstudio.io/thank-you/index.md): Post-submission confirmation page — not strategic content; safe to skip.
+- [Sitemap](https://unicornstudio.io/sitemap.xml): XML sitemap with all crawlable URLs.
+- [robots.txt](https://unicornstudio.io/robots.txt): Crawl policy (non-blocking; allows all well-behaved bots).
+- [API catalog](https://unicornstudio.io/.well-known/api-catalog): RFC 9727 catalog — empty service-desc array (the site exposes no public APIs of its own).
