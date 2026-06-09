@@ -61,8 +61,21 @@ jobs:
           RewriteCond %{REQUEST_FILENAME} !-d
           RewriteRule ^([^.]+[^/])$ $1/ [L,R=301]
 
+          # Content negotiation: if the client sends Accept: text/markdown
+          # and an index.md twin exists for this directory, serve that
+          # instead of index.html. AI agents (Perplexity, ChatGPT search,
+          # Claude web, etc.) explicitly opt in via this header.
+          RewriteCond %{HTTP_ACCEPT} text/markdown
+          RewriteCond %{REQUEST_FILENAME} -d
+          RewriteCond %{REQUEST_FILENAME}/index.md -f
+          RewriteRule ^(.+)/$ $1/index.md [L,T=text/markdown]
+
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteRule ^(.+)/$ $1/index.html [L]
+
+          # Always serve .md files with the correct Content-Type, so that
+          # fetching /path/index.md directly also works as expected.
+          AddType text/markdown .md
 
           # Long cache for hashed assets
           <FilesMatch "\.(js|css|woff2|woff|ttf|otf|svg|png|jpg|jpeg|webp|avif|ico)$">
