@@ -477,25 +477,25 @@ export default function RecentLaunches() {
               {/* Overview, Challenge, Result */}
               <div className="grid sm:grid-cols-3 gap-6 mb-10">
                 <div className="p-5 rounded-xl bg-blue-50 border border-blue-100">
-                  <h4 className="text-sm font-semibold text-blue-800 uppercase tracking-wider mb-2">
+                  <h3 className="text-sm font-semibold text-blue-800 uppercase tracking-wider mb-2">
                     Overview
-                  </h4>
+                  </h3>
                   <p className="text-sm text-gray-700 leading-relaxed">
                     {activeProject.caseStudy.overview}
                   </p>
                 </div>
                 <div className="p-5 rounded-xl bg-amber-50 border border-amber-100">
-                  <h4 className="text-sm font-semibold text-amber-800 uppercase tracking-wider mb-2">
+                  <h3 className="text-sm font-semibold text-amber-800 uppercase tracking-wider mb-2">
                     Challenge
-                  </h4>
+                  </h3>
                   <p className="text-sm text-gray-700 leading-relaxed">
                     {activeProject.caseStudy.challenge}
                   </p>
                 </div>
                 <div className="p-5 rounded-xl bg-emerald-50 border border-emerald-100">
-                  <h4 className="text-sm font-semibold text-emerald-800 uppercase tracking-wider mb-2">
+                  <h3 className="text-sm font-semibold text-emerald-800 uppercase tracking-wider mb-2">
                     Result
-                  </h4>
+                  </h3>
                   <p className="text-sm text-gray-700 leading-relaxed">
                     {activeProject.caseStudy.result}
                   </p>
@@ -505,9 +505,9 @@ export default function RecentLaunches() {
               {/* Project Images (if multiple) */}
               {activeProject.caseStudy.modalImages && activeProject.caseStudy.modalImages.length > 0 && (
                 <div className="mb-10">
-                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                     Project Screenshots
-                  </h4>
+                  </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {activeProject.caseStudy.modalImages.map((img, i) => (
                       <div key={i} className="relative rounded-xl overflow-hidden border border-gray-200 shadow-sm">
@@ -526,9 +526,9 @@ export default function RecentLaunches() {
 
               {/* Timeline */}
               <div className="mb-10">
-                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-6">
                   Development Timeline
-                </h4>
+                </h3>
                 <div className="space-y-0">
                   {activeProject.caseStudy.timeline.map((step, i) => (
                     <button

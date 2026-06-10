@@ -66,9 +66,9 @@ export default function Footer() {
 
             {/* Link columns — bold headings, items flush left, consistent spacing */}
             <div className="lg:col-span-3">
-              <h4 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
+              <h3 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Services
-              </h4>
+              </h3>
               <ul className="space-y-3.5">
                 {navigation.services.map((item) => (
                   <li key={item.name}>
@@ -84,9 +84,9 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
+              <h3 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Company
-              </h4>
+              </h3>
               <ul className="space-y-3.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
@@ -102,9 +102,9 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
+              <h3 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Social
-              </h4>
+              </h3>
               <ul className="space-y-3.5">
                 {navigation.social.map((item) => (
                   <li key={item.name}>

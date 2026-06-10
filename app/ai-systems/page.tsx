@@ -359,7 +359,7 @@ export default function AISystemsPage() {
                 { title: "No quote, no commitment.", desc: "You can take the map and shop it elsewhere." },
               ].map((rule, i) => (
                 <div key={i} className="grid grid-cols-1 sm:grid-cols-[280px_1fr] gap-2 sm:gap-8 py-4 border-b border-gray-200">
-                  <h4 className="text-lg font-bold text-gray-900">{rule.title}</h4>
+                  <h3 className="text-lg font-bold text-gray-900">{rule.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{rule.desc}</p>
                 </div>
               ))}

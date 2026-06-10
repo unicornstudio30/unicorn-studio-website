@@ -347,9 +347,9 @@ export default function AboutPage() {
                     <div className="text-3xl sm:text-4xl font-bold gradient-text-modern leading-none">
                       0{index + 1}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug tracking-[-0.01em] text-balance">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug tracking-[-0.01em] text-balance">
                       {c.title}
-                    </h4>
+                    </h3>
                   </div>
                   <p className="text-[15px] sm:text-base text-gray-600 leading-[1.65] text-pretty pl-0">
                     {c.description}
@@ -379,9 +379,9 @@ export default function AboutPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                   Good fit
                 </div>
-                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-5 tracking-[-0.01em]">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-5 tracking-[-0.01em]">
                   You&apos;re a good fit if:
-                </h4>
+                </h3>
                 <ul className="space-y-3.5">
                   {fitYes.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-700 leading-[1.55]">
@@ -399,9 +399,9 @@ export default function AboutPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
                   Not for everyone
                 </div>
-                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-5 tracking-[-0.01em]">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-5 tracking-[-0.01em]">
                   We&apos;re probably not a fit if:
-                </h4>
+                </h3>
                 <ul className="space-y-3.5">
                   {fitNo.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-700 leading-[1.55]">

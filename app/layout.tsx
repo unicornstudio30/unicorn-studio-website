@@ -91,6 +91,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // Homepage canonical. Sub-page layouts override this with their own
+  // alternates.canonical so each page declares its own canonical URL.
+  alternates: {
+    canonical: "/",
+  },
 };
 
 // Schema.org JSON-LD — Organization + WebSite. Rendered on every page

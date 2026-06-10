@@ -171,9 +171,9 @@ export default function CaseStudies() {
               {/* Content side */}
               <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between gap-6">
                 <div>
-                  <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4 sm:mb-5">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4 sm:mb-5">
                     {cs.headline}
-                  </h4>
+                  </h3>
                   <div className="mb-5 sm:mb-6 p-4 rounded-xl bg-blue-50/60 border border-blue-100">
                     <div className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.18em] text-blue-700 mb-1.5">
                       Client snapshot
