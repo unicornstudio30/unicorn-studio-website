@@ -29,8 +29,8 @@ import {
 } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
-const CAL_NAMESPACE = "intro";
-const CAL_LINK = "saidur-rahaman/intro";
+const CAL_NAMESPACE = "ai-free-consultation";
+const CAL_LINK = "saidur-rahaman/ai-free-consultation";
 const CAL_FALLBACK_URL = `https://cal.com/${CAL_LINK}`;
 
 type CalApi = (action: string, payload?: Record<string, unknown>) => void;

@@ -22,7 +22,7 @@ The site itself is a static Next.js export with no public APIs. Contact submissi
 
 ## Contact
 
-- [Book a discovery call](https://cal.com/saidur-rahaman/intro): Free 30-minute intro on Cal.com.
+- [Book a free AI consultation](https://cal.com/saidur-rahaman/ai-free-consultation): Free consultation call on Cal.com.
 - [Contact form](https://unicornstudio.io/#contact): Submit a project brief from any page.
 - [Email](mailto:saidur@unicornstudio.io): Direct line to the founder.
 - [WhatsApp](https://wa.me/8801799296925): Quick async chat.
