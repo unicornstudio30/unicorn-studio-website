@@ -9,10 +9,7 @@ export default function TopNavigation() {
   const { openModal } = useCalendly();
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const desktopServicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,35 +33,12 @@ export default function TopNavigation() {
     };
   }, [sidebarOpen]);
 
-  // Close desktop services dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (desktopServicesRef.current && !desktopServicesRef.current.contains(e.target as Node)) {
-        setDesktopServicesOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-    setServicesOpen(false);
-  };
-
-  const serviceLinks = [
-    { name: "AI Systems", href: "/ai-systems", description: "Custom AI automation built for your business" },
-    { name: "AI Integrations", href: "/ai-integrations", description: "Add AI to your existing product" },
-    { name: "AI Solutions", href: "/ai-solutions", description: "Intelligent AI Solutions that solve real problems" },
-    { name: "AI SaaS", href: "/ai-saas", description: "From first commit to full-scale AI SaaS product" },
-    { name: "Website", href: "/websites", description: "Conversion-focused sites for AI SaaS founders" },
-    { name: "Branding", href: "/branding", description: "Brand identity built for AI SaaS products" },
-  ];
+  const closeSidebar = () => setSidebarOpen(false);
 
   const menuLinks = [
-    { name: "Portfolio", href: "/#portfolio" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "About", href: "/about" },
+    { name: "AI GTM System", href: "/ai-gtm-system/" },
+    { name: "Case Studies", href: "/case-studies/" },
+    { name: "About", href: "/about/" },
     { name: "Contact", href: "/#contact" },
   ];
 
@@ -92,72 +66,6 @@ export default function TopNavigation() {
 
               {/* Desktop Navigation Links */}
               <div className="hidden md:flex items-center gap-1 lg:gap-2">
-                {/* Services dropdown */}
-                <div ref={desktopServicesRef} className="relative">
-                  <button
-                    onClick={() => setDesktopServicesOpen(!desktopServicesOpen)}
-                    onMouseEnter={() => setDesktopServicesOpen(true)}
-                    className={`flex items-center gap-1 px-3 lg:px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                      desktopServicesOpen
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                    }`}
-                  >
-                    <span>Services</span>
-                    <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        desktopServicesOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-
-                  {/* Dropdown panel */}
-                  <div
-                    onMouseLeave={() => setDesktopServicesOpen(false)}
-                    className={`absolute left-0 top-full pt-2 transition-all duration-200 ${
-                      desktopServicesOpen
-                        ? "opacity-100 visible translate-y-0"
-                        : "opacity-0 invisible -translate-y-1"
-                    }`}
-                  >
-                    <div className="w-[420px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-3">
-                      <div className="grid grid-cols-1 gap-1">
-                        {serviceLinks.map((link) => (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setDesktopServicesOpen(false)}
-                            className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-blue-50 transition-colors group"
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm font-semibold text-gray-900 group-hover:text-blue-600">
-                                {link.name}
-                              </span>
-                              <svg
-                                className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </div>
-                            <span className="text-xs text-gray-500 leading-snug">
-                              {link.description}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Other menu links */}
                 {menuLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -233,47 +141,6 @@ export default function TopNavigation() {
             Home
           </Link>
 
-          {/* Services with expandable sub-menu */}
-          <div>
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center justify-between w-full px-5 py-3 text-gray-800 font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors"
-            >
-              <span>Services</span>
-              <svg
-                className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                  servicesOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                servicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="bg-gray-50/70 py-1">
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={closeSidebar}
-                    className="flex items-center px-8 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-3 flex-shrink-0" />
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Other menu links */}
           {menuLinks.map((link) => (
             <Link
               key={link.href}

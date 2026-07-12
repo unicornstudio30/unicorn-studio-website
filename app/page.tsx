@@ -2,7 +2,6 @@ import TopNavigation from "@/components/TopNavigation";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import FourSystems from "@/components/FourSystems";
-import WhatWeBuild from "@/components/WhatWeBuild";
 import Plan from "@/components/Plan";
 import Guarantee from "@/components/Guarantee";
 import RecentLaunches from "@/components/RecentLaunches";
@@ -20,7 +19,6 @@ export default function Home() {
         <Hero />
         <Problem />
         <FourSystems />
-        <WhatWeBuild />
         <Plan />
         <Guarantee />
         <RecentLaunches />

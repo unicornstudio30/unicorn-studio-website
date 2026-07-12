@@ -19,12 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFreq: MetadataRoute.Sitemap[number]["changeFrequency"];
   }> = [
     { path: "/",                 priority: 1.0, changeFreq: "weekly"  },
-    { path: "/ai-systems/",      priority: 0.9, changeFreq: "monthly" },
-    { path: "/ai-integrations/", priority: 0.9, changeFreq: "monthly" },
-    { path: "/ai-solutions/",    priority: 0.9, changeFreq: "monthly" },
-    { path: "/ai-saas/",         priority: 0.9, changeFreq: "monthly" },
-    { path: "/websites/",        priority: 0.8, changeFreq: "monthly" },
-    { path: "/branding/",        priority: 0.8, changeFreq: "monthly" },
+    { path: "/ai-gtm-system/",   priority: 0.9, changeFreq: "monthly" },
     { path: "/case-studies/",    priority: 0.8, changeFreq: "monthly" },
     { path: "/about/",           priority: 0.7, changeFreq: "monthly" },
     { path: "/thank-you/",       priority: 0.3, changeFreq: "yearly"  },

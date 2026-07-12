@@ -26,7 +26,7 @@ const siteUrl = "https://unicornstudio.io";
 const siteName = "Unicorn Studio";
 const title = "Unicorn Studio";
 const description =
-  "Tell us about your business. We'll find what can be automated, build the AI systems that do it, and stay on it until it's running. Guaranteed, or we work for free until it does.";
+  "The AI GTM System. One AI platform that runs your entire go-to-market: prospect building, personalised outreach, qualification, CRM sync, and reporting. Guaranteed pipeline output, or we work for free.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,14 +36,15 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    "AI systems",
-    "AI automation",
-    "AI business process automation",
-    "AI development",
-    "SaaS development",
-    "product development",
-    "AI integrations",
-    "MVP",
+    "AI GTM system",
+    "AI SDR",
+    "AI lead generation",
+    "AI prospect building",
+    "AI outreach",
+    "AI sales automation",
+    "AI go-to-market",
+    "outbound automation",
+    "AI pipeline generation",
   ],
   applicationName: siteName,
   authors: [{ name: "Unicorn Studio", url: siteUrl }],

@@ -3,17 +3,13 @@ import Image from "next/image";
 export default function Footer() {
   const navigation = {
     services: [
-      { name: "AI Systems", href: "/ai-systems" },
-      { name: "AI Integrations", href: "/ai-integrations" },
-      { name: "AI Solutions", href: "/ai-solutions" },
-      { name: "AI SaaS", href: "/ai-saas" },
-      { name: "Website", href: "/websites" },
-      { name: "Branding", href: "/branding" },
+      { name: "AI GTM System", href: "/ai-gtm-system/" },
+      { name: "How it works", href: "/ai-gtm-system/#how-it-works" },
+      { name: "Book a consultation", href: "https://cal.com/saidur-rahaman/ai-free-consultation" },
     ],
     company: [
-      { name: "About", href: "/about" },
-      { name: "Portfolio", href: "/#portfolio" },
-      { name: "Case Studies", href: "/case-studies" },
+      { name: "About", href: "/about/" },
+      { name: "Case Studies", href: "/case-studies/" },
       { name: "Process", href: "/#process" },
       { name: "FAQ", href: "/#faq" },
     ],
@@ -47,7 +43,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                Trusted AI integration partner for businesses. AI Systems, AI Solutions, and full AI SaaS builds, plus the website and brand to launch each one credibly.
+                The AI GTM System: one platform that runs your entire go-to-market. Prospects, outreach, qualification, CRM, and reporting, on autopilot. Guaranteed pipeline, or we work for free.
               </p>
 
               {/* Contact */}

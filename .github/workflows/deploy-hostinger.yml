@@ -56,6 +56,11 @@ jobs:
           Options -MultiViews
           RewriteEngine On
 
+          # 301 redirects for retired service pages (site consolidated to
+          # a single /ai-gtm-system/ offering). Matches with or without
+          # trailing slash; the [L,R=301] terminates rewrite processing.
+          RewriteRule ^(ai-systems|ai-integrations|ai-solutions|ai-saas|websites|branding)/?$ /ai-gtm-system/ [L,R=301]
+
           # Serve /foo as /foo/index.html (Next.js static export)
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME} !-d
