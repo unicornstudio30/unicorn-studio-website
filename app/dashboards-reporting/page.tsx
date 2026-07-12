@@ -1,0 +1,167 @@
+"use client";
+
+import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+
+const content: ServicePageContent = {
+  eyebrow: "Dashboards & Reporting",
+  headline: "Real-time business intelligence,",
+  headlineAccent: "pulled from every system you run.",
+  subhead:
+    "One place to see how the business is actually doing. Live metrics, automated reports, and dashboards your team opens because they trust the numbers. No more Monday-morning stat wrangling.",
+  outcomes: [
+    { number: "8 hours", label: "of manual reporting killed per week" },
+    { number: "<5 min", label: "from event to dashboard" },
+    { number: "100%", label: "of critical metrics in one place" },
+    { number: "0", label: "spreadsheets to reconcile" },
+  ],
+  modulesEyebrow: "What we build",
+  modulesHeadline: "One dashboard, every metric that matters.",
+  modulesLead:
+    "We do not sell you a BI seat and walk away. We wire your systems, model your data, design the dashboards, and stay on it while your business changes. The output is dashboards your team actually opens.",
+  modules: [
+    {
+      number: "01",
+      tag: "Executive",
+      title: "Executive dashboard",
+      description:
+        "The number you check before your morning coffee. Pipeline, revenue, cash, churn, headcount, and whatever else your board asks about. One glance, no filtering, always current.",
+      outputs: [
+        "Board-ready visualisations",
+        "Comparisons vs plan, LY, LM",
+        "Anomaly flagging when a metric drifts",
+      ],
+    },
+    {
+      number: "02",
+      tag: "Ops",
+      title: "Operational dashboards",
+      description:
+        "The screens your ops, support, and delivery leads live in. Queue depth, SLA breaches, throughput, capacity, alerts on what's about to break. Not vanity metrics; the ones that drive today's decisions.",
+      outputs: [
+        "Real-time (not overnight batches)",
+        "Filter, drill-down, and export",
+        "Slack alerts on threshold breaches",
+      ],
+    },
+    {
+      number: "03",
+      tag: "Reports",
+      title: "Automated reports",
+      description:
+        "Monthly board packs, weekly all-hands slides, customer-facing performance reports. Generated on schedule, delivered by email or Slack, formatted the way your audience reads.",
+      outputs: [
+        "PDF, Google Slides, Notion, email, Slack",
+        "Templated commentary auto-drafted per section",
+        "Delivered before the meeting, not during",
+      ],
+    },
+    {
+      number: "04",
+      tag: "Data",
+      title: "Warehouse & modelling",
+      description:
+        "The layer under the dashboards. We stand up a proper warehouse (BigQuery, Snowflake, Postgres), model your data with dbt or SQLMesh, and version it in git so tomorrow's reports match today's definitions.",
+      outputs: [
+        "Ingest from HubSpot, Stripe, Segment, product DB, spreadsheets",
+        "dbt / SQLMesh models under version control",
+        "Data-quality tests on every critical metric",
+      ],
+    },
+    {
+      number: "05",
+      tag: "Governance",
+      title: "Governance & trust",
+      description:
+        "The reason your team opens the dashboard: they trust the number. We ship data lineage, freshness alerts, and a definitions doc so 'what does revenue actually mean here' has a single answer.",
+      outputs: [
+        "Metric definitions doc in Notion or Confluence",
+        "Freshness alerts when a source stops updating",
+        "Lineage from raw source → warehouse → dashboard",
+      ],
+    },
+  ],
+  processEyebrow: "Our process",
+  processHeadline: "From audit to first dashboard live,",
+  processHeadlineAccent: "in five weeks.",
+  processLead:
+    "The hard part of BI is agreeing on what a metric means. We do the definitions work first, then the plumbing, then the visuals. It's why our dashboards get opened.",
+  process: [
+    {
+      step: "Week 1",
+      title: "Metric definitions",
+      description:
+        "One working session with your CEO, CFO or head-of-finance, and heads-of-department. Agree on what every key metric means: pipeline, revenue, churn, gross margin, CAC, LTV. Written down, signed off, shared.",
+    },
+    {
+      step: "Weeks 2-3",
+      title: "Warehouse + models",
+      description:
+        "Ingest your sources into the warehouse. Model them in dbt or SQLMesh. Build data-quality tests. Nothing lands in a dashboard until the tests pass.",
+    },
+    {
+      step: "Week 4",
+      title: "Dashboards",
+      description:
+        "Build the executive + operational dashboards on your tool of choice (Metabase, Preset / Superset, Looker, Hex, Sigma). Iterate in real time with the operators who'll use them.",
+    },
+    {
+      step: "Week 5",
+      title: "Automation + rollout",
+      description:
+        "Automated reports scheduled, Slack alerts wired, training session for your team. Runbooks handed over so your team can extend without us.",
+    },
+    {
+      step: "Month 2+",
+      title: "Ongoing evolution",
+      description:
+        "New metrics get added as your business changes. Monthly review to trim what's stale and add what's now important. The dashboards stay relevant instead of rotting.",
+    },
+  ],
+  guarantee: {
+    headline: "Every number ties, every source is fresh.",
+    headlineAccent: "Or we work for free.",
+    body: "We agree on a specific accuracy standard before we ship (every critical metric matches its source system to the penny; freshness inside the agreed SLA). If any metric fails that standard in month 1, every hour of remediation is on us until it doesn't.",
+    footnote: "Written into the contract. No small print, no clawback games.",
+  },
+  faqs: [
+    {
+      question: "How is this different from just buying Looker / Tableau / Power BI?",
+      answer:
+        "The tool is 20% of the problem. The other 80% is: which metrics matter, how they're defined, where the data lives, how it flows, and how you keep it fresh. We do the 80% and use whichever tool is right for the last 20%. Buying Looker without the modelling layer is why so many BI projects die.",
+    },
+    {
+      question: "Do you use dbt / SQLMesh / a warehouse?",
+      answer:
+        "Yes, for anything above the smallest scale. dbt or SQLMesh for modelling, BigQuery / Snowflake / Postgres for the warehouse, Fivetran / Airbyte / custom for ingestion. For very small businesses we can start on Postgres or Metabase's built-in query layer; upgrade path is clean.",
+    },
+    {
+      question: "How fresh are the numbers?",
+      answer:
+        "Operational dashboards run near-real-time (2-5 min delay). Executive dashboards run every 15-60 min. Batch reports run on schedule. We tell you upfront what each source can support and design around it.",
+    },
+    {
+      question: "What if our team doesn't use them?",
+      answer:
+        "That is the failure mode we care about most. We measure dashboard opens per week per user; if adoption is dropping, we know before you do and we fix it. Usually it's a definition problem, not a UI problem.",
+    },
+    {
+      question: "What's the guarantee?",
+      answer:
+        "Every critical metric matches its source system to the penny, and every source stays fresh inside its agreed SLA. Miss that in month 1 and we remediate for free until it holds.",
+    },
+    {
+      question: "What does this cost?",
+      answer:
+        "First build is a one-time fee sized to the number of sources and metrics. Then a monthly retainer covers modelling maintenance, new metrics, and freshness monitoring. Most engagements pay for themselves inside 90 days on reporting-hours reclaimed.",
+    },
+  ],
+  faqEyebrow: "Dashboards & Reporting",
+  faqHeadingHighlight: "about Dashboards & Reporting.",
+  ctaHeadline: "Stop opening five tools to answer 'how are we doing?'",
+  ctaSubhead:
+    "Book a free consultation. We'll look at what you're tracking today on the call and tell you which dashboard would answer the most questions with the least work.",
+};
+
+export default function DashboardsReportingPage() {
+  return <ServicePageTemplate content={content} />;
+}

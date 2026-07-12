@@ -4,8 +4,12 @@ export default function Footer() {
   const navigation = {
     services: [
       { name: "AI GTM System", href: "/ai-gtm-system/" },
-      { name: "How it works", href: "/ai-gtm-system/#how-it-works" },
-      { name: "Book a consultation", href: "https://cal.com/saidur-rahaman/ai-free-consultation" },
+      { name: "Workflow Automation", href: "/workflow-automation/" },
+      { name: "AI Agents", href: "/ai-agents/" },
+      { name: "Custom Apps", href: "/custom-apps/" },
+      { name: "Dashboards & Reporting", href: "/dashboards-reporting/" },
+      { name: "AI Solutions", href: "/ai-solutions/" },
+      { name: "AI Integrations", href: "/ai-integrations/" },
     ],
     company: [
       { name: "About", href: "/about/" },

@@ -1,0 +1,167 @@
+"use client";
+
+import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+
+const content: ServicePageContent = {
+  eyebrow: "Custom Apps",
+  headline: "Software built around your business,",
+  headlineAccent: "not the other way around.",
+  subhead:
+    "Internal tools, client portals, operator dashboards, and full-stack products. Modern web stacks (Next.js, Postgres, TypeScript), AI baked in where it matters, shipped in weeks not quarters.",
+  outcomes: [
+    { number: "8 weeks", label: "median MVP to production" },
+    { number: "100%", label: "code owned by you, forever" },
+    { number: "0", label: "off-the-shelf compromises" },
+    { number: "AI-native", label: "from day one" },
+  ],
+  modulesEyebrow: "What we build",
+  modulesHeadline: "Custom software for the work that spreadsheets outgrow.",
+  modulesLead:
+    "If your team is running a business-critical process in Google Sheets, Airtable, or a stitched-together Zapier stack, at some point you outgrow it. That is when a proper custom app pays for itself in a quarter.",
+  modules: [
+    {
+      number: "01",
+      tag: "Internal tools",
+      title: "Internal ops tools",
+      description:
+        "The dashboard your operators actually want to use. Search, filter, bulk actions, audit logs. Wired to every system you run so nobody is copy-pasting between six tabs.",
+      outputs: [
+        "Role-based access (ops, finance, support, admins)",
+        "Bulk operations with dry-run + rollback",
+        "Full audit log for compliance",
+      ],
+    },
+    {
+      number: "02",
+      tag: "Client-facing",
+      title: "Client & customer portals",
+      description:
+        "Where your clients log in to see their data: status, deliverables, invoices, chat, files. Branded, fast, mobile-friendly. Auth, permissions, and billing wired in cleanly from day one.",
+      outputs: [
+        "SSO / passwordless / social auth",
+        "Multi-tenant with per-client theming",
+        "Stripe or Chargebee billing integrated",
+      ],
+    },
+    {
+      number: "03",
+      tag: "AI-powered",
+      title: "AI-native features",
+      description:
+        "Search that understands intent, drafts that write themselves, screens that summarise long records. Not chatbots bolted on; AI woven into the workflow where it earns its cost per query.",
+      outputs: [
+        "Vector search over your data (pgvector, Pinecone, Turbopuffer)",
+        "LLM-driven drafts with human-in-the-loop review",
+        "Cost + latency guardrails so features stay usable",
+      ],
+    },
+    {
+      number: "04",
+      tag: "Integrations",
+      title: "System integrations",
+      description:
+        "Your app needs to talk to HubSpot, Salesforce, Stripe, QuickBooks, your data warehouse, your product API. We handle the plumbing so the surface stays clean and the data stays fresh.",
+      outputs: [
+        "Native REST / GraphQL / webhook integrations",
+        "Scheduled and real-time sync as the workflow needs",
+        "Retry, backoff, and dead-letter handling",
+      ],
+    },
+    {
+      number: "05",
+      tag: "Infra",
+      title: "Infrastructure & observability",
+      description:
+        "Deployed to your cloud (AWS, GCP, Vercel, Fly), monitored properly, backed up, secure. Logs you can grep, metrics you can graph, alerts that fire when they should.",
+      outputs: [
+        "IaC (Terraform / Pulumi) so infra is reproducible",
+        "Sentry + Datadog + PagerDuty wired from day one",
+        "SOC2-ready patterns baked in (audit, encryption, access control)",
+      ],
+    },
+  ],
+  processEyebrow: "Our process",
+  processHeadline: "From napkin to production,",
+  processHeadlineAccent: "in eight weeks.",
+  processLead:
+    "No twelve-month waterfall, no half-finished v0.1 that never ships. A short sprint zero, weekly demos, first users inside two months.",
+  process: [
+    {
+      step: "Week 1",
+      title: "Sprint zero: scope + architecture",
+      description:
+        "We spend the first week only writing. What the app does, who uses it, what data it needs, which systems it integrates with. Come out with a fixed scope and a fixed timeline before any code is written.",
+    },
+    {
+      step: "Weeks 2-5",
+      title: "Build v1",
+      description:
+        "Weekly demos on Fridays. You use what we built and tell us what's wrong. Scope changes are handled with a swap-out mechanism — you can always trade a feature in for a feature out.",
+    },
+    {
+      step: "Week 6",
+      title: "Internal launch",
+      description:
+        "Your team uses the app for real work for two weeks. We fix every bug, tune every rough edge, and load the seed data.",
+    },
+    {
+      step: "Weeks 7-8",
+      title: "External launch + docs",
+      description:
+        "Rolled out to end users (staff, clients, customers, whoever it's for). Runbooks, admin docs, and a training session for your team. Code and infra fully handed over.",
+    },
+    {
+      step: "Month 3+",
+      title: "Optional maintenance",
+      description:
+        "Most clients run lightweight after month 3 — bug fixes, small features, monthly cadence. Or take the codebase and extend in-house. You own everything.",
+    },
+  ],
+  guarantee: {
+    headline: "Fixed scope, fixed timeline.",
+    headlineAccent: "Or we work for free.",
+    body: "We commit to a written scope and delivery date at the end of Week 1. If we miss the date on the agreed scope, every hour after that is on us until it ships.",
+    footnote: "Written into the contract. No small print, no clawback games.",
+  },
+  faqs: [
+    {
+      question: "How is this different from hiring a dev shop?",
+      answer:
+        "Most dev shops build features. We build products. That means we care about the scope you don't yet know you need (auth, billing, observability, docs) as much as the features you asked for. Same monthly cost as a mid-tier shop; you get a shipping-quality product, not a codebase-shaped liability.",
+    },
+    {
+      question: "Do you use Bubble / Retool / Webflow / no-code?",
+      answer:
+        "Sometimes for internal tools where the workflow is simple and speed matters. Almost never for client-facing products — no-code hits a wall quickly on auth, billing, custom UX, and performance. We'll tell you honestly which fits.",
+    },
+    {
+      question: "Will we own the code?",
+      answer:
+        "Yes. Repo transfers to your GitHub org on day one. Infra deploys to your cloud accounts. If you fire us tomorrow, everything keeps running and your team can extend it.",
+    },
+    {
+      question: "What if scope changes mid-build?",
+      answer:
+        "It always does. We use a swap-out mechanism: you can trade any feature in the current sprint for any feature of comparable size. No change orders, no scope creep, no timeline slip.",
+    },
+    {
+      question: "Which stacks do you build on?",
+      answer:
+        "Next.js + TypeScript + Postgres + Tailwind is our default and covers 90% of what clients need. React Native or Expo for mobile. FastAPI / Rust for heavy backends. We'll match whatever your team can maintain long-term.",
+    },
+    {
+      question: "What's the guarantee?",
+      answer:
+        "If we miss the fixed scope and fixed timeline agreed at end of Week 1, every hour after that is on us until it ships.",
+    },
+  ],
+  faqEyebrow: "Custom Apps",
+  faqHeadingHighlight: "about Custom Apps.",
+  ctaHeadline: "Stop running your business in a spreadsheet.",
+  ctaSubhead:
+    "Book a free consultation. We'll look at what you're running today and tell you honestly whether a custom app is worth it, or whether we can just automate the pain first.",
+};
+
+export default function CustomAppsPage() {
+  return <ServicePageTemplate content={content} />;
+}

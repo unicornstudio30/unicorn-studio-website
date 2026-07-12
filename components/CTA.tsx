@@ -6,9 +6,13 @@ import { useRouter } from "next/navigation";
 import { useCalendly } from "./CalendlyProvider";
 
 const SERVICES = [
-  "AI GTM System · Full build",
-  "AI GTM System · Audit only",
-  "AI GTM System · Add-on to existing SDR team",
+  "AI GTM System",
+  "Workflow Automation",
+  "AI Agents",
+  "Custom Apps",
+  "Dashboards & Reporting",
+  "AI Solutions",
+  "AI Integrations",
   "Not sure yet",
 ];
 

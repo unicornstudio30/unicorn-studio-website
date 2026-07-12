@@ -18,11 +18,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: number;
     changeFreq: MetadataRoute.Sitemap[number]["changeFrequency"];
   }> = [
-    { path: "/",                 priority: 1.0, changeFreq: "weekly"  },
-    { path: "/ai-gtm-system/",   priority: 0.9, changeFreq: "monthly" },
-    { path: "/case-studies/",    priority: 0.8, changeFreq: "monthly" },
-    { path: "/about/",           priority: 0.7, changeFreq: "monthly" },
-    { path: "/thank-you/",       priority: 0.3, changeFreq: "yearly"  },
+    { path: "/",                       priority: 1.0, changeFreq: "weekly"  },
+    { path: "/ai-gtm-system/",         priority: 0.9, changeFreq: "monthly" },
+    { path: "/workflow-automation/",   priority: 0.9, changeFreq: "monthly" },
+    { path: "/ai-agents/",             priority: 0.9, changeFreq: "monthly" },
+    { path: "/custom-apps/",           priority: 0.9, changeFreq: "monthly" },
+    { path: "/dashboards-reporting/",  priority: 0.9, changeFreq: "monthly" },
+    { path: "/ai-solutions/",          priority: 0.8, changeFreq: "monthly" },
+    { path: "/ai-integrations/",       priority: 0.8, changeFreq: "monthly" },
+    { path: "/case-studies/",          priority: 0.8, changeFreq: "monthly" },
+    { path: "/about/",                 priority: 0.7, changeFreq: "monthly" },
+    { path: "/thank-you/",             priority: 0.3, changeFreq: "yearly"  },
   ];
 
   return pages.map((p) => ({
