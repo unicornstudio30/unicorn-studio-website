@@ -17,8 +17,8 @@ const outputs = [
 ];
 
 const trustStats = [
-  { value: "90 days", label: "to autopilot pipeline" },
-  { value: "100%", label: "built around your ICP" },
+  { value: "04", label: "systems we specialize in" },
+  { value: "100%", label: "custom-built per business" },
   { value: "<2h", label: "average response time" },
 ];
 
@@ -42,13 +42,13 @@ export default function Hero() {
         <div className="text-center">
           {/* Main heading */}
           <h1 className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-gray-900 leading-[1.05] tracking-[-0.02em] mb-6 sm:mb-7 max-w-4xl mx-auto text-balance">
-            Turn cold prospects into{" "}
-            <span className="gradient-text-modern">booked sales calls, on autopilot.</span>
+            Integrate AI into your business{" "}
+            <span className="gradient-text-modern">before your competitor does</span>
           </h1>
 
           {/* Subheading — three short sentences */}
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] mb-8 sm:mb-10 px-2 text-pretty">
-            One AI system runs your entire go-to-market: prospect building, personalised outreach, qualification, and CRM sync. Guaranteed pipeline output, or we work for free until it hits.
+            Tell us how your business works. We&apos;ll map what AI can take over, build it, and stay on it until it runs. Guaranteed, or we work for free.
           </p>
 
           {/* CTAs */}
@@ -58,7 +58,7 @@ export default function Hero() {
               onClick={openModal}
               className="btn-primary group w-full sm:w-auto px-8 py-4 text-white rounded-xl font-semibold text-base text-center inline-flex items-center justify-center gap-2"
             >
-              <span className="relative z-10">Book a free AI consultation</span>
+              <span className="relative z-10">Book a discovery call</span>
               <svg
                 className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform"
                 fill="none"
@@ -72,7 +72,7 @@ export default function Hero() {
               href="#systems"
               className="btn-secondary w-full sm:w-auto px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base border border-gray-300 text-center"
             >
-              See how the system works
+              See the four systems
             </a>
           </div>
 
