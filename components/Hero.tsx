@@ -72,7 +72,7 @@ export default function Hero() {
               href="#systems"
               className="btn-secondary w-full sm:w-auto px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base border border-gray-300 text-center"
             >
-              See the five systems
+              See our solutions
             </a>
           </div>
 

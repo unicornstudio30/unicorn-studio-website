@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+import { testimonials } from "@/components/testimonialData";
 
 const content: ServicePageContent = {
   eyebrow: "AI Agents",
@@ -160,6 +161,7 @@ const content: ServicePageContent = {
   ctaHeadline: "Stop your team from answering the same question 40 times a day.",
   ctaSubhead:
     "Book a free consultation. We'll look at a sample of your recent conversations on the call and tell you which agent would reclaim the most time first.",
+  testimonials: [testimonials.lokesh],
 };
 
 export default function AIAgentsPage() {

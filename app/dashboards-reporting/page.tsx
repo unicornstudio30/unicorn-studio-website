@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+import { testimonials } from "@/components/testimonialData";
 
 const content: ServicePageContent = {
   eyebrow: "Dashboards & Reporting",
@@ -160,6 +161,7 @@ const content: ServicePageContent = {
   ctaHeadline: "Stop opening five tools to answer 'how are we doing?'",
   ctaSubhead:
     "Book a free consultation. We'll look at what you're tracking today on the call and tell you which dashboard would answer the most questions with the least work.",
+  testimonials: [testimonials.lokesh],
 };
 
 export default function DashboardsReportingPage() {

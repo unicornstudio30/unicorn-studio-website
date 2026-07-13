@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+import { testimonials } from "@/components/testimonialData";
 
 const content: ServicePageContent = {
   eyebrow: "Workflow Automation",
@@ -160,6 +161,7 @@ const content: ServicePageContent = {
   ctaHeadline: "Stop your ops team from doing the same 20 things every Monday.",
   ctaSubhead:
     "Book a free consultation. We'll audit your operations for 30 minutes on the call and tell you exactly which workflow would reclaim the most hours first.",
+  testimonials: [testimonials.lokesh],
 };
 
 export default function WorkflowAutomationPage() {

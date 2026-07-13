@@ -1,9 +1,19 @@
 "use client";
 
+import Image, { StaticImageData } from "next/image";
 import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
 import FAQ, { FAQItem } from "@/components/FAQ";
 import { useCalendly } from "@/components/CalendlyProvider";
+
+export interface ServiceTestimonial {
+  name: string;
+  role: string;
+  quote: string;
+  image: StaticImageData;
+  tag: string;
+  stats: { label: string; bg: string; text: string; border: string }[];
+}
 
 export interface ServiceModule {
   number: string;
@@ -45,10 +55,11 @@ export interface ServicePageContent {
   faqHeadingHighlight: string;
   ctaHeadline: string;
   ctaSubhead: string;
+  testimonials?: ServiceTestimonial[];
 }
 
 /**
- * Server-rendered shell for every "one of the five systems" page.
+ * Server-rendered shell for every supporting-solution page.
  * Takes content as a plain object so each service page stays a
  * ~200-line data file rather than 500 lines of duplicated JSX.
  */
@@ -220,6 +231,75 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
             <p className="text-sm text-gray-500">{content.guarantee.footnote}</p>
           </div>
         </section>
+
+        {/* Testimonials — shown only when the page opts in with content.testimonials */}
+        {content.testimonials && content.testimonials.length > 0 && (
+          <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-10 sm:mb-14">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs sm:text-sm font-semibold mb-5">
+                  What clients say
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-4 text-balance">
+                  Real teams,{" "}
+                  <span className="gradient-text-modern">real outcomes.</span>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
+                  The proof isn&rsquo;t in the pitch deck. It&rsquo;s in what shipped and what changed.
+                </p>
+              </div>
+
+              <div
+                className={`grid gap-6 sm:gap-7 ${
+                  content.testimonials.length === 1 ? "max-w-2xl mx-auto" : "md:grid-cols-2"
+                }`}
+              >
+                {content.testimonials.map((t) => (
+                  <figure
+                    key={t.name}
+                    className="relative bg-white rounded-2xl border border-gray-200 shadow-sm p-7 sm:p-8 flex flex-col"
+                  >
+                    <span className="inline-flex items-center h-6 mb-5 px-2.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-[0.14em] self-start">
+                      {t.tag}
+                    </span>
+                    <blockquote className="text-[15px] sm:text-base text-gray-800 leading-[1.7] mb-6 flex-1">
+                      &ldquo;{t.quote}&rdquo;
+                    </blockquote>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {t.stats.map((s) => (
+                        <span
+                          key={s.label}
+                          className={`inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold border ${s.bg} ${s.text} ${s.border}`}
+                        >
+                          {s.label}
+                        </span>
+                      ))}
+                    </div>
+                    <figcaption className="flex items-center gap-3 pt-5 border-t border-gray-100">
+                      <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+                        <Image
+                          src={t.image}
+                          alt={t.name}
+                          width={44}
+                          height={44}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-gray-900 leading-tight">
+                          {t.name}
+                        </div>
+                        <div className="text-xs text-gray-500 leading-tight mt-0.5">
+                          {t.role}
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <FAQ
           faqs={content.faqs}

@@ -188,7 +188,7 @@ export default function CaseStudiesPage() {
                   How it was built
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-                  8 weeks. <span className="gradient-text-modern">Five systems. One pipeline.</span>
+                  8 weeks. <span className="gradient-text-modern">Five layers. One pipeline.</span>
                 </h2>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                   We didn&apos;t replace their CRM. We turned it into one node in a coordinated AI revops graph, so leads, signals, and follow-up actions move automatically across HubSpot, Salesforce, Slack, Clearbit, and the AI agent layer.

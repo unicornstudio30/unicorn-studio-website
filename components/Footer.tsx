@@ -47,7 +47,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                The AI GTM System: one platform that runs your entire go-to-market. Prospects, outreach, qualification, CRM, and reporting, on autopilot. Guaranteed pipeline, or we work for free.
+                AI systems specialist studio. Seven productised solutions covering the full stack — from GTM automation to bespoke internal software. Guaranteed outcomes on every engagement, or we work for free until they hit.
               </p>
 
               {/* Contact */}
@@ -67,7 +67,7 @@ export default function Footer() {
             {/* Link columns — bold headings, items flush left, consistent spacing */}
             <div className="lg:col-span-3">
               <h3 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
-                Services
+                Solutions
               </h3>
               <ul className="space-y-3.5">
                 {navigation.services.map((item) => (

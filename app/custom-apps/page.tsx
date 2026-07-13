@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+import { testimonials } from "@/components/testimonialData";
 
 const content: ServicePageContent = {
   eyebrow: "Custom Apps",
@@ -160,6 +161,7 @@ const content: ServicePageContent = {
   ctaHeadline: "Stop running your business in a spreadsheet.",
   ctaSubhead:
     "Book a free consultation. We'll look at what you're running today and tell you honestly whether a custom app is worth it, or whether we can just automate the pain first.",
+  testimonials: [testimonials.melissa, testimonials.daniel],
 };
 
 export default function CustomAppsPage() {
