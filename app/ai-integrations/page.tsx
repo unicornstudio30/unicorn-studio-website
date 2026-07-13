@@ -8,7 +8,7 @@ const aiIntegrationsFaqs = [
   {
     question: "Can you work with our existing codebase?",
     answer:
-      "Yes. We work in your repo, your stack, your conventions. We&apos;ll send a few PRs in the first week so you can see how we write code before committing to a full integration.",
+      "Yes. We work in your repo, your stack, your conventions. We’ll send a few PRs in the first week so you can see how we write code before committing to a full integration.",
   },
   {
     question: "Which AI providers do you integrate?",
@@ -78,7 +78,7 @@ export default function AIIntegrationsPage() {
                 <ul className="space-y-3.5">
                   {[
                     "Bolting on generic chatbots that frustrate users.",
-                    "Adding AI features that don&apos;t align with core workflows.",
+                    "Adding AI features that don’t align with core workflows.",
                     "Implementing AI because everyone else is.",
                     "Treating AI as a separate product, not native functionality.",
                   ].map((item, i) => (
@@ -98,7 +98,7 @@ export default function AIIntegrationsPage() {
                 <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-emerald-600 mb-3">What actually works</div>
                 <ul className="space-y-3.5">
                   {[
-                    "AI designed around your users&apos; existing behaviours.",
+                    "AI designed around your users’ existing behaviours.",
                     "Intelligence that enhances your core value prop.",
                     "Integration that feels like it was always there.",
                     "AI that solves the problems your users actually have.",

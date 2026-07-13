@@ -33,7 +33,7 @@ export const aiSystemsFaqs: FAQItem[] = [
   {
     question: "Which of your solutions should I pick first?",
     answer:
-      "Whichever bottleneck is hurting growth most right now. Most clients start with the AI GTM System (if pipeline is the problem) or Workflow Automation (if ops hours are the problem). We&rsquo;ll map your business on the discovery call and recommend the order.",
+      "Whichever bottleneck is hurting growth most right now. Most clients start with the AI GTM System (if pipeline is the problem) or Workflow Automation (if ops hours are the problem). We'll map your business on the discovery call and recommend the order.",
   },
   {
     question: "How quickly does a solution go live?",
@@ -43,7 +43,7 @@ export const aiSystemsFaqs: FAQItem[] = [
   {
     question: "Will my data stay private?",
     answer:
-      "Yes. We deploy to your cloud, your accounts, and your secrets manager. Nothing routes through our infrastructure. We&rsquo;ll sign an NDA before scoping if you need it.",
+      "Yes. We deploy to your cloud, your accounts, and your secrets manager. Nothing routes through our infrastructure. We'll sign an NDA before scoping if you need it.",
   },
   {
     question: "Will I own the workflows and prompts?",

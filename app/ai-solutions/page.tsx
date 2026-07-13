@@ -15,7 +15,7 @@ const aiSolutionsFaqs = [
   {
     question: "Why fine-tune instead of just prompting?",
     answer:
-      "Fine-tuning earns its keep when prompts can&apos;t express the pattern reliably (your tone, your taxonomy, your edge cases), when latency or cost matters (a smaller fine-tuned model often beats a large prompted one), or when domain quality has a hard floor that off-the-shelf models can&apos;t hit. We benchmark before recommending it.",
+      "Fine-tuning earns its keep when prompts can’t express the pattern reliably (your tone, your taxonomy, your edge cases), when latency or cost matters (a smaller fine-tuned model often beats a large prompted one), or when domain quality has a hard floor that off-the-shelf models can’t hit. We benchmark before recommending it.",
   },
   {
     question: "Which models do you fine-tune on?",
@@ -50,7 +50,7 @@ const shapes: Shape[] = [
     category: "Systems",
     name: "Multi-Agent Orchestration",
     summary:
-      "Agent graphs with explicit roles, handoffs, and verification. Built for the work that&apos;s too long, too branched, or too consequential for a single prompt.",
+      "Agent graphs with explicit roles, handoffs, and verification. Built for the work that’s too long, too branched, or too consequential for a single prompt.",
     bullets: [
       "Planner / researcher / verifier graphs",
       "Human-in-the-loop checkpoints",
@@ -63,11 +63,11 @@ const shapes: Shape[] = [
     category: "Models",
     name: "Custom LLM Fine-Tuning",
     summary:
-      "When prompts can&apos;t reliably express what you need. We fine-tune open-source or hosted models on your domain, your voice, and your edge cases, with the eval harness to prove it.",
+      "When prompts can’t reliably express what you need. We fine-tune open-source or hosted models on your domain, your voice, and your edge cases, with the eval harness to prove it.",
     bullets: [
       "LoRA, full-tune, instruction-tune, DPO",
       "Llama · Mistral · Qwen · OpenAI · Bedrock",
-      "Side-by-side eval vs. the baseline you&apos;d otherwise ship",
+      "Side-by-side eval vs. the baseline you’d otherwise ship",
     ],
     primary: true,
     badge: "New · 2026",
