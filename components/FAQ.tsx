@@ -25,39 +25,40 @@ type FAQProps = {
 };
 
 /**
- * AI GTM System FAQ — also used as the default on the homepage.
- * Exported so the AI GTM System page can reuse the same source of truth.
+ * Homepage default FAQ. General questions about the studio's engagements
+ * that apply across every solution. AI GTM System page and each of the
+ * supporting solution pages use their own FAQ set passed via props.
  */
 export const aiSystemsFaqs: FAQItem[] = [
   {
-    question: "How is this different from hiring an SDR agency?",
+    question: "Which of your solutions should I pick first?",
     answer:
-      "An SDR agency rents you 2-3 humans for $8-12k/month who send templated messages until you fire them. The AI GTM System runs 24/7, personalises every message with real research, and gets better every week as we tune it. Same monthly cost, 5-10x the throughput, and the system stays yours.",
+      "Whichever bottleneck is hurting growth most right now. Most clients start with the AI GTM System (if pipeline is the problem) or Workflow Automation (if ops hours are the problem). We&rsquo;ll map your business on the discovery call and recommend the order.",
   },
   {
-    question: "How is this different from Clay, Instantly, or Apollo?",
+    question: "How quickly does a solution go live?",
     answer:
-      "Those are ingredients, not a system. Buying Clay doesn't build your ICP. Buying Instantly doesn't warm your domains, tune your copy, or handle replies. We orchestrate best-in-class tools into one system that runs for you, then we operate it. You get the outcome, not more software to manage.",
-  },
-  {
-    question: "What if we already have SDRs? Does this replace them?",
-    answer:
-      "Usually augments, not replaces. The system handles top-of-funnel volume that SDRs can't sustain, then your humans take over the moment a conversation gets nuanced. Most clients redeploy their SDR team into AE support or expansion, not layoffs.",
-  },
-  {
-    question: "How quickly does the system go live?",
-    answer:
-      "First booked meetings by week 6. Fully autopilot pipeline by month 3. We do a system audit in week 1, build for 3 weeks, then start with a warm rollout of 50 prospects/day and ramp from there.",
+      "4 to 8 weeks depending on complexity and how clean your existing data and tools are. We commit to a fixed timeline and a fixed scope before any build begins.",
   },
   {
     question: "Will my data stay private?",
     answer:
-      "Yes. We deploy to your cloud, your accounts, and your CRM. Nothing routes through our infrastructure. We'll sign an NDA before scoping if you need it.",
+      "Yes. We deploy to your cloud, your accounts, and your secrets manager. Nothing routes through our infrastructure. We&rsquo;ll sign an NDA before scoping if you need it.",
   },
   {
-    question: "What's the guarantee?",
+    question: "Will I own the workflows and prompts?",
     answer:
-      "If we don't hit the agreed pipeline output by month 3 (booked sales conversations from qualified ICP accounts), we work for free until we do. Written into the contract.",
+      "Every workflow, prompt, integration, and asset we build is yours. Forever. Even if you fire us tomorrow, the system keeps running and your team can extend it.",
+  },
+  {
+    question: "What if the system needs changes after launch?",
+    answer:
+      "Maintenance is optional and scoped per request. Most clients run lightweight after the first 30 days. Your team can extend it themselves, or come back to us when you need bigger changes.",
+  },
+  {
+    question: "Do you guarantee outcomes?",
+    answer:
+      "We guarantee the system is built, integrated, and operational as scoped. Where a solution has a measurable output (booked meetings for the AI GTM System, hours reclaimed for Workflow Automation, etc.), we back that number with a work-for-free-until-it-hits guarantee.",
   },
 ];
 
