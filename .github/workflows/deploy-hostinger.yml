@@ -25,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: "npm"
@@ -56,12 +56,11 @@ jobs:
           Options -MultiViews
           RewriteEngine On
 
-          # 301 redirects for retired service pages. ai-integrations and
-          # ai-solutions have been restored as their own pages so they're
-          # out of this list. The others map to their closest surviving
-          # equivalent to preserve backlink authority.
+          # 301 redirects for retired service pages. ai-integrations,
+          # ai-solutions, and ai-saas have been restored as their own
+          # pages so they're out of this list. The others map to their
+          # closest surviving equivalent to preserve backlink authority.
           RewriteRule ^ai-systems/?$ /workflow-automation/ [L,R=301]
-          RewriteRule ^ai-saas/?$ /custom-apps/ [L,R=301]
           RewriteRule ^websites/?$ /custom-apps/ [L,R=301]
           RewriteRule ^branding/?$ /ai-gtm-system/ [L,R=301]
 
