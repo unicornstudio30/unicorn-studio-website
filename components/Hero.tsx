@@ -17,7 +17,7 @@ const outputs = [
 ];
 
 const trustStats = [
-  { value: "06", label: "solutions we specialize in" },
+  { value: "08", label: "solutions we specialize in" },
   { value: "100%", label: "custom-built per business" },
   { value: "<2h", label: "average response time" },
 ];

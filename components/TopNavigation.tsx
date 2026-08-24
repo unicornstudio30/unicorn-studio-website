@@ -50,6 +50,8 @@ export default function TopNavigation() {
     { name: "Dashboards & Reporting", href: "/dashboards-reporting/", description: "Real-time BI pulled from every system you run." },
     { name: "AI Solutions", href: "/ai-solutions/", description: "Multi-agent orchestration, fine-tuning, and applied ML." },
     { name: "AI Integrations", href: "/ai-integrations/", description: "Add AI to your existing product without rebuilding it." },
+    { name: "AI SEO", href: "/ai-seo/", description: "Get cited by AI search — Google AI Overview, ChatGPT, Perplexity." },
+    { name: "AI SaaS", href: "/ai-saas/", description: "Full-stack AI SaaS products, idea to first paying customer." },
   ];
 
   const menuLinks = [
@@ -96,7 +98,7 @@ export default function TopNavigation() {
                       desktopServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
                     }`}
                   >
-                    <div className="w-[460px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-3">
+                    <div className="w-[460px] max-h-[calc(100vh-6rem)] overflow-y-auto bg-white rounded-2xl shadow-2xl border border-gray-100 p-3">
                       <div className="grid grid-cols-1 gap-1">
                         {serviceLinks.map((link) => (
                           <Link
@@ -168,7 +170,7 @@ export default function TopNavigation() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${servicesOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${servicesOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"}`}>
               <div className="bg-gray-50/70 py-1">
                 {serviceLinks.map((link) => (
                   <Link key={link.href} href={link.href} onClick={closeSidebar} className="flex items-center px-8 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors">

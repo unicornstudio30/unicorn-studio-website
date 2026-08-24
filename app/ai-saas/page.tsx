@@ -1,0 +1,170 @@
+"use client";
+
+import ServicePageTemplate, { ServicePageContent } from "@/components/ServicePageTemplate";
+import { testimonials } from "@/components/testimonialData";
+
+const content: ServicePageContent = {
+  eyebrow: "AI SaaS",
+  headline: "AI SaaS products for",
+  headlineAccent: "ambitious founders and businesses.",
+  subhead:
+    "Full-stack AI SaaS products from first commit to first paying customer. Modern web stacks (Next.js, Postgres, TypeScript), AI baked in from day one, subscription billing and admin dashboards shipped by default. No throwaway prototypes; the codebase you launch is the codebase you scale.",
+  outcomes: [
+    { number: "4-8 weeks", label: "from idea to MVP in production" },
+    { number: "Month 1", label: "first paying customers, typical" },
+    { number: "100%", label: "code owned by you, forever" },
+    { number: "AI-native", label: "from day one" },
+  ],
+  modulesEyebrow: "What we ship",
+  modulesHeadline: "Full product, not a prototype.",
+  modulesLead:
+    "Every AI SaaS build ships with the boring stuff that most agencies leave to you: auth, billing, admin, observability, docs. So the launch date on the calendar is the launch date that actually happens.",
+  modules: [
+    {
+      number: "01",
+      tag: "Design",
+      title: "Product design & architecture",
+      description:
+        "One-week sprint zero. What the product does, who it's for, which AI capabilities do the heavy lifting, what data it needs, how it scales. Fixed scope and fixed timeline before any code.",
+      outputs: [
+        "Written product spec + wireframes",
+        "Data model + architecture diagram",
+        "Fixed scope + fixed launch date",
+      ],
+    },
+    {
+      number: "02",
+      tag: "Build",
+      title: "Full-stack build",
+      description:
+        "Modern stack that scales: Next.js 15 + TypeScript + Postgres + Tailwind + shadcn. Deployed to Vercel, AWS, or Fly. React Native or Expo if mobile is in scope. Weekly demos on Fridays; you use what we ship and steer.",
+      outputs: [
+        "Next.js + Postgres + TypeScript by default",
+        "React Native / Expo for mobile builds",
+        "Repo transfers to your GitHub org day one",
+      ],
+    },
+    {
+      number: "03",
+      tag: "AI",
+      title: "AI integration",
+      description:
+        "OpenAI, Claude, Gemini, or an open-source model — whichever fits the task and your cost profile. Vector search, RAG, fine-tuning, agent orchestration; whatever the product needs. Cost + latency guardrails built in so features stay usable at scale.",
+      outputs: [
+        "Model-agnostic; we rotate as the frontier moves",
+        "pgvector / Pinecone / Turbopuffer for retrieval",
+        "Prompt eval harness so quality doesn't regress",
+      ],
+    },
+    {
+      number: "04",
+      tag: "Auth + billing",
+      title: "Auth, billing, admin",
+      description:
+        "The stuff every SaaS needs but no founder wants to build. Passwordless auth (Clerk / Auth0), Stripe / Chargebee billing with prorations, roles & permissions, admin dashboard, invite flows. Configured, tested, done.",
+      outputs: [
+        "Clerk / Auth0 / Supabase Auth wired in cleanly",
+        "Stripe subscriptions + usage + one-time",
+        "Admin console with impersonation + audit log",
+      ],
+    },
+    {
+      number: "05",
+      tag: "Launch",
+      title: "Launch + observability",
+      description:
+        "Sentry + PostHog + Datadog + PagerDuty wired from day one. Logs you can grep, metrics you can graph, alerts that fire when they should. SOC2-ready patterns baked in (audit trails, encryption, access control) so enterprise deals aren't a rewrite.",
+      outputs: [
+        "IaC via Terraform / Pulumi so infra is reproducible",
+        "Product analytics + error tracking + on-call rota",
+        "Runbook + admin docs handed to your team",
+      ],
+    },
+  ],
+  processEyebrow: "Our process",
+  processHeadline: "From napkin to first paying customer,",
+  processHeadlineAccent: "in eight weeks.",
+  processLead:
+    "No twelve-month waterfall, no half-finished v0.1 that never ships. A short sprint zero, weekly demos, first paying customer inside two months.",
+  process: [
+    {
+      step: "Week 1",
+      title: "Sprint zero — scope + architecture",
+      description:
+        "We spend the first week writing, not coding. What the product does, who uses it, what data it needs, which AI capabilities matter, how it scales. Come out with a fixed scope and a fixed launch date before any code exists.",
+    },
+    {
+      step: "Weeks 2-5",
+      title: "Build v1",
+      description:
+        "Weekly demos on Fridays. You use what we shipped and tell us what's wrong. Scope changes handled via swap-out — trade any feature for any feature of comparable size. No change orders, no timeline slip.",
+    },
+    {
+      step: "Week 6",
+      title: "Private beta",
+      description:
+        "Ship to 10-50 hand-picked users. Instrument every session, fix every bug, tune the AI features against real usage. Two-week beta on payment for anyone who wants to skip the queue.",
+    },
+    {
+      step: "Weeks 7-8",
+      title: "Public launch",
+      description:
+        "Product Hunt, Hacker News, your list. Billing live, admin console handed to your team, runbooks handed to your on-call. Launch-week support included.",
+    },
+    {
+      step: "Month 3+",
+      title: "Optional maintenance",
+      description:
+        "Bug fixes, small features, monthly cadence. Or take the codebase and extend in-house — everything is yours. Most founders keep us on a lightweight retainer for the AI-specific work while their team owns the rest.",
+    },
+  ],
+  guarantee: {
+    headline: "Fixed scope, fixed launch date.",
+    headlineAccent: "Or we work for free.",
+    body: "We commit to a written scope and launch date at the end of Week 1. If we miss the launch date on the agreed scope, every hour after that is on us until the product ships.",
+    footnote: "Written into the contract. No small print, no clawback games.",
+  },
+  faqs: [
+    {
+      question: "How is this different from hiring a dev shop?",
+      answer:
+        "Most dev shops build features. We build products. That means the boring stuff you need for a real SaaS (auth, billing, observability, admin, docs) gets shipped with the same care as the AI features. Same monthly cost as a mid-tier shop; you get a launched product, not a codebase-shaped liability.",
+    },
+    {
+      question: "Which stacks do you build on?",
+      answer:
+        "Next.js + TypeScript + Postgres + Tailwind is the default and covers 90% of AI SaaS use cases. React Native / Expo for mobile. FastAPI or Rust for heavy backends. shadcn + Radix for UI. We'll match whatever your team can maintain long-term.",
+    },
+    {
+      question: "Do you help with the AI product decisions, or just build what I spec?",
+      answer:
+        "Both. Sprint zero includes an honest conversation about which AI capabilities actually earn their cost. We've seen enough AI SaaS launches to spot the features that sound impressive but don't drive retention. If you want a co-founder-style thinking partner, that's what week 1 is for.",
+    },
+    {
+      question: "What if my scope changes after Week 1?",
+      answer:
+        "It always does. We use a swap-out mechanism: any feature in the current sprint can be traded for any feature of comparable size. No change orders, no scope creep, no timeline slip.",
+    },
+    {
+      question: "Will I own the code?",
+      answer:
+        "Yes. Repo transfers to your GitHub org on day one. Infra deploys to your cloud accounts. If you fire us tomorrow, everything keeps running and your team can extend it.",
+    },
+    {
+      question: "What does this cost?",
+      answer:
+        "One-time fixed build fee based on scope confirmed in Week 1. Optional monthly retainer after launch for maintenance, small features, and AI-specific work. Every engagement pays for itself inside six months on customer LTV alone.",
+    },
+  ],
+  faqEyebrow: "AI SaaS",
+  faqHeadingHighlight: "about AI SaaS.",
+  ctaHeadline: "Have an AI SaaS idea? Let's ship it.",
+  ctaSubhead:
+    "Book a free consultation. We'll pressure-test the idea on the call and tell you honestly whether the timeline in your head matches the timeline it actually needs.",
+  testimonials: [testimonials.melissa, testimonials.daniel],
+  relatedCaseStudies: ["Sip AI", "Flairr"],
+};
+
+export default function AISaaSPage() {
+  return <ServicePageTemplate content={content} />;
+}

@@ -1,8 +1,8 @@
 # Unicorn Studio
 
-> AI systems specialist studio. Seven productised offerings, one flagship (the AI GTM System) plus six supporting services. Every engagement ships guaranteed outcomes, or we work for free until they hit.
+> AI systems specialist studio. Nine productised offerings, one flagship (the AI GTM System) plus eight supporting services. Every engagement ships guaranteed outcomes, or we work for free until they hit.
 
-Unicorn Studio is a small AI development studio founded by Saidur Rahaman. Each service is built custom to the client's business, integrated with their existing stack; no off-the-shelf templates. The flagship AI GTM System runs a company's entire go-to-market end-to-end. The four supporting systems (Workflow Automation, AI Agents, Custom Apps, Dashboards & Reporting) map to Boom Automations' proven service model, adapted to Unicorn Studio's guarantee-first delivery. Two additional services (AI Solutions and AI Integrations) cover multi-agent / fine-tuning work and existing-product AI additions respectively.
+Unicorn Studio is a small AI development studio founded by Saidur Rahaman. Each service is built custom to the client's business, integrated with their existing stack; no off-the-shelf templates. The flagship AI GTM System runs a company's entire go-to-market end-to-end. The four supporting systems (Workflow Automation, AI Agents, Custom Apps, Dashboards & Reporting) map to Boom Automations' proven service model, adapted to Unicorn Studio's guarantee-first delivery. Two additional services (AI Solutions and AI Integrations) cover multi-agent / fine-tuning work and existing-product AI additions respectively. Two more (AI SEO and AI SaaS) cover generative-engine optimisation for businesses and full AI SaaS product builds for founders.
 
 The site itself is a static Next.js export with no public APIs. Contact submissions are forwarded via Web3Forms to saidur@unicornstudio.io. Bookings happen on Cal.com.
 
@@ -18,6 +18,8 @@ The site itself is a static Next.js export with no public APIs. Contact submissi
 - [Dashboards & Reporting](https://unicornstudio.io/dashboards-reporting/): Live BI pulled from every system you run. Warehouse + models + dashboards + automated reports. Every metric ties to source, or we remediate for free.
 - [AI Solutions](https://unicornstudio.io/ai-solutions/): Multi-agent orchestration, LLM fine-tuning, retrieval, NLP, perception, classical ML, and MLOps. Three engagement shapes: proof of concept (~3 weeks), complete solution (~8 weeks + 90-day stabilisation), combined engagement.
 - [AI Integrations](https://unicornstudio.io/ai-integrations/): Add AI capabilities to an existing product or workflow without rebuilding it.
+- [AI SEO](https://unicornstudio.io/ai-seo/): Rank in AI search engines, not just Google. Technical AI-readiness audit, schema.org / JSON-LD everywhere, LLM-optimised content rewrites, citation seeding, and weekly AI-citation monitoring across Google AI Overview, Perplexity, ChatGPT search, and Claude web search. Cited in Google AI Overview by month 3, or we work for free.
+- [AI SaaS](https://unicornstudio.io/ai-saas/): Full-stack AI SaaS products for ambitious founders and businesses. Next.js + Postgres + TypeScript, AI baked in from day one, auth + Stripe billing + admin console + observability shipped by default. Idea to first paying customer in eight weeks. Fixed scope and fixed launch date, or we work for free.
 
 ## Company
 
@@ -43,6 +45,8 @@ Each page on this site is also available as Markdown — fetch the same URL with
 - [Dashboards & Reporting](https://unicornstudio.io/dashboards-reporting/index.md)
 - [AI Solutions](https://unicornstudio.io/ai-solutions/index.md)
 - [AI Integrations](https://unicornstudio.io/ai-integrations/index.md)
+- [AI SEO](https://unicornstudio.io/ai-seo/index.md)
+- [AI SaaS](https://unicornstudio.io/ai-saas/index.md)
 - [About](https://unicornstudio.io/about/index.md)
 - [Case Studies](https://unicornstudio.io/case-studies/index.md)
 

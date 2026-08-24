@@ -98,6 +98,34 @@ export default function FourSystems() {
         </svg>
       ),
     },
+    {
+      number: "08",
+      title: "AI SEO",
+      description:
+        "Rank in AI search, not just Google. Structured data, machine-readable content, and citation seeding so Google AI Overview, ChatGPT, Perplexity, and Claude cite you when your customers ask.",
+      keywords: ["AI Overview", "Perplexity", "Schema", "llms.txt"],
+      href: "/ai-seo/",
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-4.35-4.35M11 17a6 6 0 100-12 6 6 0 000 12z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.5 11.2l1.6 1.7 3.4-3.6" />
+        </svg>
+      ),
+    },
+    {
+      number: "09",
+      title: "AI SaaS",
+      description:
+        "Full-stack AI SaaS products for ambitious founders and businesses. Auth, billing, admin, and observability shipped by default. Idea to first paying customer in eight weeks.",
+      keywords: ["MVP", "Stripe billing", "Next.js", "Launch"],
+      href: "/ai-saas/",
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h10a4 4 0 00.8-7.92A6 6 0 006.34 9.5 4 4 0 003 15z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v6m0-6l-2 2m2-2l2 2" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -112,7 +140,7 @@ export default function FourSystems() {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-6 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] text-balance">
             One flagship,{" "}
-            <span className="gradient-text-modern">six supporting solutions.</span> Every one guaranteed.
+            <span className="gradient-text-modern">eight supporting solutions.</span> Every one guaranteed.
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
             Pick the one that hurts most, or let us map your business on the discovery call and recommend the order.
@@ -162,7 +190,7 @@ export default function FourSystems() {
           </div>
         </article>
 
-        {/* Six supporting solutions as a 2x3 grid (3 cols on desktop, 2 on tablet, 1 on mobile) */}
+        {/* Eight supporting solutions as a grid (3 cols on desktop, 2 on tablet, 1 on mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {rest.map((sys) => (
             <Link

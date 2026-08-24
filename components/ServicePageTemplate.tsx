@@ -1,7 +1,9 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import TopNavigation from "@/components/TopNavigation";
+import { caseStudies, CaseStudyItem } from "@/components/CaseStudies";
 import Footer from "@/components/Footer";
 import FAQ, { FAQItem } from "@/components/FAQ";
 import { useCalendly } from "@/components/CalendlyProvider";
@@ -56,6 +58,12 @@ export interface ServicePageContent {
   ctaHeadline: string;
   ctaSubhead: string;
   testimonials?: ServiceTestimonial[];
+  /**
+   * Case studies to surface as proof, referenced by the `name` field in
+   * components/CaseStudies.tsx so the copy stays in one place. Pages that
+   * omit this render no related-work section.
+   */
+  relatedCaseStudies?: string[];
 }
 
 /**
@@ -65,6 +73,10 @@ export interface ServicePageContent {
  */
 export default function ServicePageTemplate({ content }: { content: ServicePageContent }) {
   const { openModal } = useCalendly();
+
+  const relatedWork: CaseStudyItem[] = (content.relatedCaseStudies ?? [])
+    .map((name) => caseStudies.find((cs) => cs.name === name))
+    .filter((cs): cs is CaseStudyItem => Boolean(cs));
 
   return (
     <>
@@ -296,6 +308,92 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
                     </figcaption>
                   </figure>
                 ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Related work — opt-in via content.relatedCaseStudies */}
+        {relatedWork.length > 0 && (
+          <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-10 sm:mb-14">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-5">
+                  Related work
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1] mb-4 text-balance">
+                  Builds we can{" "}
+                  <span className="gradient-text-modern">point at.</span>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-[1.6]">
+                  Real engagements, real constraints, real numbers. The full write-ups live in the case studies.
+                </p>
+              </div>
+
+              <div
+                className={`grid gap-6 sm:gap-7 ${
+                  relatedWork.length === 1 ? "max-w-2xl mx-auto" : "md:grid-cols-2"
+                }`}
+              >
+                {relatedWork.map((cs) => (
+                  <article
+                    key={cs.name}
+                    className="flex flex-col rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:border-blue-300 hover:shadow-[0_20px_50px_-20px_rgba(59,130,246,0.25)] transition-all"
+                  >
+                    <div className="h-1.5 w-full" style={{ background: cs.gradientStyle }} />
+                    <div className="flex flex-col flex-1 p-7 sm:p-8">
+                      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-blue-700 mb-3">
+                        {cs.eyebrow}
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-[1.35] mb-3">
+                        {cs.headline}
+                      </h3>
+                      <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 flex-1">
+                        {cs.snapshot}
+                      </p>
+                      <div className="grid grid-cols-2 gap-3 mb-6">
+                        {cs.metrics.map((m) => (
+                          <div
+                            key={m.label}
+                            className="px-3 py-2 rounded-lg bg-gray-50 border border-gray-200"
+                          >
+                            <div className="text-lg font-bold gradient-text-modern leading-tight">
+                              {m.value}
+                            </div>
+                            <div className="text-[11px] text-gray-600 leading-snug mt-0.5">
+                              {m.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 pt-5 border-t border-gray-100">
+                        <span className="px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-[11px] font-semibold border border-blue-100">
+                          {cs.timelineLabel}
+                        </span>
+                        {cs.tools.map((t) => (
+                          <span
+                            key={t}
+                            className="px-2.5 py-1 rounded-md bg-gray-50 text-gray-700 text-[11px] font-medium border border-gray-100"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="text-center mt-10 sm:mt-12">
+                <Link
+                  href="/case-studies/"
+                  className="btn-secondary inline-flex items-center gap-2 px-7 py-3.5 bg-white text-gray-900 rounded-xl font-semibold text-[15px] border border-gray-300"
+                >
+                  <span>See all case studies</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </section>
