@@ -1,0 +1,62 @@
+# Unicorn Studio
+
+> AI systems specialist studio. Nine productised offerings, one flagship (the AI GTM System) plus eight supporting services. Every engagement ships guaranteed outcomes, or we work for free until they hit.
+
+Unicorn Studio is a small AI development studio founded by Saidur Rahaman. Each service is built custom to the client's business, integrated with their existing stack; no off-the-shelf templates. The flagship AI GTM System runs a company's entire go-to-market end-to-end. The four supporting systems (Workflow Automation, AI Agents, Custom Apps, Dashboards & Reporting) map to Boom Automations' proven service model, adapted to Unicorn Studio's guarantee-first delivery. Two additional services (AI Solutions and AI Integrations) cover multi-agent / fine-tuning work and existing-product AI additions respectively. Two more (AI SaaS and AI SEO) cover full AI SaaS product builds for founders and generative-engine optimisation for businesses.
+
+The site itself is a static Next.js export with no public APIs. Contact submissions are forwarded via Web3Forms to saidur@unicornstudio.io. Bookings happen on Cal.com.
+
+## Flagship
+
+- [AI GTM System](https://unicornstudio.io/ai-gtm-system/): Seven-module system covering ICP definition, prospect building, enrichment & scoring, personalised outreach, qualification & booking, CRM sync, and analytics. 90-day path to fully autopilot pipeline. Guaranteed booked meetings by month 3.
+
+## Supporting services
+
+- [Workflow Automation](https://unicornstudio.io/workflow-automation/): Kill the manual, repetitive work in your operations. Onboarding, approvals, reporting, cross-tool syncs. Guaranteed hours reclaimed by month 2.
+- [AI Agents](https://unicornstudio.io/ai-agents/): Intelligent assistants trained on your business — support, research, qualification, internal Q&A. Ship an agent that beats a human on your golden eval set, or we work for free.
+- [Custom Apps](https://unicornstudio.io/custom-apps/): Internal tools and client portals built around your workflow. Modern web stacks (Next.js, Postgres, TypeScript), AI baked in where it earns its cost. Fixed scope, fixed timeline, or we work for free.
+- [Dashboards & Reporting](https://unicornstudio.io/dashboards-reporting/): Live BI pulled from every system you run. Warehouse + models + dashboards + automated reports. Every metric ties to source, or we remediate for free.
+- [AI Solutions](https://unicornstudio.io/ai-solutions/): Multi-agent orchestration, LLM fine-tuning, retrieval, NLP, perception, classical ML, and MLOps. Three engagement shapes: proof of concept (~3 weeks), complete solution (~8 weeks + 90-day stabilisation), combined engagement.
+- [AI Integrations](https://unicornstudio.io/ai-integrations/): Add AI capabilities to an existing product or workflow without rebuilding it.
+- [AI SaaS](https://unicornstudio.io/ai-saas/): Full-stack AI SaaS products for ambitious founders and businesses. Next.js + Postgres + TypeScript, AI baked in from day one, auth + Stripe billing + admin console + observability shipped by default. Idea to first paying customer in eight weeks. Fixed scope and fixed launch date, or we work for free.
+- [AI SEO](https://unicornstudio.io/ai-seo/): Rank in AI search engines, not just Google. Technical AI-readiness audit, schema.org / JSON-LD everywhere, LLM-optimised content rewrites, citation seeding, and weekly AI-citation monitoring across Google AI Overview, Perplexity, ChatGPT search, and Claude web search. Cited in Google AI Overview by month 3, or we work for free.
+
+## Company
+
+- [About](https://unicornstudio.io/about/): Studio philosophy, the five beliefs we operate from, what we will and will not do, and a fit guide for prospective clients.
+- [Case Studies](https://unicornstudio.io/case-studies/): Recent client work with concrete metrics — pipeline lifts, hours reclaimed, AI systems shipped to production.
+
+## Contact
+
+- [Book a free AI consultation](https://cal.com/saidur-rahaman/ai-free-consultation): Free consultation call on Cal.com.
+- [Contact form](https://unicornstudio.io/#contact): Submit a project brief from any page.
+- [Email](mailto:saidur@unicornstudio.io): Direct line to the founder.
+- [WhatsApp](https://wa.me/8801799296925): Quick async chat.
+
+## Markdown content for LLMs
+
+Each page on this site is also available as Markdown — fetch the same URL with `index.md` appended, or send `Accept: text/markdown` and the server will negotiate.
+
+- [Home](https://unicornstudio.io/index.md)
+- [AI GTM System](https://unicornstudio.io/ai-gtm-system/index.md)
+- [Workflow Automation](https://unicornstudio.io/workflow-automation/index.md)
+- [AI Agents](https://unicornstudio.io/ai-agents/index.md)
+- [Custom Apps](https://unicornstudio.io/custom-apps/index.md)
+- [Dashboards & Reporting](https://unicornstudio.io/dashboards-reporting/index.md)
+- [AI Solutions](https://unicornstudio.io/ai-solutions/index.md)
+- [AI Integrations](https://unicornstudio.io/ai-integrations/index.md)
+- [AI SaaS](https://unicornstudio.io/ai-saas/index.md)
+- [AI SEO](https://unicornstudio.io/ai-seo/index.md)
+- [About](https://unicornstudio.io/about/index.md)
+- [Case Studies](https://unicornstudio.io/case-studies/index.md)
+
+## Optional
+
+- [Thank you](https://unicornstudio.io/thank-you/index.md): Post-submission confirmation page — not strategic content; safe to skip.
+- [Sitemap](https://unicornstudio.io/sitemap.xml): XML sitemap with all crawlable URLs.
+- [robots.txt](https://unicornstudio.io/robots.txt): Crawl policy (non-blocking; allows all well-behaved bots).
+- [API catalog](https://unicornstudio.io/.well-known/api-catalog): RFC 9727 catalog, points at the OpenAPI description below.
+- [OpenAPI description](https://unicornstudio.io/openapi.yaml): OpenAPI 3.1 spec for the read-only content surface.
+- [HTTP message signatures directory](https://unicornstudio.io/.well-known/http-message-signatures-directory): JWKS-style key directory — empty keys array.
+- [OAuth authorization server metadata (RFC 8414)](https://unicornstudio.io/.well-known/oauth-authorization-server): empty supported lists.
+- [OAuth protected resource metadata (RFC 9728)](https://unicornstudio.io/.well-known/oauth-protected-resource): empty authorization-servers array.

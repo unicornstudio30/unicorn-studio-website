@@ -1,0 +1,83 @@
+# Hostinger shared hosting — Apache rewrite rules
+Options -MultiViews
+RewriteEngine On
+
+# 301 redirects for retired service pages. ai-integrations,
+# ai-solutions, and ai-saas have been restored as their own
+# pages so they're out of this list. The others map to their
+# closest surviving equivalent to preserve backlink authority.
+RewriteRule ^ai-systems/?$ /workflow-automation/ [L,R=301]
+RewriteRule ^websites/?$ /custom-apps/ [L,R=301]
+RewriteRule ^branding/?$ /ai-gtm-system/ [L,R=301]
+
+# Serve /foo as /foo/index.html (Next.js static export)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^.]+[^/])$ $1/ [L,R=301]
+
+# Content negotiation: when the client opts in via either
+# Accept: text/markdown OR ?format=md, and an index.md twin
+# exists for the requested directory, serve that instead of
+# index.html. Works for the homepage (/) too because we anchor
+# off REQUEST_URI instead of capturing the path with a regex
+# that requires at least one leading character.
+RewriteCond %{HTTP_ACCEPT} text/markdown [OR]
+RewriteCond %{QUERY_STRING} (^|&)format=md(&|$)
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.md -f
+RewriteRule ^ %{REQUEST_URI}index.md [L,T=text/markdown,QSD]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)/$ $1/index.html [L]
+
+# Always serve .md files with the correct Content-Type, so that
+# fetching /path/index.md directly also works as expected.
+AddType text/markdown .md
+
+# Long cache for hashed assets
+<FilesMatch "\.(js|css|woff2|woff|ttf|otf|svg|png|jpg|jpeg|webp|avif|ico)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+# RFC 9727 — Serve /.well-known/api-catalog as application/linkset+json
+<Files "api-catalog">
+  ForceType application/linkset+json
+  Header set Cache-Control "public, max-age=86400"
+</Files>
+
+# draft-ietf-httpapi-signature-directory — JWKS-style key directory
+<Files "http-message-signatures-directory">
+  ForceType application/http-message-signatures-directory+json
+  Header set Cache-Control "public, max-age=86400"
+</Files>
+
+# RFC 8414 — OAuth 2.0 Authorization Server Metadata
+<Files "oauth-authorization-server">
+  ForceType application/json
+  Header set Cache-Control "public, max-age=86400"
+</Files>
+
+# RFC 9728 — OAuth 2.0 Protected Resource Metadata
+<Files "oauth-protected-resource">
+  ForceType application/json
+  Header set Cache-Control "public, max-age=86400"
+</Files>
+
+# OpenAPI 3.1 description served at /openapi.yaml (linked from the
+# api-catalog). AddType wins where ForceType-inside-Files loses to
+# extension-based MIME matching on LiteSpeed.
+AddType "application/vnd.oai.openapi+yaml;version=3.1" .yaml
+<Files "openapi.yaml">
+  Header set Cache-Control "public, max-age=86400"
+</Files>
+
+# RFC 9727 — Advertise the catalog via a Link header on every HTML
+# response (skipped for assets to avoid bloat). Single-quoted outer
+# so LiteSpeed (Hostinger's Apache variant) preserves inner quotes
+# cleanly instead of leaking backslashes.
+<FilesMatch "\.html$">
+  Header append Link '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"'
+</FilesMatch>
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

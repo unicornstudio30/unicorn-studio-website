@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Unicorn Studio — Trusted AI integration partner for businesses">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1224"/>
+      <stop offset="55%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="15%" r="60%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="85%" r="55%">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="usMark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10adda"/>
+      <stop offset="1" stop-color="#3488f2"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Backgrounds -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Brand mark top-left -->
+  <g transform="translate(80 70)">
+    <g transform="translate(0 0) scale(0.42)">
+      <!-- Wordmark logo wings + text -->
+      <path d="M99.18,198.71c9-14.52,18.19-30.34,18.08-47.47-.03-5.14-2.61-9.04-6.96-11.5-4.55-2.1-9.15-3.64-14.19-4.86-15.7-3.31-31.11-3.34-47.17-2.03,17.62-6.27,35.99-9.68,54.67-9.56,12.18.08,34.73,3.63,32.89,20.07-1.78,15.94-15.48,35.9-26.61,47.27-3.23,3.3-6.69,5.97-10.71,8.09Z" fill="url(#usMark)"/>
+      <path d="M121.47,191.51c10.21-16.47,20.63-34.41,20.51-53.84-.04-5.83-2.96-10.25-7.9-13.05-5.16-2.38-10.38-4.13-16.09-5.51-17.81-3.76-35.29-3.79-53.5-2.31,19.98-7.12,40.81-10.98,62-10.85,13.81.09,39.39,4.12,37.31,22.76-2.02,18.08-17.56,40.72-30.18,53.61-3.66,3.74-7.59,6.77-12.15,9.17Z" fill="url(#usMark)"/>
+      <path d="M80.97,148.94c-11.3-1.56-21.89-.96-33.11.2,14.36-6.27,29.6-7.99,44.83-8.35,4.67-.11,9.25.71,13.54,2.14,20.46,6.83-15.63,45.5-23.65,51.37,4.38-7.27,23.32-36.69,9.52-42.19-3.58-1.3-7.07-2.28-11.14-3.17Z" fill="url(#usMark)"/>
+    </g>
+    <text x="100" y="38" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" letter-spacing=".5" fill="#ffffff">UNICORN</text>
+    <text x="100" y="64" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" letter-spacing=".5" fill="#cbd5e1">STUDIO</text>
+  </g>
+
+  <!-- Eyebrow pill top-right -->
+  <g transform="translate(900 80)">
+    <rect width="220" height="38" rx="19" fill="#ffffff" fill-opacity=".1" stroke="#ffffff" stroke-opacity=".25"/>
+    <circle cx="22" cy="19" r="4" fill="#22d3ee"/>
+    <text x="40" y="25" font-family="ui-monospace, monospace" font-size="12" font-weight="700" letter-spacing="2.5" fill="#bae6fd">unicornstudio.io</text>
+  </g>
+
+  <!-- Headline -->
+  <g transform="translate(80 230)">
+    <text font-family="Inter, system-ui, sans-serif" fill="#ffffff">
+      <tspan x="0" y="0" font-size="62" font-weight="800" letter-spacing="-1.5">Trusted AI integration partner</tspan>
+      <tspan x="0" y="76" font-size="62" font-weight="800" letter-spacing="-1.5" fill="url(#accent)">for businesses.</tspan>
+    </text>
+  </g>
+
+  <!-- Subhead -->
+  <text x="80" y="420" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#cbd5e1" letter-spacing="-.2">
+    AI Systems · AI Solutions · AI SaaS · plus the website and brand to launch each one credibly.
+  </text>
+
+  <!-- Bottom row: service chips -->
+  <g transform="translate(80 500)" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">
+    <g>
+      <rect width="170" height="46" rx="23" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+      <circle cx="22" cy="23" r="4" fill="#22d3ee"/>
+      <text x="38" y="29" fill="#ffffff">AI Systems</text>
+    </g>
+    <g transform="translate(184 0)">
+      <rect width="190" height="46" rx="23" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+      <circle cx="22" cy="23" r="4" fill="#a78bfa"/>
+      <text x="38" y="29" fill="#ffffff">AI Solutions</text>
+    </g>
+    <g transform="translate(388 0)">
+      <rect width="150" height="46" rx="23" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+      <circle cx="22" cy="23" r="4" fill="#fde68a"/>
+      <text x="38" y="29" fill="#ffffff">AI SaaS</text>
+    </g>
+    <g transform="translate(552 0)">
+      <rect width="150" height="46" rx="23" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+      <circle cx="22" cy="23" r="4" fill="#38bdf8"/>
+      <text x="38" y="29" fill="#ffffff">Website</text>
+    </g>
+    <g transform="translate(716 0)">
+      <rect width="160" height="46" rx="23" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+      <circle cx="22" cy="23" r="4" fill="#86efac"/>
+      <text x="38" y="29" fill="#ffffff">Branding</text>
+    </g>
+  </g>
+</svg>

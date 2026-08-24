@@ -1,0 +1,14 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://unicornstudio.io/",
+      "service-desc": [
+        {
+          "href": "https://unicornstudio.io/openapi.yaml",
+          "type": "application/vnd.oai.openapi+yaml;version=3.1",
+          "title": "Unicorn Studio content API (OpenAPI 3.1)"
+        }
+      ]
+    }
+  ]
+}
