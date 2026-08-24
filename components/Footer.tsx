@@ -10,8 +10,8 @@ export default function Footer() {
       { name: "Dashboards & Reporting", href: "/dashboards-reporting/" },
       { name: "AI Solutions", href: "/ai-solutions/" },
       { name: "AI Integrations", href: "/ai-integrations/" },
-      { name: "AI SEO", href: "/ai-seo/" },
       { name: "AI SaaS", href: "/ai-saas/" },
+      { name: "AI SEO", href: "/ai-seo/" },
     ],
     company: [
       { name: "About", href: "/about/" },
