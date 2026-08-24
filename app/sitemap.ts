@@ -26,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/dashboards-reporting/",  priority: 0.9, changeFreq: "monthly" },
     { path: "/ai-solutions/",          priority: 0.8, changeFreq: "monthly" },
     { path: "/ai-integrations/",       priority: 0.8, changeFreq: "monthly" },
+    { path: "/ai-seo/",                priority: 0.9, changeFreq: "monthly" },
+    { path: "/ai-saas/",               priority: 0.9, changeFreq: "monthly" },
     { path: "/case-studies/",          priority: 0.8, changeFreq: "monthly" },
     { path: "/about/",                 priority: 0.7, changeFreq: "monthly" },
     { path: "/thank-you/",             priority: 0.3, changeFreq: "yearly"  },

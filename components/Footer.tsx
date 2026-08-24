@@ -10,6 +10,8 @@ export default function Footer() {
       { name: "Dashboards & Reporting", href: "/dashboards-reporting/" },
       { name: "AI Solutions", href: "/ai-solutions/" },
       { name: "AI Integrations", href: "/ai-integrations/" },
+      { name: "AI SEO", href: "/ai-seo/" },
+      { name: "AI SaaS", href: "/ai-saas/" },
     ],
     company: [
       { name: "About", href: "/about/" },
@@ -47,7 +49,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                AI systems specialist studio. Seven productised solutions covering the full stack — from GTM automation to bespoke internal software. Guaranteed outcomes on every engagement, or we work for free until they hit.
+                AI systems specialist studio. Nine productised solutions covering the full stack — from GTM automation and AI SEO to bespoke internal software and full AI SaaS products. Guaranteed outcomes on every engagement, or we work for free until they hit.
               </p>
 
               {/* Contact */}

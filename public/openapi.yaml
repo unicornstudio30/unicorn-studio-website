@@ -88,13 +88,16 @@ paths:
           schema:
             type: string
             enum:
-              - about
-              - ai-systems
-              - ai-integrations
+              - ai-gtm-system
+              - workflow-automation
+              - ai-agents
+              - custom-apps
+              - dashboards-reporting
               - ai-solutions
+              - ai-integrations
+              - ai-seo
               - ai-saas
-              - websites
-              - branding
+              - about
               - case-studies
               - thank-you
       responses:
