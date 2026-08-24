@@ -50,8 +50,8 @@ export default function TopNavigation() {
     { name: "Dashboards & Reporting", href: "/dashboards-reporting/", description: "Real-time BI pulled from every system you run." },
     { name: "AI Solutions", href: "/ai-solutions/", description: "Multi-agent orchestration, fine-tuning, and applied ML." },
     { name: "AI Integrations", href: "/ai-integrations/", description: "Add AI to your existing product without rebuilding it." },
-    { name: "AI SEO", href: "/ai-seo/", description: "Get cited by AI search — Google AI Overview, ChatGPT, Perplexity." },
     { name: "AI SaaS", href: "/ai-saas/", description: "Full-stack AI SaaS products, idea to first paying customer." },
+    { name: "AI SEO", href: "/ai-seo/", description: "Get cited by AI search — Google AI Overview, ChatGPT, Perplexity." },
   ];
 
   const menuLinks = [

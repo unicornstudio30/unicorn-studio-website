@@ -100,20 +100,6 @@ export default function FourSystems() {
     },
     {
       number: "08",
-      title: "AI SEO",
-      description:
-        "Rank in AI search, not just Google. Structured data, machine-readable content, and citation seeding so Google AI Overview, ChatGPT, Perplexity, and Claude cite you when your customers ask.",
-      keywords: ["AI Overview", "Perplexity", "Schema", "llms.txt"],
-      href: "/ai-seo/",
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-4.35-4.35M11 17a6 6 0 100-12 6 6 0 000 12z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.5 11.2l1.6 1.7 3.4-3.6" />
-        </svg>
-      ),
-    },
-    {
-      number: "09",
       title: "AI SaaS",
       description:
         "Full-stack AI SaaS products for ambitious founders and businesses. Auth, billing, admin, and observability shipped by default. Idea to first paying customer in eight weeks.",
@@ -123,6 +109,20 @@ export default function FourSystems() {
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h10a4 4 0 00.8-7.92A6 6 0 006.34 9.5 4 4 0 003 15z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v6m0-6l-2 2m2-2l2 2" />
+        </svg>
+      ),
+    },
+    {
+      number: "09",
+      title: "AI SEO",
+      description:
+        "Rank in AI search, not just Google. Structured data, machine-readable content, and citation seeding so Google AI Overview, ChatGPT, Perplexity, and Claude cite you when your customers ask.",
+      keywords: ["AI Overview", "Perplexity", "Schema", "llms.txt"],
+      href: "/ai-seo/",
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-4.35-4.35M11 17a6 6 0 100-12 6 6 0 000 12z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.5 11.2l1.6 1.7 3.4-3.6" />
         </svg>
       ),
     },
