@@ -51,7 +51,7 @@ export default function Problem() {
           </p>
         </div>
 
-        {/* Split-layout card sequence — one column, alternating direction, higher visual density than a flat card grid */}
+        {/* Split-layout card sequence, one column, alternating direction, higher visual density than a flat card grid */}
         <div className="space-y-6 sm:space-y-8">
           {shifts.map((s, i) => (
             <article
@@ -116,7 +116,7 @@ export default function Problem() {
           ))}
         </div>
 
-        {/* Closing line — larger, quieter */}
+        {/* Closing line, larger, quieter */}
         <div className="mt-14 sm:mt-16 lg:mt-20 text-center">
           <p className="text-xl sm:text-2xl text-gray-700 font-medium leading-snug tracking-[-0.01em] max-w-2xl mx-auto">
             You don&apos;t need to panic.{" "}

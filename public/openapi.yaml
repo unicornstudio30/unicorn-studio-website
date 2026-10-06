@@ -13,7 +13,7 @@ info:
     url: https://unicornstudio.io/
     email: saidur@unicornstudio.io
   license:
-    name: Proprietary — content © Unicorn Studio
+    name: Proprietary, content © Unicorn Studio
 servers:
   - url: https://unicornstudio.io
     description: Production
@@ -156,7 +156,7 @@ paths:
     get:
       tags: [well-known]
       summary: HTTP message signatures key directory
-      description: JWKS-style key directory (currently an empty keys array — the site signs no outbound messages).
+      description: JWKS-style key directory (currently an empty keys array, the site signs no outbound messages).
       responses:
         "200":
           description: OK

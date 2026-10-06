@@ -21,7 +21,7 @@ export default function FourSystems() {
       number: "02",
       title: "Workflow Automation",
       description:
-        "Kill the manual, repetitive work that shouldn't need a person. Approvals, onboarding, reporting, cross-tool handoffs — automated end-to-end with the guardrails your operations need.",
+        "Kill the manual, repetitive work that shouldn't need a person. Approvals, onboarding, reporting, cross-tool handoffs, automated end-to-end with the guardrails your operations need.",
       keywords: ["Onboarding", "Approvals", "Reporting", "Integrations"],
       href: "/workflow-automation/",
       icon: (
@@ -35,7 +35,7 @@ export default function FourSystems() {
       number: "03",
       title: "AI Agents",
       description:
-        "Intelligent assistants trained on your business — support, research, qualification, internal Q&A. Running 24/7, escalating to a human only when it should.",
+        "Intelligent assistants trained on your business for support, research, qualification and internal Q&A. Running 24/7, escalating to a human only when it should.",
       keywords: ["Support", "Sales", "Ops", "Research"],
       href: "/ai-agents/",
       icon: (

@@ -26,7 +26,7 @@ export default function AutoRevealSections() {
     if (sections.length === 0) return;
 
     if (reduced) {
-      // Respect the user's accessibility preference — show everything
+      // Respect the user's accessibility preference, show everything
       // immediately, no animation.
       sections.forEach((s) => s.classList.add("auto-reveal", "is-visible"));
       return;

@@ -417,7 +417,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Personal CTA — connekt-inspired */}
+        {/* Personal CTA, connekt-inspired */}
         <CTA />
       </main>
       <Footer />

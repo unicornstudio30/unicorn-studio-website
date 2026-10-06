@@ -25,7 +25,7 @@ const BUDGETS = [
   "Not sure yet",
 ];
 
-// Web3Forms — submissions are POSTed as JSON to api.web3forms.com and
+// Web3Forms, submissions are POSTed as JSON to api.web3forms.com and
 // delivered to the email registered with the access key (saidur@unicornstudio.io).
 // The access key is public by design; rotate it from the Web3Forms dashboard if abused.
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
@@ -116,9 +116,9 @@ export default function CTA() {
 
       <div className="relative max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] gap-10 lg:gap-16 items-start">
-          {/* LEFT — Identity / pitch */}
+          {/* LEFT, Identity / pitch */}
           <div className="lg:pt-2">
-            {/* Avatar — founder photo */}
+            {/* Avatar, founder photo */}
             <div className="relative inline-block mb-6">
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 p-[3px] shadow-[0_20px_50px_-12px_rgba(59,130,246,0.4)]">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white">
@@ -189,7 +189,7 @@ export default function CTA() {
             </div>
           </div>
 
-          {/* RIGHT — Form card */}
+          {/* RIGHT, Form card */}
           <form
             onSubmit={submit}
             className="relative bg-white rounded-3xl border border-gray-200/80 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.18)] p-6 sm:p-8 lg:p-10"

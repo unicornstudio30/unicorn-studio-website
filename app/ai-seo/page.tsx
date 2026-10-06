@@ -138,7 +138,7 @@ const content: ServicePageContent = {
     {
       question: "Can you guarantee I'll rank in ChatGPT / Perplexity?",
       answer:
-        "For Google AI Overview and Perplexity, yes — those are traceable and we back them with a work-for-free guarantee. For ChatGPT's default answers, no honest agency can guarantee that; the training cutoffs and grounding are opaque. What we can guarantee is that when ChatGPT search does browse your site, it will find well-structured, machine-readable content.",
+        "For Google AI Overview and Perplexity, yes. Those are traceable and we back them with a work-for-free guarantee. For ChatGPT's default answers, no honest agency can guarantee that; the training cutoffs and grounding are opaque. What we can guarantee is that when ChatGPT search does browse your site, it will find well-structured, machine-readable content.",
     },
     {
       question: "Isn't llms.txt just a fad?",
@@ -160,7 +160,7 @@ const content: ServicePageContent = {
   faqHeadingHighlight: "about AI SEO.",
   ctaHeadline: "Stop competing for blue links. Start owning AI answers.",
   ctaSubhead:
-    "Book a free consultation. We'll run a live AI-readiness scan on the call and show you which queries your competitors already own — and how quickly we can flip them.",
+    "Book a free consultation. We'll run a live AI-readiness scan on the call and show you which queries your competitors already own, and how quickly we can flip them.",
   testimonials: [testimonials.tivan],
   relatedCaseStudies: ["AI Revenue Operations · B2B SaaS Platform"],
 };

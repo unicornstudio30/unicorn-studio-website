@@ -39,7 +39,7 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="py-14 lg:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
-            {/* Brand Section — wider, left-aligned with the columns */}
+            {/* Brand Section, wider, left-aligned with the columns */}
             <div className="lg:col-span-5">
               <a href="/" className="inline-flex items-center mb-3 -ml-2 sm:-ml-3" aria-label="Unicorn Studio home">
                 <Image
@@ -51,7 +51,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                AI systems specialist studio. Eleven AI services covering the full stack — from GTM automation and AI SEO to bespoke internal software, full AI SaaS products, and AI for M&A acquirers and private equity. Guaranteed outcomes on every engagement, or we work for free until they hit.
+                AI systems specialist studio. Eleven AI services covering the full stack, from GTM automation and AI SEO to bespoke internal software, full AI SaaS products, and AI for M&A acquirers and private equity. Guaranteed outcomes on every engagement, or we work for free until they hit.
               </p>
 
               {/* Contact */}
@@ -68,7 +68,7 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Link columns — bold headings, items flush left, consistent spacing */}
+            {/* Link columns, bold headings, items flush left, consistent spacing */}
             <div className="lg:col-span-3">
               <h3 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
                 Services

@@ -8,7 +8,7 @@ const content: ServicePageContent = {
   headline: "Intelligent assistants,",
   headlineAccent: "trained on your business.",
   subhead:
-    "Not chatbots. Agents that understand your product, your customers, your operations. They handle the back-and-forth work your team does today — support, research, qualification, internal Q&A — running 24/7 and escalating only when a human should step in.",
+    "Not chatbots. Agents that understand your product, your customers, your operations. They handle the back-and-forth work your team does today, whether that is support, research, qualification or internal Q&A, running 24/7 and escalating only when a human should step in.",
   outcomes: [
     { number: "70%", label: "of inbound queries resolved without a human" },
     { number: "24/7", label: "coverage, no shift patterns" },
@@ -18,7 +18,7 @@ const content: ServicePageContent = {
   modulesEyebrow: "Where agents earn their keep",
   modulesHeadline: "Every conversation your team keeps having.",
   modulesLead:
-    "If your team is answering the same class of question over and over — from customers, from internal staff, from prospects — an agent can handle it faster and never forgets the answer.",
+    "If your team is answering the same class of question over and over, from customers, from internal staff, from prospects, an agent can handle it faster and never forgets the answer.",
   modules: [
     {
       number: "01",
