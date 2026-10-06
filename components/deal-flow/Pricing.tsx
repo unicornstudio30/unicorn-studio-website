@@ -1,5 +1,8 @@
+"use client";
+
+import { useCalendly } from "@/components/CalendlyProvider";
 import { CheckIcon, Icon } from "@/components/landing/Icons";
-import { pricing, BOOKING_LABEL, BOOK_ANCHOR } from "./content";
+import { pricing, BOOKING_LABEL } from "./content";
 import { BTN, EYEBROW, GRADIENT_TEXT, H2, SECTION_INNER } from "@/components/landing/theme";
 import type { IconName } from "./content";
 
@@ -16,6 +19,7 @@ function NoteBox({ icon, title, body }: { icon: IconName; title: string; body: s
 }
 
 export default function Pricing() {
+  const { openModal } = useCalendly();
   const c = pricing.card;
 
   return (
@@ -71,9 +75,9 @@ export default function Pricing() {
             <NoteBox key={g.title} icon={g.icon} title={g.title} body={g.body} />
           ))}
 
-          <a href={BOOK_ANCHOR} className={`${BTN} px-6 py-4 text-[17px] w-full`}>
+          <button type="button" onClick={openModal} className={`${BTN} px-6 py-4 text-[17px] w-full`}>
             {BOOKING_LABEL}
-          </a>
+          </button>
         </div>
       </div>
     </section>

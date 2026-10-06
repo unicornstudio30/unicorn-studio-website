@@ -14,24 +14,12 @@ export type { IconName };
 
 export const BOOKING_LABEL = "Book a discovery call";
 
-/** Anchor the nav, hero and pricing CTAs scroll to. */
-export const BOOK_ANCHOR = "#book";
 
 export const meta = {
   title: "The 14-Day EBITDA Finder for PE Operating Partners",
   description:
     "The 14-Day EBITDA Finder: an AI audit and advisory sprint for PE operating partners, by Unicorn Studio.",
   path: "/services/private-equity-portco-ai-integration/",
-};
-
-export const nav = {
-  brand: "Unicorn Studio",
-  links: [
-    { label: "How it works", href: "#how" },
-    { label: "Deliverables", href: "#deliverables" },
-    { label: "Data security", href: "#security" },
-    { label: "Pricing", href: "#pricing" },
-  ],
 };
 
 export const hero = {

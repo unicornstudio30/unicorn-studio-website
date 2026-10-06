@@ -1,8 +1,13 @@
+"use client";
+
+import { useCalendly } from "@/components/CalendlyProvider";
 import { Icon } from "@/components/landing/Icons";
 import { BTN, BTN_OUTLINE, GRADIENT_TEXT } from "@/components/landing/theme";
-import { hero, BOOKING_LABEL, BOOK_ANCHOR } from "./content";
+import { hero, BOOKING_LABEL } from "./content";
 
 export default function Hero() {
+  const { openModal } = useCalendly();
+
   return (
     <section id="top" className="bg-[rgba(37,99,235,0.05)] border-b border-[rgba(37,99,235,0.10)]">
       <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-[88px] flex flex-col gap-7">
@@ -22,9 +27,9 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-3.5">
-          <a href={BOOK_ANCHOR} className={`${BTN} px-7 py-4 text-[17px]`}>
+          <button type="button" onClick={openModal} className={`${BTN} px-7 py-4 text-[17px]`}>
             {BOOKING_LABEL}
-          </a>
+          </button>
           <a href={hero.secondaryCta.href} className={`${BTN_OUTLINE} px-7 py-4 text-[17px]`}>
             {hero.secondaryCta.label}
           </a>

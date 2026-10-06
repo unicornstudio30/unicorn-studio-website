@@ -53,7 +53,7 @@ export default function TopNavigation() {
     { name: "AI SaaS", href: "/ai-saas/", description: "Full-stack AI SaaS products, idea to first paying customer." },
     { name: "AI SEO", href: "/ai-seo/", description: "Get cited by AI search — Google AI Overview, ChatGPT, Perplexity." },
     { name: "M&A AI Integration", href: "/services/m-and-a-ai-integration/", description: "The 30-Day Deal Flow Engine: off-market deal sourcing for buy-side acquirers." },
-    { name: "Private Equity Portco AI", href: "/services/private-equity-portco-ai-integration/", description: "The 14-Day EBITDA Finder: an AI audit sprint for PE operating partners." },
+    { name: "Private Equity Portco AI integration", href: "/services/private-equity-portco-ai-integration/", description: "The 14-Day EBITDA Finder: an AI audit sprint for PE operating partners." },
   ];
 
   const menuLinks = [

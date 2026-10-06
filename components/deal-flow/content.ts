@@ -13,24 +13,12 @@ export type { IconName };
 
 export const BOOKING_LABEL = "Book a deal-flow call";
 
-/** Anchor the nav, hero and pricing CTAs scroll to. */
-export const BOOK_ANCHOR = "#book";
 
 export const meta = {
   title: "The 30-Day Deal Flow Engine for Buy-Side Acquirers",
   description:
     "A custom AI deal sourcing system built around your buy box. Live in 30 days.",
   path: "/services/m-and-a-ai-integration/",
-};
-
-export const nav = {
-  brand: "Unicorn Studio",
-  links: [
-    { label: "How it works", href: "#how" },
-    { label: "What you get", href: "#stack" },
-    { label: "Results", href: "#proof" },
-    { label: "Pricing", href: "#pricing" },
-  ],
 };
 
 export const hero = {
