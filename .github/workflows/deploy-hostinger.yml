@@ -61,6 +61,13 @@ jobs:
           # pages so they're out of this list. The others map to their
           # closest surviving equivalent to preserve backlink authority.
           RewriteRule ^ai-systems/?$ /workflow-automation/ [L,R=301]
+
+          # Convenience redirects onto the canonical M&A landing page slug.
+          # `&` is legal in a URL path, so a typed /M&A arrives here intact,
+          # but it is fragile in links and chat clients, hence /m-and-a/.
+          RewriteRule ^M&A/?$ /m-and-a/ [L,R=301,NC]
+          RewriteRule ^m-a/?$ /m-and-a/ [L,R=301,NC]
+          RewriteRule ^ma/?$ /m-and-a/ [L,R=301,NC]
           RewriteRule ^websites/?$ /custom-apps/ [L,R=301]
           RewriteRule ^branding/?$ /ai-gtm-system/ [L,R=301]
 
