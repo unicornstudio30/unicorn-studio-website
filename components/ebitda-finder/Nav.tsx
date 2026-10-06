@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 import { BrandMark } from "@/components/landing/Icons";
-import { nav, BOOKING_LABEL, BOOK_ANCHOR } from "./content";
 import { BTN } from "@/components/landing/theme";
+import { nav, BOOKING_LABEL, BOOK_ANCHOR } from "./content";
 
-/**
- * Sticky top bar. Desktop shows the links inline; below md they collapse
- * into a disclosure menu so the CTA stays reachable on a phone.
- */
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
@@ -35,7 +31,7 @@ export default function Nav() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-controls="dfe-mobile-menu"
+          aria-controls="ebf-mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
           className="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-[#151616] hover:bg-[rgba(21,22,22,0.05)] transition-colors"
         >
@@ -46,19 +42,14 @@ export default function Nav() {
       </div>
 
       <div
-        id="dfe-mobile-menu"
+        id="ebf-mobile-menu"
         className={`md:hidden overflow-hidden border-t border-[rgba(21,22,22,0.08)] transition-[max-height,opacity] duration-300 ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-4 flex flex-col gap-1">
           {nav.links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="py-3 text-[16px] font-medium text-[#151616] no-underline"
-            >
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 text-[16px] font-medium text-[#151616] no-underline">
               {l.label}
             </a>
           ))}

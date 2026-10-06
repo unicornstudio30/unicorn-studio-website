@@ -1,6 +1,6 @@
 import { Icon } from "@/components/landing/Icons";
-import { hero, BOOKING_LABEL, BOOK_ANCHOR } from "./content";
 import { BTN, BTN_OUTLINE, GRADIENT_TEXT } from "@/components/landing/theme";
+import { hero, BOOKING_LABEL, BOOK_ANCHOR } from "./content";
 
 export default function Hero() {
   return (
@@ -10,11 +10,13 @@ export default function Hero() {
           {hero.eyebrow}
         </div>
 
-        <h1 className="m-0 text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.05] tracking-[-0.03em] font-extrabold max-w-[980px]">
-          {hero.headline} <span className={GRADIENT_TEXT}>{hero.headlineAccent}</span>
+        <h1 className="m-0 text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.05] tracking-[-0.03em] font-extrabold max-w-[920px]">
+          {hero.headlineLead}
+          <span className={GRADIENT_TEXT}>{hero.headlineAccent}</span>
+          {hero.headlineTail}
         </h1>
 
-        <p className="m-0 text-[18px] sm:text-[21px] max-w-[800px] text-[rgba(21,22,22,0.75)]">
+        <p className="m-0 text-[18px] sm:text-[21px] max-w-[760px] text-[rgba(21,22,22,0.75)]">
           <strong className="text-[#151616]">{hero.leadStrong}</strong>
           {hero.lead}
         </p>
@@ -31,15 +33,14 @@ export default function Hero() {
         <a href="#proof" className="self-start text-[16px] text-[rgba(21,22,22,0.78)] no-underline">
           {hero.proofLinkPre}
           <strong className="text-[#151616]">{hero.proofLinkFirm}</strong>
-          {hero.proofLinkMid}
-          <strong className="text-[#151616]">{hero.proofLinkSecond}</strong>.{" "}
+          {hero.proofLinkPost}{" "}
           <span className="text-[#2563eb] font-semibold">{hero.proofLinkCta}</span>
         </a>
 
-        <div className="flex flex-wrap gap-y-2.5 gap-x-7 text-[15px] font-semibold text-[#151616]">
+        <div className="flex flex-wrap gap-y-2.5 gap-x-6 text-[15px] font-semibold text-[#151616]">
           {hero.trust.map((t) => (
             <span key={t.text} className="inline-flex gap-2 items-start">
-              <Icon name={t.icon} strokeWidth={2.2} className="w-[22px] h-[22px] flex-none mt-[3px] text-[#2563eb]" />
+              <Icon name={t.icon} strokeWidth={2.2} className="w-5 h-5 flex-none mt-[3px] text-[#2563eb]" />
               {t.text}
             </span>
           ))}

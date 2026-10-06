@@ -1,16 +1,9 @@
 import { CheckIcon, Icon } from "@/components/landing/Icons";
-import { valueStack } from "./content";
 import { EYEBROW, GRADIENT_TEXT, H2, SECTION_INNER } from "@/components/landing/theme";
+import { deliverables } from "./content";
 
-type Item = {
-  kicker: string;
-  title: string;
-  body: string;
-  solves: string;
-  price: string;
-};
+type Item = { kicker: string; title: string; body: string; solves: string; price: string };
 
-/** One priced line in the stack. Price drops below the copy on narrow screens. */
 function StackRow({ item, bonus }: { item: Item; bonus: boolean }) {
   return (
     <div className="flex flex-wrap gap-4 items-start py-[22px] border-t border-[rgba(21,22,22,0.10)]">
@@ -21,42 +14,38 @@ function StackRow({ item, bonus }: { item: Item; bonus: boolean }) {
           <CheckIcon />
         )}
         <div>
-          <div className="text-[13px] font-bold tracking-[0.06em] uppercase text-[#1d4ed8] mb-1">
-            {item.kicker}
-          </div>
+          <div className="text-[13px] font-bold tracking-[0.06em] uppercase text-[#1d4ed8] mb-1">{item.kicker}</div>
           <h3 className="m-0 mb-1.5 text-[20px] font-bold">{item.title}</h3>
           <p className="m-0 mb-1.5 text-base text-[rgba(21,22,22,0.75)]">{item.body}</p>
           <div className="text-sm font-semibold text-[rgba(21,22,22,0.72)]">{item.solves}</div>
         </div>
       </div>
-      <div className="flex-none text-[20px] font-extrabold text-[#151616] pl-9 lg:pl-9">
-        {item.price}
-      </div>
+      <div className="flex-none text-[20px] font-extrabold text-[#151616] pl-9">{item.price}</div>
     </div>
   );
 }
 
-export default function ValueStack() {
-  const s = valueStack.summary;
+export default function Deliverables() {
+  const s = deliverables.summary;
 
   return (
-    <section id="stack">
+    <section id="deliverables">
       <div className={`${SECTION_INNER} flex flex-col gap-8`}>
         <div className="flex flex-col gap-3.5 max-w-[820px]">
-          <div className={EYEBROW}>{valueStack.eyebrow}</div>
+          <div className={EYEBROW}>{deliverables.eyebrow}</div>
           <h2 className={H2}>
-            {valueStack.headline} <span className={GRADIENT_TEXT}>{valueStack.headlineAccent}</span>
+            {deliverables.headline} <span className={GRADIENT_TEXT}>{deliverables.headlineAccent}</span>
           </h2>
         </div>
 
         <div className="flex flex-col">
-          <div className="text-[22px] font-extrabold pb-1.5">{valueStack.coreHeading}</div>
-          {valueStack.core.map((item) => (
+          <div className="text-[22px] font-extrabold pb-1.5">{deliverables.coreHeading}</div>
+          {deliverables.core.map((item) => (
             <StackRow key={item.title} item={item} bonus={false} />
           ))}
 
-          <div className="text-[22px] font-extrabold pt-8 pb-1.5">{valueStack.bonusHeading}</div>
-          {valueStack.bonuses.map((item) => (
+          <div className="text-[22px] font-extrabold pt-9 pb-1.5">{deliverables.bonusHeading}</div>
+          {deliverables.bonuses.map((item) => (
             <StackRow key={item.title} item={item} bonus />
           ))}
 
@@ -66,12 +55,12 @@ export default function ValueStack() {
               <div className="text-[40px] font-extrabold tracking-[-0.02em] text-white">{s.totalValue}</div>
             </div>
             <div className="flex flex-col gap-1">
-              <div className="text-base text-white/75">{s.setupLabel}</div>
-              <div className="text-[40px] font-extrabold tracking-[-0.02em] text-[#3b82f6]">{s.setup}</div>
+              <div className="text-base text-white/75">{s.investmentLabel}</div>
+              <div className="text-[40px] font-extrabold tracking-[-0.02em] text-[#3b82f6]">{s.investment}</div>
             </div>
-            <div className="flex flex-col gap-1 max-w-[380px]">
-              <div className="text-base text-white/75">{s.thenLabel}</div>
-              <div className="text-[20px] font-bold text-white">{s.then}</div>
+            <div className="flex flex-col gap-1 max-w-[360px]">
+              <div className="text-base text-white/75">{s.creditLabel}</div>
+              <div className="text-[20px] font-bold text-white">{s.credit}</div>
             </div>
           </div>
         </div>

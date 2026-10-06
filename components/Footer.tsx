@@ -12,6 +12,8 @@ export default function Footer() {
       { name: "AI Integrations", href: "/ai-integrations/" },
       { name: "AI SaaS", href: "/ai-saas/" },
       { name: "AI SEO", href: "/ai-seo/" },
+      { name: "M&A AI Integration", href: "/m-and-a-ai-integration/" },
+      { name: "Private Equity Portco AI", href: "/private-equity-portco-ai-integration/" },
     ],
     company: [
       { name: "About", href: "/about/" },
@@ -49,7 +51,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                AI systems specialist studio. Nine productised solutions covering the full stack — from GTM automation and AI SEO to bespoke internal software and full AI SaaS products. Guaranteed outcomes on every engagement, or we work for free until they hit.
+                AI systems specialist studio. Nine productised solutions covering the full stack — from GTM automation and AI SEO to bespoke internal software and full AI SaaS products — plus two fixed-term engagements for M&A acquirers and private equity. Guaranteed outcomes on every engagement, or we work for free until they hit.
               </p>
 
               {/* Contact */}

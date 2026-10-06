@@ -3,7 +3,24 @@
  * approved design. Kept here so sections stay readable and a stroke or
  * size tweak happens in one place.
  */
-import type { IconName } from "./content";
+/** Every glyph available to a landing page. */
+export type IconName =
+  | "lines"
+  | "grid"
+  | "mail"
+  | "eye"
+  | "shield"
+  | "clock"
+  | "check"
+  | "gift"
+  | "cross"
+  | "server"
+  | "unlink"
+  | "trend"
+  | "cycle"
+  | "lock"
+  | "calendar"
+  | "arrowOut";
 
 type Props = { className?: string; strokeWidth?: number };
 
@@ -70,6 +87,37 @@ export function Icon({ name, className = "w-7 h-7", strokeWidth = 2 }: Props & {
       <>
         <circle cx="8" cy="15" r="4" />
         <path d="M11 12l9-9M17 6l3 3M15 8l2 2" />
+      </>
+    ),
+    trend: (
+      <>
+        <path d="M3 3v18h18" />
+        <path d="M7 15l4-4 3 3 5-6" />
+      </>
+    ),
+    cycle: (
+      <>
+        <path d="M21 12a9 9 0 1 1-3-6.7" />
+        <path d="M21 3v6h-6" />
+      </>
+    ),
+    lock: (
+      <>
+        <rect x="4" y="11" width="16" height="10" rx="2" />
+        <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+      </>
+    ),
+    calendar: (
+      <>
+        <rect x="3" y="4" width="18" height="17" rx="2" />
+        <path d="M3 9h18M8 2v4M16 2v4" />
+      </>
+    ),
+    arrowOut: (
+      <>
+        <path d="M21 12a9 9 0 1 1-9-9" />
+        <path d="M21 3l-9 9" />
+        <path d="M15 3h6v6" />
       </>
     ),
   };

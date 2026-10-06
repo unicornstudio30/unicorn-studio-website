@@ -1,25 +1,15 @@
 /**
  * Single source of truth for the Deal Flow Engine offer.
  *
- * Every price, bonus, guarantee, FAQ answer and testimonial on /m-and-a/
+ * Every price, bonus, guarantee, FAQ answer and testimonial on /m-and-a-ai-integration/
  * is read from this file, so the offer can be edited without touching a
  * single component. Copy here is approved, do not reword it in passing.
  *
  * House style for this page: no em dashes anywhere in the copy.
  */
 
-export type IconName =
-  | "lines"
-  | "grid"
-  | "mail"
-  | "eye"
-  | "shield"
-  | "clock"
-  | "check"
-  | "gift"
-  | "cross"
-  | "server"
-  | "unlink";
+import type { IconName } from "@/components/landing/Icons";
+export type { IconName };
 
 export const BOOKING_LABEL = "Book a deal-flow call";
 
@@ -30,7 +20,7 @@ export const meta = {
   title: "The 30-Day Deal Flow Engine for Buy-Side Acquirers",
   description:
     "A custom AI deal sourcing system built around your buy box. Live in 30 days.",
-  path: "/m-and-a/",
+  path: "/m-and-a-ai-integration/",
 };
 
 export const nav = {
