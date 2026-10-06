@@ -26,17 +26,17 @@ type FAQProps = {
 
 /**
  * Homepage default FAQ. General questions about the studio's engagements
- * that apply across every solution. AI GTM System page and each of the
- * supporting solution pages use their own FAQ set passed via props.
+ * that apply across every service. Each service page passes its own FAQ
+ * set via props.
  */
 export const aiSystemsFaqs: FAQItem[] = [
   {
-    question: "Which of your solutions should I pick first?",
+    question: "Which of your services should I pick first?",
     answer:
       "Whichever bottleneck is hurting growth most right now. Most clients start with the AI GTM System (if pipeline is the problem) or Workflow Automation (if ops hours are the problem). We'll map your business on the discovery call and recommend the order.",
   },
   {
-    question: "How quickly does a solution go live?",
+    question: "How quickly does a service go live?",
     answer:
       "4 to 8 weeks depending on complexity and how clean your existing data and tools are. We commit to a fixed timeline and a fixed scope before any build begins.",
   },
@@ -58,7 +58,7 @@ export const aiSystemsFaqs: FAQItem[] = [
   {
     question: "Do you guarantee outcomes?",
     answer:
-      "We guarantee the system is built, integrated, and operational as scoped. Where a solution has a measurable output (booked meetings for the AI GTM System, hours reclaimed for Workflow Automation, etc.), we back that number with a work-for-free-until-it-hits guarantee.",
+      "We guarantee the system is built, integrated, and operational as scoped. Where a service has a measurable output (booked meetings for the AI GTM System, hours reclaimed for Workflow Automation, etc.), we back that number with a work-for-free-until-it-hits guarantee.",
   },
 ];
 

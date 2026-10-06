@@ -51,7 +51,7 @@ export default function Footer() {
                 />
               </a>
               <p className="text-[15px] text-gray-600 leading-[1.7] mb-6 max-w-md">
-                AI systems specialist studio. Nine productised solutions covering the full stack — from GTM automation and AI SEO to bespoke internal software and full AI SaaS products — plus two fixed-term engagements for M&A acquirers and private equity. Guaranteed outcomes on every engagement, or we work for free until they hit.
+                AI systems specialist studio. Eleven AI services covering the full stack — from GTM automation and AI SEO to bespoke internal software, full AI SaaS products, and AI for M&A acquirers and private equity. Guaranteed outcomes on every engagement, or we work for free until they hit.
               </p>
 
               {/* Contact */}
@@ -71,7 +71,7 @@ export default function Footer() {
             {/* Link columns — bold headings, items flush left, consistent spacing */}
             <div className="lg:col-span-3">
               <h3 className="text-base font-bold text-gray-900 mb-5 sm:mb-6">
-                Solutions
+                Services
               </h3>
               <ul className="space-y-3.5">
                 {navigation.services.map((item) => (
