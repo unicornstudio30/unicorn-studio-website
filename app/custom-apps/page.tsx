@@ -97,7 +97,7 @@ const content: ServicePageContent = {
       step: "Weeks 2-5",
       title: "Build v1",
       description:
-        "Weekly demos on Fridays. You use what we built and tell us what's wrong. Scope changes are handled with a swap-out mechanism — you can always trade a feature in for a feature out.",
+        "Weekly demos on Fridays. You use what we built and tell us what's wrong. Scope changes are handled with a swap-out mechanism: you can always trade a feature in for a feature out.",
     },
     {
       step: "Week 6",
@@ -115,7 +115,7 @@ const content: ServicePageContent = {
       step: "Month 3+",
       title: "Optional maintenance",
       description:
-        "Most clients run lightweight after month 3 — bug fixes, small features, monthly cadence. Or take the codebase and extend in-house. You own everything.",
+        "Most clients run lightweight after month 3: bug fixes, small features, monthly cadence. Or take the codebase and extend in-house. You own everything.",
     },
   ],
   guarantee: {
@@ -133,7 +133,7 @@ const content: ServicePageContent = {
     {
       question: "Do you use Bubble / Retool / Webflow / no-code?",
       answer:
-        "Sometimes for internal tools where the workflow is simple and speed matters. Almost never for client-facing products — no-code hits a wall quickly on auth, billing, custom UX, and performance. We'll tell you honestly which fits.",
+        "Sometimes for internal tools where the workflow is simple and speed matters. Almost never for client-facing products. No-code hits a wall quickly on auth, billing, custom UX, and performance. We'll tell you honestly which fits.",
     },
     {
       question: "Will we own the code?",

@@ -244,7 +244,7 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
           </div>
         </section>
 
-        {/* Testimonials — shown only when the page opts in with content.testimonials */}
+        {/* Testimonials, shown only when the page opts in with content.testimonials */}
         {content.testimonials && content.testimonials.length > 0 && (
           <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
             <div className="max-w-6xl mx-auto">
@@ -313,7 +313,7 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
           </section>
         )}
 
-        {/* Related work — opt-in via content.relatedCaseStudies */}
+        {/* Related work, opt-in via content.relatedCaseStudies */}
         {relatedWork.length > 0 && (
           <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-6xl mx-auto">

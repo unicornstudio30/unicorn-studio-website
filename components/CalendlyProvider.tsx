@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Booking provider — wraps Cal.com's embed under the existing
+ * Booking provider, wraps Cal.com's embed under the existing
  * `useCalendly` / `openModal` interface so every CTA on the site
  * keeps working without code changes.
  *
@@ -87,7 +87,7 @@ export function CalendlyProvider({ children }: { children: ReactNode }) {
       });
       return;
     }
-    // Embed script hasn't finished loading yet — don't leave the
+    // Embed script hasn't finished loading yet, don't leave the
     // visitor with a dead click. Send them to the Cal.com page.
     if (typeof window !== "undefined") {
       window.open(CAL_FALLBACK_URL, "_blank", "noopener,noreferrer");

@@ -49,7 +49,7 @@ const content: ServicePageContent = {
       tag: "AI",
       title: "AI integration",
       description:
-        "OpenAI, Claude, Gemini, or an open-source model — whichever fits the task and your cost profile. Vector search, RAG, fine-tuning, agent orchestration; whatever the product needs. Cost + latency guardrails built in so features stay usable at scale.",
+        "OpenAI, Claude, Gemini, or an open-source model, whichever fits the task and your cost profile. Vector search, RAG, fine-tuning, agent orchestration; whatever the product needs. Cost + latency guardrails built in so features stay usable at scale.",
       outputs: [
         "Model-agnostic; we rotate as the frontier moves",
         "pgvector / Pinecone / Turbopuffer for retrieval",
@@ -89,7 +89,7 @@ const content: ServicePageContent = {
   process: [
     {
       step: "Week 1",
-      title: "Sprint zero — scope + architecture",
+      title: "Sprint zero: scope + architecture",
       description:
         "We spend the first week writing, not coding. What the product does, who uses it, what data it needs, which AI capabilities matter, how it scales. Come out with a fixed scope and a fixed launch date before any code exists.",
     },
@@ -97,7 +97,7 @@ const content: ServicePageContent = {
       step: "Weeks 2-5",
       title: "Build v1",
       description:
-        "Weekly demos on Fridays. You use what we shipped and tell us what's wrong. Scope changes handled via swap-out — trade any feature for any feature of comparable size. No change orders, no timeline slip.",
+        "Weekly demos on Fridays. You use what we shipped and tell us what's wrong. Scope changes handled via swap-out: trade any feature for any feature of comparable size. No change orders, no timeline slip.",
     },
     {
       step: "Week 6",
@@ -115,7 +115,7 @@ const content: ServicePageContent = {
       step: "Month 3+",
       title: "Optional maintenance",
       description:
-        "Bug fixes, small features, monthly cadence. Or take the codebase and extend in-house — everything is yours. Most founders keep us on a lightweight retainer for the AI-specific work while their team owns the rest.",
+        "Bug fixes, small features, monthly cadence. Or take the codebase and extend in-house. Everything is yours. Most founders keep us on a lightweight retainer for the AI-specific work while their team owns the rest.",
     },
   ],
   guarantee: {

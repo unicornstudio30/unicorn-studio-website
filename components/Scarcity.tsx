@@ -90,7 +90,7 @@ export default function Scarcity() {
           ))}
         </div>
 
-        {/* Conversion footer — quiet, factual, single CTA */}
+        {/* Conversion footer, quiet, factual, single CTA */}
         <div className="relative rounded-3xl bg-gray-900 text-white p-7 sm:p-9 lg:p-12 overflow-hidden">
           {/* subtle decoration */}
           <div className="pointer-events-none absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full bg-blue-500/15 blur-3xl" />

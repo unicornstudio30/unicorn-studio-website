@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Schema.org JSON-LD — Organization + WebSite. Rendered on every page
+// Schema.org JSON-LD, Organization + WebSite. Rendered on every page
 // via the root layout so the site has at least one structured-data block
 // no matter which URL Google / AI overviews crawl. Hand-curated rather
 // than auto-extracted so the values stay accurate.

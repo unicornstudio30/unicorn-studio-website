@@ -1,5 +1,5 @@
 /**
- * Server-side schema.org BreadcrumbList. Renders nothing visible — it
+ * Server-side schema.org BreadcrumbList. Renders nothing visible, it
  * only emits the JSON-LD <script> Google's search results use to show
  * a breadcrumb trail under your URL ("unicornstudio.io › services ›
  * AI Systems"). Each sub-page's layout passes its own trail.

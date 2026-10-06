@@ -46,7 +46,7 @@ export default function Hero() {
             <span className="gradient-text-modern">before your competitor does</span>
           </h1>
 
-          {/* Subheading — three short sentences */}
+          {/* Subheading, three short sentences */}
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] mb-8 sm:mb-10 px-2 text-pretty">
             Tell us how your business works. We&apos;ll map what AI can take over, build it, and stay on it until it runs. Guaranteed, or we work for free.
           </p>
@@ -76,7 +76,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Trust signals — small, factual, below CTAs */}
+          {/* Trust signals, small, factual, below CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-10 gap-y-3 mb-14 sm:mb-16 px-4">
             {trustStats.map((s, i) => (
               <div key={i} className="flex items-baseline gap-2">
@@ -90,7 +90,7 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* === System in action — the centerpiece visual === */}
+          {/* === System in action, the centerpiece visual === */}
           <div className="relative max-w-5xl mx-auto mb-14 sm:mb-16 px-2">
             {/* Subtle glow halo behind the card */}
             <div className="pointer-events-none absolute inset-x-8 -top-6 -bottom-6 rounded-[2rem] bg-gradient-to-br from-blue-200/40 via-indigo-200/30 to-cyan-200/40 blur-3xl opacity-70" />
@@ -115,7 +115,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Body — 3 columns: inputs / core / outputs */}
+              {/* Body, 3 columns: inputs / core / outputs */}
               <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.1fr)] gap-6 sm:gap-8 lg:gap-10 items-center px-5 sm:px-8 lg:px-10 py-7 sm:py-9 lg:py-10">
                 {/* INPUTS */}
                 <div className="text-left">
@@ -138,7 +138,7 @@ export default function Hero() {
                   </ul>
                 </div>
 
-                {/* CORE — connecting node */}
+                {/* CORE, connecting node */}
                 <div className="relative flex flex-col items-center justify-center min-h-[140px] md:min-h-[200px]">
                   {/* Left dashed connectors with flowing data dots (desktop) */}
                   <svg
@@ -295,7 +295,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Logo carousel — social proof */}
+          {/* Logo carousel, social proof */}
           <div>
             <LogoCarousel />
           </div>

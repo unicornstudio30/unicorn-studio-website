@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 const SITE = "https://unicornstudio.io";
 
 /**
- * Non-blocking robots.txt — allows every well-behaved crawler (including
+ * Non-blocking robots.txt, allows every well-behaved crawler (including
  * Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, CCBot) to index
  * everything, and points them at /sitemap.xml for discovery.
  *

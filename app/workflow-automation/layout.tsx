@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Workflow Automation",
   description:
-    "Kill the manual, repetitive work in your operations. Approvals, onboarding, reporting, cross-system handoffs — automated end-to-end with the guardrails your business needs. Guaranteed hours reclaimed, or we work for free.",
+    "Kill the manual, repetitive work in your operations. Approvals, onboarding, reporting, cross-system handoffs, automated end-to-end with the guardrails your business needs. Guaranteed hours reclaimed, or we work for free.",
   alternates: { canonical: "/workflow-automation/" },
 };
 
