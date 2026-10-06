@@ -21,6 +21,10 @@ The site itself is a static Next.js export with no public APIs. Contact submissi
 - [AI SaaS](https://unicornstudio.io/ai-saas/): Full-stack AI SaaS products for ambitious founders and businesses. Next.js + Postgres + TypeScript, AI baked in from day one, auth + Stripe billing + admin console + observability shipped by default. Idea to first paying customer in eight weeks. Fixed scope and fixed launch date, or we work for free.
 - [AI SEO](https://unicornstudio.io/ai-seo/): Rank in AI search engines, not just Google. Technical AI-readiness audit, schema.org / JSON-LD everywhere, LLM-optimised content rewrites, citation seeding, and weekly AI-citation monitoring across Google AI Overview, Perplexity, ChatGPT search, and Claude web search. Cited in Google AI Overview by month 3, or we work for free.
 
+## Offers
+
+- [The 30-Day Deal Flow Engine](https://unicornstudio.io/m-and-a/): A custom AI deal sourcing system for buy-side acquirers, built around your buy box. Sources US and UK companies, scores every one against your mandate with evidence, watches off-market seller signals, and drafts owner outreach for your review. Live in 30 days. $4,000 setup plus $1,500 a month. 100 qualified targets in the first 30 days live, or we work free. For independent sponsors, search funds, buy-side advisors and lower-middle-market PE.
+
 ## Company
 
 - [About](https://unicornstudio.io/about/): Studio philosophy, the five beliefs we operate from, what we will and will not do, and a fit guide for prospective clients.
@@ -47,6 +51,7 @@ Each page on this site is also available as Markdown — fetch the same URL with
 - [AI Integrations](https://unicornstudio.io/ai-integrations/index.md)
 - [AI SaaS](https://unicornstudio.io/ai-saas/index.md)
 - [AI SEO](https://unicornstudio.io/ai-seo/index.md)
+- [The 30-Day Deal Flow Engine](https://unicornstudio.io/m-and-a/index.md)
 - [About](https://unicornstudio.io/about/index.md)
 - [Case Studies](https://unicornstudio.io/case-studies/index.md)
 
