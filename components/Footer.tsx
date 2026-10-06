@@ -13,7 +13,7 @@ export default function Footer() {
       { name: "AI SaaS", href: "/ai-saas/" },
       { name: "AI SEO", href: "/ai-seo/" },
       { name: "M&A AI Integration", href: "/services/m-and-a-ai-integration/" },
-      { name: "Private Equity Portco AI", href: "/services/private-equity-portco-ai-integration/" },
+      { name: "Private Equity Portco AI integration", href: "/services/private-equity-portco-ai-integration/" },
     ],
     company: [
       { name: "About", href: "/about/" },

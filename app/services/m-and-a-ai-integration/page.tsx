@@ -1,4 +1,4 @@
-import Nav from "@/components/deal-flow/Nav";
+import TopNavigation from "@/components/TopNavigation";
 import Hero from "@/components/deal-flow/Hero";
 import Problem from "@/components/deal-flow/Problem";
 import HowItWorks from "@/components/deal-flow/HowItWorks";
@@ -16,16 +16,16 @@ import Footer from "@/components/deal-flow/Footer";
 /**
  * The 30-Day Deal Flow Engine landing page.
  *
- * Standalone offer page: it carries its own nav and footer from the
- * approved design rather than the site-wide TopNavigation and Footer.
+ * Offer page: it uses the site-wide TopNavigation so visitors get the
+ * real Unicorn Studio menu, and keeps the design's own compact footer.
  * The `landing-inter` class scopes the page's typography (Inter throughout, where
  * the rest of the site sets headings in Sora) and its white background.
  */
 export default function DealFlowEnginePage() {
   return (
     <div className="landing-inter min-h-screen bg-white text-[#151616] leading-[1.55]">
-      <Nav />
-      <main>
+      <TopNavigation />
+      <main className="pt-14 sm:pt-16">
         <Hero />
         <Problem />
         <HowItWorks />
