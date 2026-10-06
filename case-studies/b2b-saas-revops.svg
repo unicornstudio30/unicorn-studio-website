@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="B2B SaaS revenue operations dashboard illustration">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="55%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+  <ellipse cx="900" cy="280" rx="500" ry="360" fill="url(#glow)"/>
+  <ellipse cx="220" cy="780" rx="380" ry="260" fill="url(#glow)" opacity="0.6"/>
+
+  <!-- Floating dots -->
+  <g fill="#ffffff" opacity="0.35">
+    <circle cx="120" cy="160" r="2.5"/>
+    <circle cx="980" cy="120" r="2"/>
+    <circle cx="1080" cy="640" r="3"/>
+    <circle cx="160" cy="540" r="2"/>
+    <circle cx="640" cy="80" r="2.5"/>
+    <circle cx="320" cy="820" r="2"/>
+  </g>
+
+  <!-- Top KPI cards -->
+  <g>
+    <rect x="80" y="100" width="320" height="120" rx="20" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="100" y="140" font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="#cbd5e1" font-weight="600" letter-spacing="2">PIPELINE ADDED</text>
+    <text x="100" y="190" font-family="-apple-system, system-ui, sans-serif" font-size="44" fill="#ffffff" font-weight="800">$640K</text>
+    <text x="225" y="190" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#86efac" font-weight="700">▲ 38%</text>
+
+    <rect x="420" y="100" width="320" height="120" rx="20" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="440" y="140" font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="#cbd5e1" font-weight="600" letter-spacing="2">SALES CYCLE</text>
+    <text x="440" y="190" font-family="-apple-system, system-ui, sans-serif" font-size="44" fill="#ffffff" font-weight="800">−42%</text>
+    <text x="585" y="190" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#86efac" font-weight="700">faster</text>
+
+    <rect x="760" y="100" width="360" height="120" rx="20" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="780" y="140" font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="#cbd5e1" font-weight="600" letter-spacing="2">SDR MEETINGS / REP</text>
+    <text x="780" y="190" font-family="-apple-system, system-ui, sans-serif" font-size="44" fill="#ffffff" font-weight="800">3.4×</text>
+    <text x="880" y="190" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#86efac" font-weight="700">vs. baseline</text>
+  </g>
+
+  <!-- Left chart: Revenue trend line -->
+  <g>
+    <rect x="80" y="260" width="660" height="380" rx="24" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="100" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#e2e8f0" font-weight="700">Pipeline created · last 90 days</text>
+    <text x="100" y="324" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#94a3b8">AI agents enriching, qualifying, and routing inbound + ABM</text>
+
+    <!-- Axes -->
+    <g stroke="#ffffff" stroke-opacity="0.12">
+      <line x1="120" y1="580" x2="720" y2="580"/>
+      <line x1="120" y1="520" x2="720" y2="520" stroke-dasharray="4 6"/>
+      <line x1="120" y1="460" x2="720" y2="460" stroke-dasharray="4 6"/>
+      <line x1="120" y1="400" x2="720" y2="400" stroke-dasharray="4 6"/>
+    </g>
+
+    <!-- Area under the curve -->
+    <path d="M 120 560 L 200 540 L 280 510 L 360 490 L 440 450 L 520 430 L 600 390 L 680 360 L 720 350 L 720 580 L 120 580 Z" fill="url(#lineGrad)" opacity="0.18"/>
+
+    <!-- Line -->
+    <path d="M 120 560 L 200 540 L 280 510 L 360 490 L 440 450 L 520 430 L 600 390 L 680 360 L 720 350" fill="none" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Data points -->
+    <g fill="#ffffff">
+      <circle cx="120" cy="560" r="5"/>
+      <circle cx="280" cy="510" r="5"/>
+      <circle cx="440" cy="450" r="5"/>
+      <circle cx="600" cy="390" r="5"/>
+      <circle cx="720" cy="350" r="6" fill="#38bdf8"/>
+    </g>
+
+    <!-- Annotation pill -->
+    <g>
+      <rect x="600" y="290" width="120" height="40" rx="20" fill="#0ea5e9"/>
+      <text x="660" y="316" font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="700" text-anchor="middle">+$640K</text>
+    </g>
+    <line x1="660" y1="332" x2="715" y2="350" stroke="#0ea5e9" stroke-width="2"/>
+  </g>
+
+  <!-- Right card: Funnel / qualified meetings bars -->
+  <g>
+    <rect x="760" y="260" width="360" height="380" rx="24" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="780" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#e2e8f0" font-weight="700">Qualified meetings · weekly</text>
+    <text x="780" y="324" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#94a3b8">Before vs. after AI revops system</text>
+
+    <!-- Bars -->
+    <g>
+      <rect x="800" y="540" width="40" height="60" rx="6" fill="#475569"/>
+      <rect x="850" y="500" width="40" height="100" rx="6" fill="#475569"/>
+      <rect x="900" y="520" width="40" height="80" rx="6" fill="#475569"/>
+      <rect x="950" y="480" width="40" height="120" rx="6" fill="#475569"/>
+
+      <rect x="800" y="440" width="40" height="160" rx="6" fill="url(#barGrad)"/>
+      <rect x="850" y="400" width="40" height="200" rx="6" fill="url(#barGrad)"/>
+      <rect x="900" y="380" width="40" height="220" rx="6" fill="url(#barGrad)"/>
+      <rect x="950" y="360" width="40" height="240" rx="6" fill="url(#barGrad)"/>
+    </g>
+    <line x1="780" y1="600" x2="1100" y2="600" stroke="#ffffff" stroke-opacity="0.18"/>
+
+    <!-- Legend -->
+    <g font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+      <rect x="1010" y="394" width="14" height="14" rx="3" fill="url(#barGrad)"/>
+      <text x="1030" y="406">After</text>
+      <rect x="1010" y="424" width="14" height="14" rx="3" fill="#475569"/>
+      <text x="1030" y="436">Before</text>
+    </g>
+  </g>
+
+  <!-- Bottom: integration / agent row -->
+  <g>
+    <rect x="80" y="680" width="1040" height="160" rx="24" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="110" y="720" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#e2e8f0" font-weight="700">AI Revenue Operations Stack</text>
+    <text x="110" y="744" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#94a3b8">Live across 5 systems · enriching, scoring &amp; routing every lead in seconds</text>
+
+    <!-- Integration pills -->
+    <g font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="700">
+      <g>
+        <rect x="110" y="770" width="150" height="46" rx="23" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
+        <circle cx="135" cy="793" r="9" fill="#fb923c"/>
+        <text x="155" y="798">HubSpot</text>
+      </g>
+      <g>
+        <rect x="280" y="770" width="160" height="46" rx="23" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
+        <circle cx="305" cy="793" r="9" fill="#22d3ee"/>
+        <text x="325" y="798">Salesforce</text>
+      </g>
+      <g>
+        <rect x="460" y="770" width="120" height="46" rx="23" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
+        <circle cx="485" cy="793" r="9" fill="#a78bfa"/>
+        <text x="505" y="798">Slack</text>
+      </g>
+      <g>
+        <rect x="600" y="770" width="150" height="46" rx="23" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
+        <circle cx="625" cy="793" r="9" fill="#34d399"/>
+        <text x="645" y="798">Clearbit</text>
+      </g>
+      <g>
+        <rect x="770" y="770" width="180" height="46" rx="23" fill="#0ea5e9" stroke="#ffffff" stroke-opacity="0.4"/>
+        <circle cx="795" cy="793" r="9" fill="#ffffff"/>
+        <text x="815" y="798">AI Agents · GPT</text>
+      </g>
+    </g>
+  </g>
+</svg>

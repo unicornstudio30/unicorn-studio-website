@@ -1,0 +1,77 @@
+User-Agent: *
+Allow: /
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: claude-web
+Allow: /
+
+User-Agent: Claude-User
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Perplexity-User
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: CCBot
+Allow: /
+
+User-Agent: Meta-ExternalAgent
+Allow: /
+
+User-Agent: FacebookBot
+Allow: /
+
+User-Agent: DuckAssistBot
+Allow: /
+
+User-Agent: MistralAI-User
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
+User-Agent: YouBot
+Allow: /
+
+User-Agent: cohere-ai
+Allow: /
+
+User-Agent: cohere-training-data-crawler
+Allow: /
+
+User-Agent: AhrefsBot
+Disallow: /
+
+User-Agent: SemrushBot
+Disallow: /
+
+User-Agent: MJ12bot
+Disallow: /
+
+User-Agent: DotBot
+Disallow: /
+
+Host: https://unicornstudio.io
+Sitemap: https://unicornstudio.io/sitemap.xml
