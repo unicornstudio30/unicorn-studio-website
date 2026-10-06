@@ -1,5 +1,5 @@
 import { dealMath } from "./content";
-import { GRADIENT_TEXT, SECTION_INNER } from "./theme";
+import { GRADIENT_TEXT, SECTION_INNER } from "@/components/landing/theme";
 
 /** Named DealMath rather than Math so it cannot shadow the global. */
 export default function DealMath() {

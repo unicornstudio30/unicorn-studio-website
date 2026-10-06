@@ -1,5 +1,5 @@
 import { sampleOutput } from "./content";
-import { EYEBROW, GRADIENT_TEXT, H2, LEAD, SECTION_INNER, TINT_SECTION } from "./theme";
+import { EYEBROW, GRADIENT_TEXT, H2, LEAD, SECTION_INNER, TINT_SECTION } from "@/components/landing/theme";
 
 const verdictTone = {
   pass: "bg-[rgba(21,128,61,0.10)] text-[#15803d]",

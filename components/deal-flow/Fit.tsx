@@ -1,6 +1,6 @@
-import { CheckIcon, Icon } from "./Icons";
+import { CheckIcon, Icon } from "@/components/landing/Icons";
 import { fit } from "./content";
-import { EYEBROW, GRADIENT_TEXT, H2, SECTION_INNER } from "./theme";
+import { EYEBROW, GRADIENT_TEXT, H2, SECTION_INNER } from "@/components/landing/theme";
 
 export default function Fit() {
   return (

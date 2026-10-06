@@ -1,6 +1,6 @@
 import { QuoteMark } from "@/components/landing/Icons";
-import { proof } from "./content";
 import { EYEBROW, GRADIENT_TEXT, H2, SECTION_INNER } from "@/components/landing/theme";
+import { proof } from "./content";
 
 export default function Proof() {
   const t = proof.testimonial;
@@ -13,11 +13,12 @@ export default function Proof() {
           <h2 className={H2}>
             {proof.headline} <span className={GRADIENT_TEXT}>{proof.headlineAccent}</span>
           </h2>
+          <p className="m-0 text-[18px] text-[rgba(21,22,22,0.75)]">{proof.lead}</p>
         </div>
 
-        <figure className="m-0 rounded-3xl p-7 sm:p-11 bg-[rgba(37,99,235,0.05)] border border-[rgba(37,99,235,0.18)] flex flex-col gap-[22px]">
+        <figure className="m-0 rounded-3xl p-7 sm:p-12 bg-[rgba(37,99,235,0.05)] border border-[rgba(37,99,235,0.18)] flex flex-col gap-[22px]">
           <QuoteMark />
-          <blockquote className="m-0 flex flex-col gap-3.5 text-[17px] sm:text-[19px] leading-[1.6] text-[#151616]">
+          <blockquote className="m-0 flex flex-col gap-[18px] text-[18px] sm:text-[20px] leading-[1.6] text-[#151616]">
             {t.paragraphs.map((p) => (
               <p key={p.slice(0, 40)} className="m-0">
                 {p}
@@ -38,20 +39,15 @@ export default function Proof() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {proof.cases.map((c) => (
-            <div
-              key={c.name}
-              className="rounded-[20px] p-8 border border-[rgba(21,22,22,0.10)] flex flex-col gap-3"
-            >
+            <div key={c.name} className="rounded-[20px] p-8 border border-[rgba(21,22,22,0.10)] flex flex-col gap-3">
               <div className="text-sm font-bold text-[#1d4ed8]">{c.kicker}</div>
               <h3 className="m-0 text-[23px] font-bold">{c.name}</h3>
-              {c.stats.length > 0 && (
-                <div className="flex flex-wrap gap-7 py-1.5">
-                  {c.stats.map((s) => (
-                    <div key={s.label}>
-                      <div className="text-[36px] font-extrabold text-[#2563eb] tracking-[-0.02em]">{s.value}</div>
-                      <div className="text-sm text-[rgba(21,22,22,0.72)]">{s.label}</div>
-                    </div>
-                  ))}
+              {c.statValue && (
+                <div className="flex items-baseline gap-2.5 flex-wrap">
+                  <span className={`${GRADIENT_TEXT} text-[44px] font-extrabold tracking-[-0.03em] leading-none`}>
+                    {c.statValue}
+                  </span>
+                  <span className="text-base font-semibold">{c.statLabel}</span>
                 </div>
               )}
               <p className="m-0 text-base text-[rgba(21,22,22,0.75)]">{c.body}</p>

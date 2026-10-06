@@ -18,12 +18,12 @@ import Footer from "@/components/deal-flow/Footer";
  *
  * Standalone offer page: it carries its own nav and footer from the
  * approved design rather than the site-wide TopNavigation and Footer.
- * The `dfe` class scopes the page's typography (Inter throughout, where
+ * The `landing-inter` class scopes the page's typography (Inter throughout, where
  * the rest of the site sets headings in Sora) and its white background.
  */
 export default function DealFlowEnginePage() {
   return (
-    <div className="dfe min-h-screen bg-white text-[#151616] leading-[1.55]">
+    <div className="landing-inter min-h-screen bg-white text-[#151616] leading-[1.55]">
       <Nav />
       <main>
         <Hero />

@@ -25,6 +25,8 @@ The site itself is a static Next.js export with no public APIs. Contact submissi
 
 - [The 30-Day Deal Flow Engine](https://unicornstudio.io/m-and-a/): A custom AI deal sourcing system for buy-side acquirers, built around your buy box. Sources US and UK companies, scores every one against your mandate with evidence, watches off-market seller signals, and drafts owner outreach for your review. Live in 30 days. $4,000 setup plus $1,500 a month. 100 qualified targets in the first 30 days live, or we work free. For independent sponsors, search funds, buy-side advisors and lower-middle-market PE.
 
+- [The 14-Day EBITDA Finder](https://unicornstudio.io/private-equity-portco-ai-integration/): An independent AI audit and advisory sprint for PE operating partners and portfolio operations teams. In 14 days we map, size and prioritise the AI opportunities across the portfolio companies in scope, with a baseline, dollar impact, build cost and payback for each, plus a data readiness assessment, a secure architecture blueprint that keeps data inside your systems, and a board-ready readout with a 90-day roadmap. $10,000 fixed fee, fully credited if you build. Full refund if we do not identify at least $100,000 in annualised AI opportunities.
+
 ## Company
 
 - [About](https://unicornstudio.io/about/): Studio philosophy, the five beliefs we operate from, what we will and will not do, and a fit guide for prospective clients.
@@ -52,6 +54,7 @@ Each page on this site is also available as Markdown — fetch the same URL with
 - [AI SaaS](https://unicornstudio.io/ai-saas/index.md)
 - [AI SEO](https://unicornstudio.io/ai-seo/index.md)
 - [The 30-Day Deal Flow Engine](https://unicornstudio.io/m-and-a/index.md)
+- [The 14-Day EBITDA Finder](https://unicornstudio.io/private-equity-portco-ai-integration/index.md)
 - [About](https://unicornstudio.io/about/index.md)
 - [Case Studies](https://unicornstudio.io/case-studies/index.md)
 

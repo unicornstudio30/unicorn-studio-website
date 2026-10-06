@@ -1,6 +1,6 @@
-import { Icon } from "./Icons";
+import { Icon } from "@/components/landing/Icons";
 import { security } from "./content";
-import { CARD, EYEBROW, GRADIENT_TEXT, H2, LEAD, SECTION_INNER, TINT_SECTION } from "./theme";
+import { CARD, EYEBROW, GRADIENT_TEXT, H2, LEAD, SECTION_INNER, TINT_SECTION } from "@/components/landing/theme";
 
 export default function Security() {
   return (

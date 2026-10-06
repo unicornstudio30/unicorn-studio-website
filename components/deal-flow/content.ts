@@ -8,18 +8,8 @@
  * House style for this page: no em dashes anywhere in the copy.
  */
 
-export type IconName =
-  | "lines"
-  | "grid"
-  | "mail"
-  | "eye"
-  | "shield"
-  | "clock"
-  | "check"
-  | "gift"
-  | "cross"
-  | "server"
-  | "unlink";
+import type { IconName } from "@/components/landing/Icons";
+export type { IconName };
 
 export const BOOKING_LABEL = "Book a deal-flow call";
 
