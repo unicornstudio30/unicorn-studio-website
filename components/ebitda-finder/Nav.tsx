@@ -11,7 +11,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(21,22,22,0.08)] bg-white/95 backdrop-blur-sm">
       <div className="max-w-[1200px] mx-auto px-6 py-[18px] flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2.5 no-underline text-[#151616]">
+        <a href="/" className="flex items-center gap-2.5 no-underline text-[#151616]">
           <BrandMark />
           <span className="font-bold text-[19px] tracking-[-0.01em]">{nav.brand}</span>
         </a>
