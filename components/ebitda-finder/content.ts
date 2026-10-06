@@ -2,7 +2,7 @@
  * Single source of truth for the 14-Day EBITDA Finder offer.
  *
  * Every price, deliverable, bonus, guarantee, FAQ answer and the
- * testimonial on /private-equity-portco-ai-integration/ is read from this
+ * testimonial on /services/private-equity-portco-ai-integration/ is read from this
  * file, so the offer can be edited without touching a component. Copy here
  * is approved, do not reword it in passing.
  *
@@ -21,7 +21,7 @@ export const meta = {
   title: "The 14-Day EBITDA Finder for PE Operating Partners",
   description:
     "The 14-Day EBITDA Finder: an AI audit and advisory sprint for PE operating partners, by Unicorn Studio.",
-  path: "/private-equity-portco-ai-integration/",
+  path: "/services/private-equity-portco-ai-integration/",
 };
 
 export const nav = {

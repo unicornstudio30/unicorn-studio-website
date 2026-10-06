@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { meta } from "@/components/ebitda-finder/content";
+import { meta } from "@/components/deal-flow/content";
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg?v=3",
         width: 1200,
         height: 630,
-        alt: "The 14-Day EBITDA Finder by Unicorn Studio",
+        alt: "The 30-Day Deal Flow Engine by Unicorn Studio",
         type: "image/jpeg",
       },
     ],
@@ -31,7 +31,8 @@ export const metadata: Metadata = {
 
 const breadcrumbs = [
   { name: "Home", url: "https://unicornstudio.io/" },
-  { name: "PE Portco AI Integration", url: `https://unicornstudio.io${meta.path}` },
+  { name: "Services", url: "https://unicornstudio.io/#systems" },
+  { name: "M&A Deal Flow Engine", url: `https://unicornstudio.io${meta.path}` },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
