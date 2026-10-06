@@ -33,7 +33,7 @@ h1, h2, h3, .font-display {
   letter-spacing: -0.025em;
 }
 
-/* Standalone landing pages (/m-and-a-ai-integration/, /private-equity-portco-ai-integration/).
+/* Standalone landing pages (both pages under /services/).
    Their approved designs are set in Inter throughout, including headings, which
    the rest of the site renders in Sora via the global `h1, h2, h3` rule. Scoped
    to .landing-inter so nothing else moves. Letter-spacing is deliberately not

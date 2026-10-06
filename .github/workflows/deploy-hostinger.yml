@@ -62,23 +62,26 @@ jobs:
           # closest surviving equivalent to preserve backlink authority.
           RewriteRule ^ai-systems/?$ /workflow-automation/ [L,R=301]
 
-          # Convenience redirects onto the canonical M&A landing page slug.
-          # `&` is legal in a URL path, so a typed /M&A arrives here intact,
-          # but it is fragile in links and chat clients, hence the words.
-          # /m-and-a was the canonical slug until the rename and was live, so
-          # it keeps a 301 rather than 404ing once the mirror removes it.
-          RewriteRule ^m-and-a/?$ /m-and-a-ai-integration/ [L,R=301,NC]
-          RewriteRule ^M&A[\s]AI[\s]integration/?$ /m-and-a-ai-integration/ [L,R=301,NC]
-          RewriteRule ^M[\s]and[\s]A[\s]AI[\s]integration/?$ /m-and-a-ai-integration/ [L,R=301,NC]
-          RewriteRule ^M&A/?$ /m-and-a-ai-integration/ [L,R=301,NC]
-          RewriteRule ^m-a/?$ /m-and-a-ai-integration/ [L,R=301,NC]
-          RewriteRule ^ma/?$ /m-and-a-ai-integration/ [L,R=301,NC]
+          # The two offer pages live under /services/. Every earlier URL they
+          # have been published at keeps a 301, because each was live and is
+          # already indexed. `&` is legal in a URL path so a typed /M&A gets
+          # here intact; a URL cannot carry literal spaces, so the spelled-out
+          # phrases arrive percent-encoded and mod_rewrite sees them decoded.
+          RewriteRule ^m-and-a-ai-integration/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
+          RewriteRule ^m-and-a/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
+          RewriteRule ^M&A[\s]AI[\s]integration/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
+          RewriteRule ^M[\s]and[\s]A[\s]AI[\s]integration/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
+          RewriteRule ^M&A/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
+          RewriteRule ^m-a/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
+          RewriteRule ^ma/?$ /services/m-and-a-ai-integration/ [L,R=301,NC]
 
-          # Convenience redirects onto the canonical EBITDA Finder slug. A URL
-          # cannot carry literal spaces, so the spelled-out phrase arrives
-          # percent-encoded and mod_rewrite sees it decoded.
-          RewriteRule ^private[\s]equity[\s]portco[\s]ai[\s]integration/?$ /private-equity-portco-ai-integration/ [L,R=301,NC]
-          RewriteRule ^portco-ai/?$ /private-equity-portco-ai-integration/ [L,R=301,NC]
+          RewriteRule ^private-equity-portco-ai-integration/?$ /services/private-equity-portco-ai-integration/ [L,R=301,NC]
+          RewriteRule ^private[\s]equity[\s]portco[\s]ai[\s]integration/?$ /services/private-equity-portco-ai-integration/ [L,R=301,NC]
+          RewriteRule ^portco-ai/?$ /services/private-equity-portco-ai-integration/ [L,R=301,NC]
+
+          # /services/ itself has no page of its own, so send it to the
+          # Solutions section on the homepage rather than let it 404.
+          RewriteRule ^services/?$ /#systems [L,R=301,NC]
           RewriteRule ^websites/?$ /custom-apps/ [L,R=301]
           RewriteRule ^branding/?$ /ai-gtm-system/ [L,R=301]
 
