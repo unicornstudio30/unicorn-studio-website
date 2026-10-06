@@ -3,22 +3,20 @@
 import Link from "next/link";
 
 export default function FourSystems() {
-  const featured = {
-    number: "01",
-    label: "Flagship",
-    title: "AI GTM System",
-    description:
-      "One AI system that runs your entire go-to-market. Finds the right accounts, enriches every contact, writes the outreach, books the meetings, syncs your CRM, and reports the numbers. Built once, runs forever.",
-    keywords: ["Prospecting", "Outreach", "Qualification", "CRM sync", "Reporting"],
-    href: "/ai-gtm-system/",
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-  };
-
-  const rest = [
+  const services = [
+    {
+      number: "01",
+      title: "AI GTM System",
+      description:
+        "One AI system that runs your entire go-to-market. Finds the right accounts, enriches every contact, writes the outreach, books the meetings, syncs your CRM, and reports the numbers.",
+      keywords: ["Prospecting", "Outreach", "Qualification", "CRM sync"],
+      href: "/ai-gtm-system/",
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
     {
       number: "02",
       title: "Workflow Automation",
@@ -126,6 +124,35 @@ export default function FourSystems() {
         </svg>
       ),
     },
+    {
+      number: "10",
+      title: "M&A AI Integration",
+      description:
+        "The 30-Day Deal Flow Engine. A custom AI deal sourcing system built around your buy box, finding the off-market companies your competitors never see.",
+      keywords: ["Deal sourcing", "Buy box", "Off-market", "Outreach"],
+      href: "/services/m-and-a-ai-integration/",
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" strokeWidth={1.5} />
+          <circle cx="12" cy="12" r="3.5" strokeWidth={1.5} />
+          <path strokeLinecap="round" strokeWidth={1.5} d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3" />
+        </svg>
+      ),
+    },
+    {
+      number: "11",
+      title: "Private Equity Portco AI integration",
+      description:
+        "The 14-Day EBITDA Finder. An AI audit and advisory sprint that maps, sizes and prioritises the AI opportunities across your portfolio companies.",
+      keywords: ["Portfolio", "EBITDA", "Audit", "Roadmap"],
+      href: "/services/private-equity-portco-ai-integration/",
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3v18h18" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 15l4-4 3 3 5-6" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -136,63 +163,20 @@ export default function FourSystems() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold mb-6 sm:mb-7">
-            Our Solutions
+            What we do
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-6 tracking-[-0.02em] px-4 max-w-4xl mx-auto leading-[1.1] text-balance">
-            One flagship,{" "}
-            <span className="gradient-text-modern">eight supporting solutions.</span> Every one guaranteed.
+            Our <span className="gradient-text-modern">Services</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-[1.6] px-4">
             Pick the one that hurts most, or let us map your business on the discovery call and recommend the order.
           </p>
         </div>
 
-        {/* Featured: AI GTM System */}
-        <article className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-700 to-indigo-700 text-white shadow-2xl shadow-blue-600/25 mb-7 sm:mb-9 lg:mb-10">
-          <div className="pointer-events-none absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-cyan-400/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-indigo-400/20 blur-3xl" />
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff14_1px,transparent_1px)] bg-[size:48px_48px] opacity-40" />
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-8 lg:gap-14 items-center p-8 sm:p-12 lg:p-14">
-            <div className="flex lg:flex-col items-baseline lg:items-start gap-3">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-[11px] font-bold uppercase tracking-[0.18em] backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-300" />
-                {featured.label}
-              </span>
-              <div className="text-6xl lg:text-7xl font-black leading-none text-white/30 lg:mt-4">
-                {featured.number}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 sm:mb-4">
-                {featured.title}
-              </h3>
-              <p className="text-sm sm:text-base lg:text-lg text-blue-50/90 leading-relaxed max-w-2xl mb-5 sm:mb-6">
-                {featured.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {featured.keywords.map((k, i) => (
-                  <span key={i} className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] sm:text-xs font-medium text-white/90 backdrop-blur-sm">
-                    {k}
-                  </span>
-                ))}
-              </div>
-              <Link href={featured.href} className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-all">
-                <span className="border-b border-white/40">Explore the AI GTM System</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-            <div className="hidden lg:flex items-center justify-center w-32 h-32 rounded-2xl bg-white/10 border border-white/20 text-white">
-              {featured.icon}
-            </div>
-          </div>
-        </article>
-
-        {/* Eight supporting solutions as a grid (3 cols on desktop, 2 on tablet, 1 on mobile) */}
+        {/* Every service, same size (3 cols on desktop, 2 on tablet, 1 on mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
-          {rest.map((sys) => (
+          {services.map((sys) => (
             <Link
               key={sys.number}
               href={sys.href}
@@ -232,7 +216,7 @@ export default function FourSystems() {
             href="#contact"
             className="btn-primary group inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 text-white rounded-xl font-semibold text-[15px] sm:text-base"
           >
-            <span className="relative z-10">Tell us which solution you need</span>
+            <span className="relative z-10">Tell us which service you need</span>
             <svg className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

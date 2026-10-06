@@ -1,17 +1,14 @@
 # Unicorn Studio
 
-> AI systems specialist studio. Nine productised offerings, one flagship (the AI GTM System) plus eight supporting services. Every engagement ships guaranteed outcomes, or we work for free until they hit.
+> AI systems specialist studio. Eleven AI services, each scoped and priced on its own. Every engagement ships guaranteed outcomes, or we work for free until they hit.
 
-Unicorn Studio is a small AI development studio founded by Saidur Rahaman. Each service is built custom to the client's business, integrated with their existing stack; no off-the-shelf templates. The flagship AI GTM System runs a company's entire go-to-market end-to-end. The four supporting systems (Workflow Automation, AI Agents, Custom Apps, Dashboards & Reporting) map to Boom Automations' proven service model, adapted to Unicorn Studio's guarantee-first delivery. Two additional services (AI Solutions and AI Integrations) cover multi-agent / fine-tuning work and existing-product AI additions respectively. Two more (AI SaaS and AI SEO) cover full AI SaaS product builds for founders and generative-engine optimisation for businesses.
+Unicorn Studio is a small AI development studio founded by Saidur Rahaman. Each service is built custom to the client's business, integrated with their existing stack; no off-the-shelf templates. The eleven services stand on their own rather than laddering up to one offering: AI GTM System runs a company's entire go-to-market end-to-end; Workflow Automation, AI Agents, Custom Apps and Dashboards & Reporting cover operations; AI Solutions and AI Integrations cover multi-agent / fine-tuning work and existing-product AI additions; AI SaaS and AI SEO cover full product builds and generative-engine optimisation; and two fixed-term engagements serve M&A acquirers and private equity portfolio operations.
 
 The site itself is a static Next.js export with no public APIs. Contact submissions are forwarded via Web3Forms to saidur@unicornstudio.io. Bookings happen on Cal.com.
 
-## Flagship
+## Services
 
 - [AI GTM System](https://unicornstudio.io/ai-gtm-system/): Seven-module system covering ICP definition, prospect building, enrichment & scoring, personalised outreach, qualification & booking, CRM sync, and analytics. 90-day path to fully autopilot pipeline. Guaranteed booked meetings by month 3.
-
-## Supporting services
-
 - [Workflow Automation](https://unicornstudio.io/workflow-automation/): Kill the manual, repetitive work in your operations. Onboarding, approvals, reporting, cross-tool syncs. Guaranteed hours reclaimed by month 2.
 - [AI Agents](https://unicornstudio.io/ai-agents/): Intelligent assistants trained on your business — support, research, qualification, internal Q&A. Ship an agent that beats a human on your golden eval set, or we work for free.
 - [Custom Apps](https://unicornstudio.io/custom-apps/): Internal tools and client portals built around your workflow. Modern web stacks (Next.js, Postgres, TypeScript), AI baked in where it earns its cost. Fixed scope, fixed timeline, or we work for free.

@@ -17,7 +17,7 @@ const outputs = [
 ];
 
 const trustStats = [
-  { value: "08", label: "solutions we specialize in" },
+  { value: "11", label: "services we specialize in" },
   { value: "100%", label: "custom-built per business" },
   { value: "<2h", label: "average response time" },
 ];
@@ -72,7 +72,7 @@ export default function Hero() {
               href="#systems"
               className="btn-secondary w-full sm:w-auto px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base border border-gray-300 text-center"
             >
-              See our solutions
+              See our services
             </a>
           </div>
 
