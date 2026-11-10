@@ -61,11 +61,18 @@ export default function VideoTestimonials() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-sm md:max-w-none mx-auto">
+        {/* Mobile: swipeable row with the next card peeking in. md+: 3-column grid. */}
+        <div
+          className="-mx-4 sm:-mx-6 px-4 sm:px-6 flex gap-4 overflow-x-auto snap-x snap-mandatory md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8 lg:gap-10 md:overflow-visible"
+          style={{ scrollbarWidth: "none" }}
+        >
           {videos.map((v) => {
             const isStarted = started[v.id];
             return (
-              <article key={v.id} className="flex flex-col">
+              <article
+                key={v.id}
+                className="flex flex-col shrink-0 w-[78%] max-w-[320px] snap-center md:w-auto md:max-w-none"
+              >
                 <div className="relative aspect-[9/16] rounded-3xl overflow-hidden bg-gray-900 border border-gray-200 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.25)]">
                   <video
                     ref={(el) => {
