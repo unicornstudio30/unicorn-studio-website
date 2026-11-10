@@ -7,6 +7,7 @@ import Guarantee from "@/components/Guarantee";
 import RecentLaunches from "@/components/RecentLaunches";
 import Scarcity from "@/components/Scarcity";
 import Testimonials from "@/components/Testimonials";
+import VideoTestimonials from "@/components/VideoTestimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <RecentLaunches />
         <Scarcity />
         <Testimonials />
+        <VideoTestimonials />
         <FAQ />
         <CTA />
         <Footer />
