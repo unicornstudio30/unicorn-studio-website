@@ -410,7 +410,7 @@ export default function CaseStudiesPage() {
                 More builds
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
-                Other recent <span className="gradient-text-modern">case studies.</span>
+                More <span className="gradient-text-modern">case studies.</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mt-4 font-light">
                 Mobile, marketplaces, AI products. Same playbook, different shapes.
