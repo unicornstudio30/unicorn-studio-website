@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import { caseStudies } from "@/components/CaseStudies";
 import { useCalendly } from "@/components/CalendlyProvider";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { allCaseStudies } from "@/components/case-study-content";
 
 export default function CaseStudiesPage() {
   const { openModal } = useCalendly();
@@ -20,6 +22,12 @@ export default function CaseStudiesPage() {
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "https://unicornstudio.io/" },
+          { name: "Case Studies", url: "https://unicornstudio.io/case-studies/" },
+        ]}
+      />
       <TopNavigation />
       <div className="min-h-screen bg-white">
         {/* Hero */}
@@ -57,6 +65,70 @@ export default function CaseStudiesPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Deal origination case studies */}
+        <section id="client-stories" className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 sm:mb-12 text-center max-w-3xl mx-auto">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4">
+                Client stories · In their own words
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
+                Real clients. <span className="gradient-text-modern">Real systems. Real outcomes.</span>
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 mt-4">
+                Each one starts with the client&apos;s problem, shows how we solved it, and ends with what changed, told with their own video testimonial.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {allCaseStudies.map((cs) => (
+                <Link
+                  key={cs.slug}
+                  href={`/case-studies/${cs.slug}/`}
+                  className="group rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-blue-500 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col bg-white"
+                >
+                  <div className="relative p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-600 text-white">
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                      <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/80">
+                        {cs.market}
+                      </span>
+                      {cs.flag && (
+                        <span className="px-2.5 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-bold tracking-wider">
+                          {cs.flag}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold leading-tight">{cs.client}</h3>
+                    <p className="mt-2 text-sm sm:text-base text-white/80 leading-snug">
+                      {cs.headline} {cs.headlineAccent}
+                    </p>
+                  </div>
+                  <div className="p-6 sm:p-7 flex flex-col flex-1 gap-5">
+                    <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed">{cs.intro}</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {cs.stats.slice(0, 3).map((m) => (
+                        <div key={m.label} className="px-2.5 py-2 rounded-lg bg-gray-50 border border-gray-200">
+                          <div className="text-[15px] sm:text-base font-bold gradient-text-modern leading-tight">{m.value}</div>
+                          <div className="text-[10px] sm:text-[11px] text-gray-600 leading-snug mt-0.5">{m.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-auto flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+                      <span className="text-xs sm:text-sm text-gray-500">{cs.testimonial.name}, {cs.testimonial.role.split(",")[0]}</span>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 shrink-0">
+                        Read
+                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
