@@ -7,7 +7,8 @@
  * number before changing it. House style: no em dashes.
  */
 
-export type Point = { title: string; body: string };
+export type Shot = { src: string; alt: string; caption: string; width: number; height: number };
+export type Point = { title: string; body: string; image?: Shot };
 export type OutcomePoint = { value?: string; title: string; body: string };
 
 export type CaseStudy = {
@@ -26,7 +27,7 @@ export type CaseStudy = {
   statsNote: string;
   pain: { title: string; intro: string; points: Point[] };
   solution: { title: string; intro: string; steps: Point[] };
-  outcome: { title: string; intro: string; points: OutcomePoint[] };
+  outcome: { title: string; intro: string; points: OutcomePoint[]; image?: Shot };
   testimonial: {
     video: string;
     poster: string;
@@ -57,10 +58,10 @@ export const whiteKnight: CaseStudy = {
   stats: [
     { value: "~1 min", label: "to screen 250 companies against a buy box" },
     { value: "1,850", label: "companies screened, every one with a reason" },
-    { value: "1,652", label: "broker listings refreshed every night" },
-    { value: "~3¢", label: "AI cost to screen 250 companies" },
+    { value: "1,663", label: "broker listings from 27 brokers, refreshed nightly" },
+    { value: "$3.97", label: "total AI spend to screen all 1,850 companies" },
   ],
-  statsNote: "Figures as of 9 November 2026.",
+  statsNote: "Figures from the live platform, November 2026.",
   pain: {
     title: "The problem wasn't finding information. It was time.",
     intro:
@@ -97,16 +98,19 @@ export const whiteKnight: CaseStudy = {
         title: "Wrote the buy box down",
         body:
           "Sectors, geography and the size measure Ernesto actually uses (SDE, EBITDA, cash flow or revenue), saved as mandates. Several run at once, so his clients' buy boxes are covered as well as his own.",
+        image: { src: "/case-studies/screens/wka-buybox.jpg", alt: "Buy Box screen in the White Knight Acquisitions platform showing four live mandates", caption: "Four buy boxes running side by side, each with its own size measure, region and sectors.", width: 1600, height: 1094 },
       },
       {
         title: "Let the AI read, not filter",
         body:
           "Every company is judged against the buy box and gets a verdict (Qualifies, Potential or Reject) with a score and the exact line of evidence it rests on. Nothing is silently deleted, so a near miss can always be found again.",
+        image: { src: "/case-studies/screens/wka-scoring.jpg", alt: "Scoring screen showing 223 verdicts and ten validation checks passing", caption: "223 verdicts, checked by ten standing rules: every verdict has a reason, and nothing is rejected on a test its source could not answer.", width: 1600, height: 846 },
       },
       {
         title: "Brought every source into one place",
         body:
-          "A browser assistant works beside the databases and LinkedIn accounts he already pays for, and 26 brokers are collected every night. Anonymous listings are matched to the real business behind them.",
+          "A browser assistant works beside the databases and LinkedIn accounts he already pays for, and 27 brokers are collected every night. Anonymous listings are matched to the real business behind them.",
+        image: { src: "/case-studies/screens/wka-onmarket.jpg", alt: "On Market screen searching 1,663 broker listings with a plain-English sentence", caption: "Search 1,663 broker listings with a sentence. Thresholds in the sentence are compared against the listed numbers, not guessed.", width: 1600, height: 746 },
       },
       {
         title: "Drafted the approach, kept the human in charge",
@@ -119,6 +123,7 @@ export const whiteKnight: CaseStudy = {
     title: "Sourcing became systematic and scalable.",
     intro:
       "Instead of spending hours finding opportunities, Ernesto now spends his time deciding which opportunities are worth pursuing.",
+    image: { src: "/case-studies/screens/wka-overview.jpg", alt: "White Knight Acquisitions overview: 1,850 companies, 24 scoring runs, $3.97 AI spend", caption: "The live overview: 1,850 companies, 24 reproducible scoring runs, $3.97 of AI spend in total.", width: 1600, height: 1030 },
     points: [
       {
         value: "~1 min",
@@ -131,13 +136,14 @@ export const whiteKnight: CaseStudy = {
         body: "Plus 805 owners sourced from LinkedIn and 223 detailed buy-box verdicts, each one quoting its evidence.",
       },
       {
-        value: "26",
-        title: "Brokers watched every night",
-        body: "1,652 live listings in one place with comparable numbers, so new deals surface without anyone searching.",
+        value: "$3.97",
+        title: "Total AI spend, all time",
+        body: "That is about $0.0002 per company screened, across 24 scoring runs that can each be reproduced exactly.",
       },
       {
-        title: "Every mandate, one system",
-        body: "Buy boxes for Ernesto and his clients run side by side in priority order, so every mandate is screened by the same system instead of by hand.",
+        value: "27",
+        title: "Brokers watched every night",
+        body: "1,663 live listings in one place with comparable numbers, so new deals surface without anyone searching.",
       },
     ],
   },
@@ -184,7 +190,7 @@ export const digitalGrowthEquity: CaseStudy = {
     { value: "11", label: "readiness signals, every one explained" },
     { value: "2+ yrs", label: "as DGE's AI and technology partner" },
   ],
-  statsNote: "Figures as of 9 November 2026.",
+  statsNote: "Figures from the live platform, November 2026.",
   pain: {
     title: "A register is not a deal list.",
     intro:
@@ -226,16 +232,19 @@ export const digitalGrowthEquity: CaseStudy = {
         title: "A transparent readiness score",
         body:
           "Two scores, kept separate: is the owner likely ready to hand over, and is it a clean, financeable business? Each one shows the signals behind it. A missing fact lowers the confidence figure, not the score, so a thinly documented company is not mistaken for a bad one.",
+        image: { src: "/case-studies/screens/dge-score.jpg", alt: "Readiness score of 63 with succession readiness and business quality bars and the reasons behind the score", caption: "One headline score, the two axes behind it, and the reasons in plain English. Company and director details blurred.", width: 1600, height: 854 },
       },
       {
         title: "Real numbers, verified companies",
         body:
           "Up to ten years of figures read straight from filed accounts instead of an invented revenue estimate. The platform also checks that each company is actually trading and that its website really belongs to it.",
+        image: { src: "/case-studies/screens/dge-valuation.jpg", alt: "Valuation research panel with staff, net assets, cash and debtors trended from filed accounts", caption: "Valuation research read from filed accounts: staff, net assets, cash and debtors, trended year by year.", width: 1600, height: 880 },
       },
       {
         title: "A saved search that keeps watching",
         body:
           "Every watchlist is re-scanned daily, even when nobody is logged in. DGE is alerted when a company newly meets the criteria or a watched company files a resignation, a new charge or an ownership change.",
+        image: { src: "/case-studies/screens/dge-watchlist.jpg", alt: "Watchlist dashboard tracking 27 companies with hiring and director change events", caption: "A live watchlist: 27 companies tracked daily, with hiring and director changes surfaced as they happen. Company names blurred.", width: 1600, height: 1162 },
       },
       {
         title: "Outreach that respects privacy",
@@ -248,6 +257,7 @@ export const digitalGrowthEquity: CaseStudy = {
     title: "From a public register to a working deal engine.",
     intro:
       "In Dudley's words, the platform covers deal sourcing, valuation, due diligence and outreach, and now sits at the centre of how DGE finds and assesses acquisitions.",
+    image: { src: "/case-studies/screens/dge-pipeline.jpg", alt: "Deal pipeline from New to Closed with offers out", caption: "The deal pipeline, from first contact to offer. Company names blurred.", width: 1600, height: 1108 },
     points: [
       {
         value: "Daily",

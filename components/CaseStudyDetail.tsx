@@ -6,7 +6,7 @@ import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import { useCalendly } from "@/components/CalendlyProvider";
-import type { CaseStudy } from "@/components/case-study-content";
+import type { CaseStudy, Shot } from "@/components/case-study-content";
 
 const SITE = "https://unicornstudio.io";
 
@@ -164,6 +164,35 @@ function ClientVideo({ t }: { t: CaseStudy["testimonial"] }) {
   );
 }
 
+/* ---------- Product screenshot ---------- */
+
+function Screenshot({ shot, dark = false }: { shot: Shot; dark?: boolean }) {
+  return (
+    <figure className="mt-4">
+      <a
+        href={shot.src}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`block rounded-xl sm:rounded-2xl overflow-hidden border shadow-[0_20px_60px_-25px_rgba(15,23,42,0.45)] transition-transform hover:-translate-y-0.5 ${
+          dark ? "border-white/15" : "border-gray-200"
+        }`}
+        aria-label={`Open full-size screenshot: ${shot.alt}`}
+      >
+        <div className="flex items-center gap-1.5 px-3 py-2 bg-[#0b0d14] border-b border-white/10">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" decoding="async" className="block w-full h-auto bg-[#0b0d14]" />
+      </a>
+      <figcaption className={`mt-2.5 text-xs sm:text-[13px] leading-relaxed ${dark ? "text-blue-100/70" : "text-gray-500"}`}>
+        {shot.caption}
+      </figcaption>
+    </figure>
+  );
+}
+
 /* ---------- Page ---------- */
 
 export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
@@ -265,6 +294,7 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
                 {cs.solution.title}
               </h2>
               <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">{cs.solution.intro}</p>
+              <p className="mt-4 text-xs text-gray-500">Screenshots are from the live platform. Company names and personal details are blurred.</p>
             </div>
             <ol className="relative border-l-2 border-blue-200 pl-6 sm:pl-8 space-y-7 sm:space-y-9">
               {cs.solution.steps.map((s, i) => (
@@ -274,6 +304,7 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
                   </span>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1.5">{s.title}</h3>
                   <p className="text-sm sm:text-[15px] text-gray-700 leading-relaxed">{s.body}</p>
+                  {s.image && <Screenshot shot={s.image} />}
                 </li>
               ))}
             </ol>
@@ -288,6 +319,11 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight">{cs.outcome.title}</h2>
               <p className="mt-4 text-base sm:text-lg text-blue-100/90 leading-relaxed">{cs.outcome.intro}</p>
             </div>
+            {cs.outcome.image && (
+              <div className="mb-8 sm:mb-10 max-w-5xl">
+                <Screenshot shot={cs.outcome.image} dark />
+              </div>
+            )}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {cs.outcome.points.map((o) => (
                 <div key={o.title} className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10">
