@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/case-studies/",          priority: 0.8, changeFreq: "monthly" },
     { path: "/case-studies/white-knight-acquisitions/", priority: 0.8, changeFreq: "monthly" },
     { path: "/case-studies/digital-growth-equity/",     priority: 0.8, changeFreq: "monthly" },
+    { path: "/case-studies/more-convos/",               priority: 0.8, changeFreq: "monthly" },
     { path: "/about/",                 priority: 0.7, changeFreq: "monthly" },
     { path: "/thank-you/",             priority: 0.3, changeFreq: "yearly"  },
   ];

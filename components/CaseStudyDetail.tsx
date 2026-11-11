@@ -243,9 +243,9 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
             </div>
 
             {/* Outcome stats */}
-            <div className="mt-10 sm:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className={`mt-10 sm:mt-12 grid grid-cols-2 gap-3 sm:gap-4 ${cs.stats.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
               {cs.stats.map((s) => (
-                <div key={s.label} className="px-4 py-4 sm:py-5 rounded-2xl bg-white border border-gray-200 shadow-sm">
+                <div key={s.label} className="px-4 py-4 sm:py-5 rounded-2xl bg-white border border-gray-200 shadow-sm [&:last-child:nth-child(odd)]:col-span-2 lg:[&:last-child:nth-child(odd)]:col-span-1">
                   <div className="text-2xl sm:text-3xl font-bold gradient-text-modern leading-tight">{s.value}</div>
                   <div className="text-xs sm:text-sm text-gray-600 leading-snug mt-1">{s.label}</div>
                 </div>
@@ -294,7 +294,9 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
                 {cs.solution.title}
               </h2>
               <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">{cs.solution.intro}</p>
-              <p className="mt-4 text-xs text-gray-500">Screenshots are from the live platform. Company names and personal details are blurred.</p>
+              {cs.solution.steps.some((s) => s.image) && (
+                <p className="mt-4 text-xs text-gray-500">Screenshots are from the live platform. Company names and personal details are blurred.</p>
+              )}
             </div>
             <ol className="relative border-l-2 border-blue-200 pl-6 sm:pl-8 space-y-7 sm:space-y-9">
               {cs.solution.steps.map((s, i) => (
@@ -387,7 +389,7 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
                 Know someone with the same problem?
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-gray-600">Send them this case study, or talk to us about your own deal flow.</p>
+              <p className="mt-2 text-sm sm:text-base text-gray-600">Send them this case study, or talk to us about your own workflow.</p>
               <div className="mt-6">
                 <ShareBar cs={cs} align="center" />
               </div>

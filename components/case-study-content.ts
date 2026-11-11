@@ -14,8 +14,8 @@ export type OutcomePoint = { value?: string; title: string; body: string };
 export type CaseStudy = {
   slug: string;
   client: string;
-  market: "United States" | "United Kingdom";
-  flag: string;
+  market: string;
+  flag?: string;
   eyebrow: string;
   seoTitle: string;
   seoDescription: string;
@@ -302,4 +302,118 @@ export const digitalGrowthEquity: CaseStudy = {
   },
 };
 
+export const moreConvos: CaseStudy = {
+  slug: "more-convos",
+  client: "MoreConvos",
+  market: "Lead generation agency",
+  eyebrow: "Case study · Outbound lead generation · WhatsApp automation",
+  seoTitle: "MoreConvos: From Hand-Posting in WhatsApp Groups to Lead Generation That Runs Itself",
+  seoDescription:
+    "MoreConvos runs pay-per-lead cold outreach. Unicorn Studio has worked with founder Zach Gitlin since day one: first the brand and website, then an AI system that joins WhatsApp groups and posts in them automatically, plus AI outreach workflows.",
+  ogImage: "/case-studies/og-more-convos.png",
+  headline: "From hand-posting in WhatsApp groups",
+  headlineAccent: "to lead generation that runs on its own.",
+  intro:
+    "MoreConvos runs cold outreach for other businesses and only gets paid for positive replies. We have worked with founder Zach Gitlin since the agency's earliest days: first its website and LinkedIn presence, then a system that joins WhatsApp groups and posts in them automatically, plus the AI workflows around his outreach.",
+  stats: [
+    { value: "Day one", label: "partner since MoreConvos's starting days" },
+    { value: "Auto", label: "WhatsApp group joining and posting, no manual work" },
+    { value: "5M+", label: "messages MoreConvos has sent for 100+ companies" },
+  ],
+  statsNote: "MoreConvos's message and client figures are their own, from moreconvos.com.",
+  pain: {
+    title: "A pay-per-lead business lives or dies on new conversations.",
+    intro:
+      "MoreConvos only gets paid when a prospect replies with real interest, so every week needs a steady supply of new conversations. WhatsApp groups full of the right people were a strong source of leads, but joining them and posting in each one by hand takes hours, and it stops the moment nobody is doing it.",
+    points: [
+      {
+        title: "Starting from zero",
+        body:
+          "In the early days, a new agency had to look as credible as the ones it competed with: a proper website and a professional presence on LinkedIn.",
+      },
+      {
+        title: "Manual group work",
+        body:
+          "Joining WhatsApp groups and posting in them one at a time ate hours that should have gone into selling and serving clients.",
+      },
+      {
+        title: "Leads capped by hours",
+        body:
+          "More leads meant more manual posting. Growth was limited by how much time there was to do it, not by how many good groups existed.",
+      },
+    ],
+  },
+  solution: {
+    title: "A partner that grew with the business.",
+    intro:
+      "We started with what Zach needed to win his first clients, then automated the work that was eating his time.",
+    steps: [
+      {
+        title: "A brand that looks established",
+        body:
+          "Website design and a LinkedIn banner in MoreConvos's starting days, so the agency looked the part from its first sales conversation.",
+      },
+      {
+        title: "WhatsApp lead generation that runs itself",
+        body:
+          "A system that joins relevant WhatsApp groups and posts in them automatically, so new conversations keep arriving without anyone posting by hand.",
+      },
+      {
+        title: "AI workflows for outreach",
+        body:
+          "Simple AI workflows that take repetitive outreach tasks off Zach's plate, built one at a time as the agency needed them.",
+      },
+      {
+        title: "The same team, year after year",
+        body:
+          "Each new build was made by the team that built the last one, so it fits what is already running instead of starting from scratch.",
+      },
+    ],
+  },
+  outcome: {
+    title: "Lead generation that keeps going when Zach isn't.",
+    intro:
+      "The repetitive work moved into software, and a one-off design job became years of building together.",
+    points: [
+      {
+        title: "Group posting on autopilot",
+        body: "Joining WhatsApp groups and posting in them happens automatically instead of by hand.",
+      },
+      {
+        title: "Time back for selling",
+        body: "Hours that went into manual posting can go into the conversations that come back.",
+      },
+      {
+        title: "First website to full system",
+        body: "One partner from MoreConvos's first website and LinkedIn banner to its lead generation system.",
+      },
+      {
+        title: "Recommended by the founder",
+        body: "Zach recommends Unicorn Studio for its professionalism, its pricing and how easy it is to work with.",
+      },
+    ],
+  },
+  testimonial: {
+    video: "/testimonial/videos/zach.mp4",
+    poster: "/testimonial/videos/zach-poster.jpg",
+    duration: "1:03",
+    quote: "A very professional team, very good prices, and definitely a pleasure to work with.",
+    full: [
+      "Just wanted to leave a short testimonial for my man Saidur from Unicorn Studio. I'm Zach Gitlin from MoreConvos.com, and you're welcome to reach out to me and ask any questions you might have.",
+      "I've worked with Saidur since really my starting days, a few years ago, when his company helped me build out my website design, my LinkedIn banner and things like that. Then over the years I've been using Saidur and the services at Unicorn Studio to build an entire system over WhatsApp that generates leads by joining WhatsApp groups and posting in them automatically, plus other simple AI workflows he's helped me build out for outreach.",
+      "I highly recommend them: a very professional team, very good prices, and definitely a pleasure to work with. If you have any questions, ask Saidur to put us in touch. I'll definitely give him a good review.",
+    ],
+    fullNote: "From Zach's video testimonial, lightly edited for reading.",
+    name: "Zach Gitlin",
+    role: "Founder & CEO, MoreConvos",
+  },
+  companion: {
+    slug: "white-knight-acquisitions",
+    title: "Another system built around a real workflow",
+    body:
+      "White Knight Acquisitions was reading every deal by hand. See how we turned their sourcing into a system that screens 250 companies in about a minute.",
+  },
+};
+
 export const dealCaseStudies = [whiteKnight, digitalGrowthEquity];
+export const allCaseStudies = [whiteKnight, digitalGrowthEquity, moreConvos];

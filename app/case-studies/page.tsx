@@ -8,7 +8,7 @@ import CTA from "@/components/CTA";
 import { caseStudies } from "@/components/CaseStudies";
 import { useCalendly } from "@/components/CalendlyProvider";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { dealCaseStudies } from "@/components/case-study-content";
+import { allCaseStudies } from "@/components/case-study-content";
 
 export default function CaseStudiesPage() {
   const { openModal } = useCalendly();
@@ -70,22 +70,22 @@ export default function CaseStudiesPage() {
         </section>
 
         {/* Deal origination case studies */}
-        <section id="deal-origination" className="py-12 sm:py-16 lg:py-20 bg-white">
+        <section id="client-stories" className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-10 sm:mb-12 text-center max-w-3xl mx-auto">
               <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4">
-                Deal origination · US &amp; UK
+                Client stories · In their own words
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
-                Two acquirers. <span className="gradient-text-modern">Opposite data. One engine.</span>
+                Real clients. <span className="gradient-text-modern">Real systems. Real outcomes.</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mt-4">
-                The UK has one official register and no published revenue. The US has revenue estimates and no register at all. We built deal origination platforms for buyers in both markets.
+                Each one starts with the client&apos;s problem, shows how we solved it, and ends with what changed, told with their own video testimonial.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {dealCaseStudies.map((cs) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {allCaseStudies.map((cs) => (
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}/`}
@@ -96,9 +96,11 @@ export default function CaseStudiesPage() {
                       <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/80">
                         {cs.market}
                       </span>
-                      <span className="px-2.5 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-bold tracking-wider">
-                        {cs.flag}
-                      </span>
+                      {cs.flag && (
+                        <span className="px-2.5 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-bold tracking-wider">
+                          {cs.flag}
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold leading-tight">{cs.client}</h3>
                     <p className="mt-2 text-sm sm:text-base text-white/80 leading-snug">
@@ -110,7 +112,7 @@ export default function CaseStudiesPage() {
                     <div className="grid grid-cols-3 gap-2">
                       {cs.stats.slice(0, 3).map((m) => (
                         <div key={m.label} className="px-2.5 py-2 rounded-lg bg-gray-50 border border-gray-200">
-                          <div className="text-base sm:text-lg font-bold gradient-text-modern leading-tight">{m.value}</div>
+                          <div className="text-[15px] sm:text-base font-bold gradient-text-modern leading-tight">{m.value}</div>
                           <div className="text-[10px] sm:text-[11px] text-gray-600 leading-snug mt-0.5">{m.label}</div>
                         </div>
                       ))}
