@@ -20,6 +20,9 @@ export type CaseStudy = {
   seoTitle: string;
   seoDescription: string;
   ogImage: string;
+  cover: string;
+  tags: string[];
+  launchStats: string;
   headline: string;
   headlineAccent: string;
   intro: string;
@@ -51,6 +54,9 @@ export const whiteKnight: CaseStudy = {
   seoDescription:
     "White Knight Acquisitions was reviewing every listing and company by hand. Unicorn Studio built an AI deal sourcing and qualification system around their real M&A workflow. Now 250 companies are screened against a buy box in about a minute.",
   ogImage: "/case-studies/og-white-knight-acquisitions.png",
+  cover: "/case-studies/covers/white-knight-acquisitions.jpg",
+  tags: ["M&A Deal Sourcing", "AI Qualification", "Chrome Extension"],
+  launchStats: "1,850 companies screened · 250 in about a minute · $3.97 total AI spend",
   headline: "From manual deal sourcing",
   headlineAccent: "to a system that screens 250 companies in a minute.",
   intro:
@@ -180,6 +186,9 @@ export const digitalGrowthEquity: CaseStudy = {
   seoDescription:
     "Digital Growth Equity needed to know which UK business owners were ready to sell. Unicorn Studio built a platform that scores acquisition readiness from live Companies House data, watches targets daily and carries deals through to an offer.",
   ogImage: "/case-studies/og-digital-growth-equity.png",
+  cover: "/case-studies/covers/digital-growth-equity.jpg",
+  tags: ["Private Equity", "Readiness Scoring", "Live UK Register"],
+  launchStats: "Live Companies House data · Daily watchlists · 10 years of filed accounts per company",
   headline: "Turning the UK company register",
   headlineAccent: "into a ranked list of owners ready to sell.",
   intro:
@@ -311,6 +320,9 @@ export const moreConvos: CaseStudy = {
   seoDescription:
     "MoreConvos runs pay-per-lead cold outreach. Unicorn Studio has worked with founder Zach Gitlin since day one: first the brand and website, then an AI system that joins WhatsApp groups and posts in them automatically, plus AI outreach workflows.",
   ogImage: "/case-studies/og-more-convos.png",
+  cover: "/case-studies/covers/more-convos.jpg",
+  tags: ["Lead Generation", "WhatsApp Automation", "AI Workflows"],
+  launchStats: "Automatic WhatsApp group posting · AI outreach workflows · Partner since day one",
   headline: "From hand-posting in WhatsApp groups",
   headlineAccent: "to lead generation that runs on its own.",
   intro:

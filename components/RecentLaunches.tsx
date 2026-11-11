@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { allCaseStudies } from "@/components/case-study-content";
 
 interface CaseStudy {
   timeline: { day: string; title: string; description: string }[];
@@ -22,9 +23,25 @@ interface Project {
   image: string | null;
   gradientStyle: string;
   caseStudy: CaseStudy | null;
+  /** Full case study page; when set, the slide links there instead of opening the modal. */
+  href?: string;
+  isNew?: boolean;
 }
 
+const latestCaseStudies: Project[] = allCaseStudies.map((cs) => ({
+  name: cs.client,
+  description: `${cs.headline} ${cs.headlineAccent}`,
+  stats: cs.launchStats,
+  tags: cs.tags,
+  image: cs.cover,
+  gradientStyle: "linear-gradient(135deg, #0b1024, #0f1d4a, #13226b)",
+  caseStudy: null,
+  href: `/case-studies/${cs.slug}/`,
+  isNew: true,
+}));
+
 export const projects: Project[] = [
+  ...latestCaseStudies,
   {
     name: "AI Marketing System · B2B SaaS",
     description:
@@ -286,10 +303,13 @@ export default function RecentLaunches() {
               className="lg:w-3/5 relative min-h-[250px] sm:min-h-[350px] lg:min-h-[500px]"
               style={{ background: project.gradientStyle }}
             >
+              {project.href && (
+                <Link href={project.href} className="absolute inset-0 z-[1]" aria-label={`Read the ${project.name} case study`} />
+              )}
               {project.image ? (
                 <Image
                   src={project.image}
-                  alt={project.name}
+                  alt={project.isNew ? `${project.name} case study: product screenshot and client video testimonial` : project.name}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 60vw"
@@ -343,6 +363,12 @@ export default function RecentLaunches() {
             {/* Content Side */}
             <div className="lg:w-2/5 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
               <div className="flex flex-wrap gap-2 mb-4">
+                {project.isNew && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    New
+                  </span>
+                )}
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
@@ -365,7 +391,17 @@ export default function RecentLaunches() {
                 {project.stats}
               </p>
 
-              {project.caseStudy ? (
+              {project.href ? (
+                <Link
+                  href={project.href}
+                  className="inline-flex items-center gap-2 text-sm sm:text-base text-blue-600 font-semibold hover:gap-3 transition-all duration-300"
+                >
+                  <span>Read the case study</span>
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              ) : project.caseStudy ? (
                 <button
                   onClick={() => openCaseStudy(project)}
                   className="inline-flex items-center gap-2 text-sm sm:text-base text-blue-600 font-semibold hover:gap-3 transition-all duration-300 cursor-pointer"

@@ -45,6 +45,16 @@ export default function CaseStudiesPage() {
                 Systems that quietly{" "}
                 <span className="gradient-text-modern inline-block">move revenue.</span>
               </h1>
+              <a
+                href="#latest"
+                className="group inline-flex items-center gap-2 mb-6 sm:mb-8 pl-1.5 pr-4 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm hover:border-blue-400 transition-colors text-sm text-gray-700"
+              >
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider">New</span>
+                <span className="font-medium">3 new case studies with client video testimonials</span>
+                <svg className="w-4 h-4 text-blue-600 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
                 A look behind the curtain at the AI systems and products we&apos;ve built. The constraints, the tradeoffs, and the numbers they actually shifted.
               </p>
@@ -69,46 +79,116 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        {/* Deal origination case studies */}
-        <section id="client-stories" className="py-12 sm:py-16 lg:py-20 bg-white">
+        {/* Latest launches: the three newest case studies */}
+        <section id="latest" className="relative py-12 sm:py-16 lg:py-20 bg-white scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 sm:mb-12 text-center max-w-3xl mx-auto">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4">
-                Client stories · In their own words
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 sm:mb-12">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-bold mb-4">
+                  <span className="relative flex w-2 h-2">
+                    <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                    <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
+                  </span>
+                  Latest launches · New
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-[-0.02em] leading-[1.1]">
+                  Live in production. <span className="gradient-text-modern">Told by the clients.</span>
+                </h2>
+                <p className="text-base sm:text-lg text-gray-600 mt-4 leading-relaxed">
+                  Our three newest builds, each with the problem, how we solved it, the outcome and the client&apos;s own video testimonial.
+                </p>
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
-                Real clients. <span className="gradient-text-modern">Real systems. Real outcomes.</span>
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mt-4">
-                Each one starts with the client&apos;s problem, shows how we solved it, and ends with what changed, told with their own video testimonial.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {allCaseStudies.map((cs) => (
+            {allCaseStudies.map((cs, idx) => {
+              const href = `/case-studies/${cs.slug}/`;
+              if (idx === 0) {
+                return (
+                  <Link
+                    key={cs.slug}
+                    href={href}
+                    className="group grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-blue-200 hover:border-blue-500 bg-white shadow-2xl shadow-blue-500/10 transition-colors mb-6 sm:mb-8"
+                  >
+                    <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[460px] bg-[#0b1024] overflow-hidden">
+                      <Image
+                        src={cs.cover}
+                        alt={`${cs.client} case study: product screenshot and client video testimonial`}
+                        fill
+                        priority
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                      />
+                      <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-emerald-700 text-xs font-bold uppercase tracking-wider shadow-lg">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                        New · {cs.market}
+                      </span>
+                    </div>
+                    <div className="p-6 sm:p-8 lg:p-10 flex flex-col gap-5">
+                      <div className="flex flex-wrap gap-2">
+                        {cs.tags.map((t) => (
+                          <span key={t} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">{t}</span>
+                        ))}
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-500">{cs.client}</div>
+                        <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                          {cs.headline} <span className="gradient-text-modern">{cs.headlineAccent}</span>
+                        </h3>
+                      </div>
+                      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                        {cs.stats.slice(0, 3).map((m) => (
+                          <div key={m.label} className="px-3 py-2.5 rounded-xl bg-gray-50 border border-gray-200">
+                            <div className="text-lg sm:text-xl font-bold gradient-text-modern leading-tight">{m.value}</div>
+                            <div className="text-[11px] text-gray-600 leading-snug mt-0.5">{m.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                      <blockquote className="flex gap-3 items-start border-l-4 border-blue-500 pl-4">
+                        <span className="text-[15px] text-gray-800 font-medium leading-snug">
+                          &ldquo;{cs.testimonial.quote}&rdquo;
+                          <span className="block mt-1 text-xs font-normal text-gray-500">{cs.testimonial.name}, {cs.testimonial.role}</span>
+                        </span>
+                      </blockquote>
+                      <span className="mt-auto inline-flex items-center gap-2 text-base font-semibold text-blue-700">
+                        Read the case study
+                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                );
+              }
+              return null;
+            })}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {allCaseStudies.slice(1).map((cs) => (
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}/`}
-                  className="group rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-blue-500 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col bg-white"
+                  className="group rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-blue-500 bg-white shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
                 >
-                  <div className="relative p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-600 text-white">
-                    <div className="flex items-center justify-between gap-3 mb-6">
-                      <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/80">
-                        {cs.market}
-                      </span>
-                      {cs.flag && (
-                        <span className="px-2.5 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-bold tracking-wider">
-                          {cs.flag}
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold leading-tight">{cs.client}</h3>
-                    <p className="mt-2 text-sm sm:text-base text-white/80 leading-snug">
-                      {cs.headline} {cs.headlineAccent}
-                    </p>
+                  <div className="relative aspect-[16/10] bg-[#0b1024] overflow-hidden">
+                    <Image
+                      src={cs.cover}
+                      alt={`${cs.client} case study: product and client video testimonial`}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-emerald-700 text-xs font-bold uppercase tracking-wider shadow-lg">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      New · {cs.market}
+                    </span>
                   </div>
-                  <div className="p-6 sm:p-7 flex flex-col flex-1 gap-5">
-                    <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed">{cs.intro}</p>
+                  <div className="p-6 sm:p-7 flex flex-col flex-1 gap-4">
+                    <div>
+                      <div className="text-sm font-semibold text-gray-500">{cs.client}</div>
+                      <h3 className="mt-1 text-xl sm:text-2xl font-bold text-gray-900 leading-snug">
+                        {cs.headline} <span className="gradient-text-modern">{cs.headlineAccent}</span>
+                      </h3>
+                    </div>
                     <div className="grid grid-cols-3 gap-2">
                       {cs.stats.slice(0, 3).map((m) => (
                         <div key={m.label} className="px-2.5 py-2 rounded-lg bg-gray-50 border border-gray-200">
@@ -138,7 +218,7 @@ export default function CaseStudiesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-10 sm:mb-12 text-center">
               <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4">
-                Featured Build
+                Earlier build
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
                 A B2B SaaS company, <span className="gradient-text-modern">re-engineered for revenue.</span>
@@ -327,7 +407,7 @@ export default function CaseStudiesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12">
               <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4">
-                More Builds
+                More builds
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
                 Other recent <span className="gradient-text-modern">case studies.</span>
