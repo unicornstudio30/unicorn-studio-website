@@ -7,7 +7,6 @@ import Image from "next/image";
 type Member = {
   name: string;
   role: string;
-  headline: string;
   bio: string;
   since: string;
   location: string;
@@ -19,7 +18,6 @@ const team: Member[] = [
   {
     name: "Saidur Rahaman",
     role: "CEO & Founder",
-    headline: "Building AI systems for PE portcos and M&A, and the 14-day AI audit that finds the margin hiding in portfolio companies.",
     bio: "Saidur founded Unicorn Studio to build AI systems that replace manual, messy, repetitive work. He leads client strategy and the 14-day AI audit, with a focus on private equity portfolio companies and M&A deal sourcing.",
     since: "Oct 2023",
     location: "Dhaka, Bangladesh",
@@ -27,19 +25,8 @@ const team: Member[] = [
     linkedin: "https://www.linkedin.com/in/saidur-builder",
   },
   {
-    name: "K. M. Habibullah",
-    role: "Chief Operating Officer",
-    headline: "Building AI systems that scale revenue without scaling busywork.",
-    bio: "Habibullah runs operations at Unicorn Studio, keeping delivery on track so AI systems ship on time and scale revenue without scaling busywork. He brings a software engineering background and leadership experience across several Dhaka organizations.",
-    since: "Sep 2025",
-    location: "Dhaka, Bangladesh",
-    photo: "/team/km-habibullah.jpg",
-    linkedin: "https://www.linkedin.com/in/km-habibullah",
-  },
-  {
     name: "Fahim Shahryer",
     role: "Chief AI Engineer",
-    headline: "Building AI systems that turn manual, messy, repetitive work into revenue.",
     bio: "Fahim leads AI engineering at Unicorn Studio, designing and building the custom AI systems the team ships for clients. He works across agentic AI, LLM workflows, RAG and cloud deployment.",
     since: "Apr 2025",
     location: "Dhaka, Bangladesh",
@@ -47,9 +34,17 @@ const team: Member[] = [
     linkedin: "https://www.linkedin.com/in/fahim-shahryer",
   },
   {
+    name: "K. M. Habibullah",
+    role: "Chief Operating Officer",
+    bio: "Habibullah runs operations at Unicorn Studio, keeping delivery on track so AI systems ship on time and scale revenue without scaling busywork. He brings a software engineering background and leadership experience across several Dhaka organizations.",
+    since: "Sep 2025",
+    location: "Dhaka, Bangladesh",
+    photo: "/team/km-habibullah.jpg",
+    linkedin: "https://www.linkedin.com/in/km-habibullah",
+  },
+  {
     name: "Afsana Akter",
     role: "Growth Systems Lead",
-    headline: "Turning manual, repetitive operations into AI systems that drive growth.",
     bio: "Afsana leads growth systems at Unicorn Studio, turning manual, repetitive operations into AI systems that drive pipeline and revenue. She combines a finance degree with hands-on experience in marketing, outreach and operations.",
     since: "Apr 2025",
     location: "Dhaka, Bangladesh",
@@ -106,8 +101,6 @@ export default function TeamSection() {
                     </svg>
                   </a>
                 </div>
-
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed text-pretty">{m.headline}</p>
 
                 <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
                   <span className="inline-flex items-center gap-1">
