@@ -4,6 +4,7 @@ import Image from "next/image";
 import TopNavigation from "@/components/TopNavigation";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import TeamSection from "@/components/TeamSection";
 
 const beliefs = [
   {
@@ -281,6 +282,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Team */}
+        <TeamSection />
 
         {/* Beliefs */}
         <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
